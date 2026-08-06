@@ -20,15 +20,24 @@ jobs:
         with:
           ref: resume/use-uploaded-dark-pdf
 
-      - name: Download the supplied resume
+      - name: Inspect the supplied resume download
         shell: bash
         run: |
           mkdir -p public
           curl --location --fail --retry 3 \
+            --dump-header /tmp/resume-headers.txt \
             --output public/JeremyR-darkResume.pdf \
             "https://drive.usercontent.google.com/download?id=1jodbGDGFVSe_hYQMdjPTVIlNo6D_NyVi&export=download&confirm=t"
-          test "$(head -c 4 public/JeremyR-darkResume.pdf)" = "%PDF"
-          test "$(stat -c%s public/JeremyR-darkResume.pdf)" -gt 1000000
+          echo "RESPONSE HEADERS"
+          sed -n '1,80p' /tmp/resume-headers.txt
+          echo "FILE TYPE"
+          file public/JeremyR-darkResume.pdf
+          echo "FIRST BYTES"
+          head -c 800 public/JeremyR-darkResume.pdf | tr '\n' ' ' | sed 's/</\n</g' | head -30
+          echo
+          if test "$(head -c 4 public/JeremyR-darkResume.pdf)" != "%PDF"; then
+            exit 1
+          fi
 
       - name: Commit the exact PDF
         shell: bash

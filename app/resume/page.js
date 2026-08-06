@@ -1,3 +1,5 @@
+import PrintButton from "./print-button";
+
 const roles = [
   {
     company: "The Villages",
@@ -38,7 +40,7 @@ export default function ResumePage() {
     <main className="resume-page shell">
       <div className="resume-topbar">
         <a href="/">← Back to portfolio</a>
-        <button className="button primary" onClick={undefined}>Print / Save PDF from your browser</button>
+        <PrintButton />
       </div>
       <article className="resume-sheet">
         <header>

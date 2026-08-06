@@ -1,6 +1,6 @@
 import SiteHeader from "../components/SiteHeader";
 
-const RESUME_URL = "/JeremyRiveraResume.pdf";
+const RESUME_URL = "https://drive.google.com/file/d/1QOMANcqVvlxiBwIrWUiEXT-1QYgAN54C/view?usp=sharing";
 
 const projects = [
   {

@@ -1,0 +1,40 @@
+name: Import uploaded resume PDF
+
+on:
+  push:
+    branches:
+      - resume/use-uploaded-dark-pdf
+    paths:
+      - .github/workflows/import-resume.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-resume:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: resume/use-uploaded-dark-pdf
+
+      - name: Download the supplied resume
+        shell: bash
+        run: |
+          mkdir -p public
+          curl --location --fail --retry 3 \
+            --output public/JeremyR-darkResume.pdf \
+            "https://drive.usercontent.google.com/download?id=1jodbGDGFVSe_hYQMdjPTVIlNo6D_NyVi&export=download&confirm=t"
+          test "$(head -c 4 public/JeremyR-darkResume.pdf)" = "%PDF"
+          test "$(stat -c%s public/JeremyR-darkResume.pdf)" -gt 1000000
+
+      - name: Commit the exact PDF
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/JeremyR-darkResume.pdf
+          git commit -m "docs: use supplied dark resume PDF" || exit 0
+          git push origin HEAD:resume/use-uploaded-dark-pdf

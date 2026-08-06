@@ -1,0 +1,1 @@
+Follow `AGENTS.md`. Keep changes focused, accessible, responsive, and truthful. Use small stacked pull requests for case-study pages, project imagery, content polish, SEO, analytics, and testing. Do not merge, expose confidential assets, or deploy production without approval.

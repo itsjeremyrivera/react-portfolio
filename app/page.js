@@ -1,24 +1,27 @@
+import SiteHeader from "../components/SiteHeader";
+
 const projects = [
   {
     number: "01",
     company: "The Villages",
     type: "Enterprise product design",
     date: "2025–Present",
-    title:
-      "Operational products for point-of-sale and vehicle-specific navigation.",
+    title: "Operational products for point-of-sale and vehicle-specific navigation.",
     summary:
-      "Product design and front-end delivery for Golf Rail, reusable interaction patterns for a .NET MAUI Blazor Hybrid application, and close collaboration with engineering across complex workflows.",
+      "Product design and front-end delivery for Golf Rail, reusable interaction patterns for a .NET MAUI Blazor Hybrid application, and close collaboration with engineering across complex operational workflows.",
     tags: ["Product design", "Interaction design", "Mobile", "Front-end"],
+    imageNote: "Approved Golf Rail or navigation product imagery",
   },
   {
     number: "02",
     company: "Switch by Quadient",
-    type: "SaaS",
+    type: "SaaS product design",
     date: "2022–2023",
     title: "Simplifying the journey from document preparation to physical mail.",
     summary:
       "End-to-end UI design across onboarding, document upload, address verification, mailing, payment, and account-management flows in a product environment serving 15,000+ users.",
     tags: ["Research", "UX/UI", "Dashboard"],
+    imageNote: "Approved Switch workflow and dashboard imagery",
   },
   {
     number: "03",
@@ -29,15 +32,48 @@ const projects = [
     summary:
       "Custom dashboard components and reusable patterns designed to make complex financial actions clearer, faster, and easier to scale.",
     tags: ["Design systems", "SaaS", "Responsive UI"],
+    imageNote: "Payro dashboard and design-system imagery",
   },
 ];
 
-function Placeholder({ company }) {
+const principles = [
+  {
+    number: "01",
+    title: "Clarity before decoration",
+    copy: "Every visual choice should make the product, decision, or story easier to understand.",
+  },
+  {
+    number: "02",
+    title: "Systems that scale",
+    copy: "I design reusable patterns that improve consistency without restricting thoughtful product decisions.",
+  },
+  {
+    number: "03",
+    title: "Craft through implementation",
+    copy: "Front-end fluency helps me protect the experience from early concept through production delivery.",
+  },
+];
+
+function ProjectPlaceholder({ project, featured }) {
   return (
-    <div className="project-placeholder" role="img" aria-label={`${company} project image placeholder`}>
-      <span>Project imagery</span>
-      <strong>{company}</strong>
-      <small>Approved screenshots and case-study visuals will be added here.</small>
+    <div className={featured ? "project-placeholder featured-visual" : "project-placeholder"} role="img" aria-label={`${project.company} project image placeholder`}>
+      <div className="placeholder-window" aria-hidden="true">
+        <div className="placeholder-toolbar"><i /><i /><i /><span /></div>
+        <div className="placeholder-canvas">
+          <div className="placeholder-sidebar" />
+          <div className="placeholder-content">
+            <span className="placeholder-line line-short" />
+            <span className="placeholder-line line-wide" />
+            <div className="placeholder-panels"><span /><span /></div>
+            <span className="placeholder-line line-medium" />
+          </div>
+        </div>
+      </div>
+      <div className="placeholder-label">
+        <span>Image placeholder</span>
+        <strong>{project.company}</strong>
+        <small>{project.imageNote}</small>
+      </div>
     </div>
   );
 }
@@ -45,7 +81,7 @@ function Placeholder({ company }) {
 function ProjectCard({ project, featured = false }) {
   return (
     <article className={`project-card ${featured ? "featured" : ""}`}>
-      <Placeholder company={project.company} />
+      <ProjectPlaceholder project={project} featured={featured} />
       <div className="project-copy">
         <div className="project-meta">
           <span>{project.number}</span>
@@ -56,9 +92,11 @@ function ProjectCard({ project, featured = false }) {
         <p className="project-title">{project.title}</p>
         <p>{project.summary}</p>
         <div className="tag-row">
-          {project.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
+          {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+        </div>
+        <div className="project-footer">
+          <span>Case study in progress</span>
+          <span aria-hidden="true">↗</span>
         </div>
       </div>
     </article>
@@ -69,21 +107,11 @@ export default function Home() {
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
-      <header className="site-header shell">
-        <a className="brand" href="#top" aria-label="Jeremy Rivera home">
-          <span>Jeremy Rivera</span>
-          <em>Product Designer</em>
-        </a>
-        <nav aria-label="Primary navigation">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="/resume">Résumé</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <main id="main">
         <section className="hero shell" id="top">
+          <div className="hero-status"><span /> Available for select product-design opportunities</div>
           <p className="eyebrow">Product design × front-end fluency</p>
           <h1>
             I design complex products—and make them easier to <em>build, use, and scale.</em>
@@ -93,25 +121,27 @@ export default function Home() {
               Product Designer with 6+ years shaping enterprise software, SaaS platforms,
               dashboards, websites, and cross-platform mobile products. I lead work from
               research and workflow definition through high-fidelity prototyping and
-              engineering handoff.
+              engineering delivery.
             </p>
             <div className="actions">
-              <a className="button primary" href="#work">View selected work</a>
+              <a className="button primary" href="#work">View selected work <span aria-hidden="true">↓</span></a>
               <a className="button secondary" href="/resume">View résumé</a>
             </div>
           </div>
-          <div className="impact-strip" aria-label="Selected impact">
-            <span>Selected impact</span>
-            <span>15,000+ user product environment</span>
-            <span>Prototype delivery reduced from ~5 weeks to 2</span>
-            <span>Development timelines reduced 20%</span>
+          <div className="impact-grid" aria-label="Selected impact">
+            <div><span>01</span><strong>15,000+</strong><p>User product environment at Quadient</p></div>
+            <div><span>02</span><strong>5 → 2 weeks</strong><p>Prototype delivery cycle at Electus</p></div>
+            <div><span>03</span><strong>20%</strong><p>Reduction in development timelines</p></div>
           </div>
         </section>
 
         <section className="section shell" id="work">
           <div className="section-heading">
             <p className="eyebrow">Selected work</p>
-            <h2>Products shaped around real operational complexity.</h2>
+            <div>
+              <h2>Products shaped around real operational complexity.</h2>
+              <p className="section-intro">A focused selection spanning enterprise operations, digital-mail SaaS, and financial-product systems.</p>
+            </div>
           </div>
           <ProjectCard project={projects[0]} featured />
           <div className="project-grid">
@@ -123,20 +153,16 @@ export default function Home() {
         <section className="bridge section">
           <div className="shell bridge-grid">
             <div>
-              <p className="eyebrow">My advantage</p>
-              <h2>I work where design decisions meet implementation.</h2>
+              <p className="eyebrow">How I work</p>
+              <h2>I connect product thinking, visual craft, and implementation.</h2>
             </div>
-            <div>
-              <p className="bridge-intro">
-                I combine research, systems thinking, interaction design, prototyping, and
-                front-end fluency to reduce ambiguity between product and engineering.
-              </p>
-              <div className="capabilities">
-                <div><span>01</span><strong>Define</strong><p>Research, workflows, information architecture</p></div>
-                <div><span>02</span><strong>Design</strong><p>Interaction models, prototypes, systems</p></div>
-                <div><span>03</span><strong>Deliver</strong><p>Technical collaboration, handoff, front-end</p></div>
-                <div><span>04</span><strong>Validate</strong><p>Usability testing, analytics, iteration</p></div>
-              </div>
+            <div className="principles">
+              {principles.map((principle) => (
+                <article key={principle.number}>
+                  <span>{principle.number}</span>
+                  <div><h3>{principle.title}</h3><p>{principle.copy}</p></div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -161,22 +187,23 @@ export default function Home() {
                 I’m based in Central Florida and open to product-design opportunities where
                 complex workflows, strong collaboration, and thoughtful systems matter.
               </p>
+              <a className="text-link" href="/resume">Read my experience <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </section>
 
-        <section className="section shell">
+        <section className="section shell independent-section">
           <div className="section-heading">
             <p className="eyebrow">Independent projects</p>
-            <h2>Building products I can own from idea to launch.</h2>
+            <h2>Building focused products from idea to launch.</h2>
           </div>
           <div className="independent-card">
             <div>
-              <span className="status">In development</span>
-              <h3>Personal product studio</h3>
+              <span className="status">Currently developing</span>
+              <h3>Independent product studio</h3>
               <p>
-                Focused products across fitness routines, shared music experiences, and
-                creator workflows—designed, built, tested, and shipped independently.
+                Exploring practical products across fitness routines, synchronized music,
+                and creator workflows—designed, built, tested, and shipped independently.
               </p>
             </div>
             <div className="independent-tags">
@@ -191,11 +218,16 @@ export default function Home() {
 
         <section className="section shell contact" id="contact">
           <p className="eyebrow">Contact</p>
-          <h2>Let’s build something clear, useful, and scalable.</h2>
-          <div className="contact-links">
-            <a href="mailto:jeremyrivera23@yahoo.com">jeremyrivera23@yahoo.com</a>
-            <a href="https://linkedin.com/in/itsjeremyrivera" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="/resume">Résumé</a>
+          <div className="contact-grid">
+            <h2>Let’s build something clear, useful, and scalable.</h2>
+            <div className="contact-copy">
+              <p>I’m available for product-design opportunities and select collaborations.</p>
+              <div className="contact-links">
+                <a href="mailto:jeremyrivera23@yahoo.com">Email <span aria-hidden="true">↗</span></a>
+                <a href="https://linkedin.com/in/itsjeremyrivera" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                <a href="/resume">Résumé <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
           </div>
         </section>
       </main>

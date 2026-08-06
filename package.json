@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "next": "latest",
+    "pdf-lib": "latest",
     "react": "latest",
     "react-dom": "latest"
   }

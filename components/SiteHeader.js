@@ -18,6 +18,14 @@ export default function SiteHeader() {
     setTheme(saved);
   }, []);
 
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
+
   const applyTheme = (nextTheme) => {
     setTheme(nextTheme);
     window.localStorage.setItem("portfolio-theme", nextTheme);
@@ -44,7 +52,7 @@ export default function SiteHeader() {
         </a>
 
         <div className="header-actions">
-          <nav className={menuOpen ? "site-nav is-open" : "site-nav"} aria-label="Primary navigation">
+          <nav id="site-navigation" className={menuOpen ? "site-nav is-open" : "site-nav"} aria-label="Primary navigation">
             {links.map(([label, href]) => (
               <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
             ))}

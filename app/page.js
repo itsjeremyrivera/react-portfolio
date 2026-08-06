@@ -1,25 +1,27 @@
 import SiteHeader from "../components/SiteHeader";
 
+const RESUME_URL = "/JeremyRiveraResume.pdf";
+
 const projects = [
   {
     number: "01",
     company: "The Villages",
     type: "Enterprise product design",
-    date: "2025–Present",
-    title: "Operational products for point-of-sale and vehicle-specific navigation.",
+    date: "2025 to Present",
+    title: "Operational products for point of sale and vehicle specific navigation.",
     summary:
-      "Product design and front-end delivery for Golf Rail, reusable interaction patterns for a .NET MAUI Blazor Hybrid application, and close collaboration with engineering across complex operational workflows.",
-    tags: ["Product design", "Interaction design", "Mobile", "Front-end"],
+      "Product design and front end delivery for Golf Rail, reusable interaction patterns for a .NET MAUI Blazor Hybrid application, and close collaboration with engineering across complex operational workflows.",
+    tags: ["Product design", "Interaction design", "Mobile", "Front end"],
     imageNote: "Approved Golf Rail or navigation product imagery",
   },
   {
     number: "02",
     company: "Switch by Quadient",
     type: "SaaS product design",
-    date: "2022–2023",
+    date: "2022 to 2023",
     title: "Simplifying the journey from document preparation to physical mail.",
     summary:
-      "End-to-end UI design across onboarding, document upload, address verification, mailing, payment, and account-management flows in a product environment serving 15,000+ users.",
+      "End to end UI design across onboarding, document upload, address verification, mailing, payment, and account management flows in a product environment serving 15,000+ users.",
     tags: ["Research", "UX/UI", "Dashboard"],
     imageNote: "Approved Switch workflow and dashboard imagery",
   },
@@ -28,11 +30,11 @@ const projects = [
     company: "Payro Finance",
     type: "Financial SaaS",
     date: "Independent",
-    title: "A scalable interface system for payroll-financing workflows.",
+    title: "A scalable interface system for payroll financing workflows.",
     summary:
       "Custom dashboard components and reusable patterns designed to make complex financial actions clearer, faster, and easier to scale.",
     tags: ["Design systems", "SaaS", "Responsive UI"],
-    imageNote: "Payro dashboard and design-system imagery",
+    imageNote: "Payro dashboard and design system imagery",
   },
 ];
 
@@ -50,7 +52,7 @@ const principles = [
   {
     number: "03",
     title: "Craft through implementation",
-    copy: "Front-end fluency helps me protect the experience from early concept through production delivery.",
+    copy: "Front end fluency helps me protect the experience from early concept through production delivery.",
   },
 ];
 
@@ -107,30 +109,30 @@ export default function Home() {
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
-      <SiteHeader />
+      <SiteHeader resumeUrl={RESUME_URL} />
 
       <main id="main">
         <section className="hero shell" id="top">
-          <div className="hero-status"><span /> Available for select product-design opportunities</div>
-          <p className="eyebrow">Product design × front-end fluency</p>
+          <div className="hero-status"><span /> Available for select product design opportunities</div>
+          <p className="eyebrow">Product design × front end fluency</p>
           <h1>
-            I design complex products—and make them easier to <em>build, use, and scale.</em>
+            I design complex products, and make them easier to <em>build, use, and scale.</em>
           </h1>
           <div className="hero-grid">
             <p>
               Product Designer with 6+ years shaping enterprise software, SaaS platforms,
-              dashboards, websites, and cross-platform mobile products. I lead work from
-              research and workflow definition through high-fidelity prototyping and
+              dashboards, websites, and cross platform mobile products. I lead work from
+              research and workflow definition through high fidelity prototyping and
               engineering delivery.
             </p>
             <div className="actions">
               <a className="button primary" href="#work">View selected work <span aria-hidden="true">↓</span></a>
-              <a className="button secondary" href="/resume">View résumé</a>
+              <a className="button secondary" href={RESUME_URL} target="_blank" rel="noreferrer">View résumé PDF</a>
             </div>
           </div>
           <div className="impact-grid" aria-label="Selected impact">
             <div><span>01</span><strong>15,000+</strong><p>User product environment at Quadient</p></div>
-            <div><span>02</span><strong>5 → 2 weeks</strong><p>Prototype delivery cycle at Electus</p></div>
+            <div><span>02</span><strong>5 to 2 weeks</strong><p>Prototype delivery cycle at Electus</p></div>
             <div><span>03</span><strong>20%</strong><p>Reduction in development timelines</p></div>
           </div>
         </section>
@@ -140,7 +142,7 @@ export default function Home() {
             <p className="eyebrow">Selected work</p>
             <div>
               <h2>Products shaped around real operational complexity.</h2>
-              <p className="section-intro">A focused selection spanning enterprise operations, digital-mail SaaS, and financial-product systems.</p>
+              <p className="section-intro">A focused selection spanning enterprise operations, digital mail SaaS, and financial product systems.</p>
             </div>
           </div>
           <ProjectCard project={projects[0]} featured />
@@ -174,20 +176,20 @@ export default function Home() {
           </div>
           <div className="about-grid">
             <p className="about-lede">
-              I’ve worked across enterprise operations, digital-mail SaaS, financial
-              services, e-commerce, and independent client products.
+              I’ve worked across enterprise operations, digital mail SaaS, financial
+              services, e commerce, and independent client products.
             </p>
             <div>
               <p>
-                My front-end background helps me explore realistic solutions, communicate
-                constraints early, and create implementation-ready experiences without losing
+                My front end background helps me explore realistic solutions, communicate
+                constraints early, and create implementation ready experiences without losing
                 sight of the user.
               </p>
               <p>
-                I’m based in Central Florida and open to product-design opportunities where
+                I’m based in Central Florida and open to product design opportunities where
                 complex workflows, strong collaboration, and thoughtful systems matter.
               </p>
-              <a className="text-link" href="/resume">Read my experience <span aria-hidden="true">↗</span></a>
+              <a className="button secondary inline-button" href={RESUME_URL} target="_blank" rel="noreferrer">View full résumé PDF <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </section>
@@ -203,7 +205,7 @@ export default function Home() {
               <h3>Independent product studio</h3>
               <p>
                 Exploring practical products across fitness routines, synchronized music,
-                and creator workflows—designed, built, tested, and shipped independently.
+                and creator workflows. Each product is designed, built, tested, and shipped independently.
               </p>
             </div>
             <div className="independent-tags">
@@ -221,11 +223,11 @@ export default function Home() {
           <div className="contact-grid">
             <h2>Let’s build something clear, useful, and scalable.</h2>
             <div className="contact-copy">
-              <p>I’m available for product-design opportunities and select collaborations.</p>
+              <p>I’m available for product design opportunities and select collaborations.</p>
               <div className="contact-links">
-                <a href="mailto:jeremyrivera23@yahoo.com">Email <span aria-hidden="true">↗</span></a>
-                <a href="https://linkedin.com/in/itsjeremyrivera" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-                <a href="/resume">Résumé <span aria-hidden="true">↗</span></a>
+                <a className="contact-button primary-contact" href="mailto:jeremyrivera23@yahoo.com">Email me <span aria-hidden="true">↗</span></a>
+                <a className="contact-button" href="https://linkedin.com/in/itsjeremyrivera" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                <a className="contact-button" href={RESUME_URL} target="_blank" rel="noreferrer">Résumé PDF <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </div>

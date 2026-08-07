@@ -2,15 +2,15 @@
 
 import { useEffect, useState } from "react";
 
-export default function SiteHeader({ resumeUrl = "/JeremyRiveraResume.pdf" }) {
+export default function SiteHeader({ resumeUrl = "/JeremyRiveraResume.pdf", navBase = "" }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState("system");
 
   const links = [
-    ["Work", "#work", false],
-    ["About", "#about", false],
+    ["Work", `${navBase}#work`, false],
+    ["About", `${navBase}#about`, false],
     ["Résumé PDF", resumeUrl, true],
-    ["Contact", "#contact", false],
+    ["Contact", `${navBase}#contact`, false],
   ];
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function SiteHeader({ resumeUrl = "/JeremyRiveraResume.pdf" }) {
   return (
     <header className="site-header-wrap">
       <div className="site-header shell">
-        <a className="brand" href="#top" aria-label="Jeremy Rivera home" onClick={() => setMenuOpen(false)}>
+        <a className="brand" href={`${navBase}#top`} aria-label="Jeremy Rivera home" onClick={() => setMenuOpen(false)}>
           <span className="brand-mark">JR</span>
           <span className="brand-copy">
             <strong>Jeremy Rivera</strong>

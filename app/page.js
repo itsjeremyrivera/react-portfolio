@@ -73,14 +73,14 @@ function ContactIcon({ type }) {
 function ProjectPlaceholder({ project, featured }) {
   if (project.image) {
     return (
-      <div className={featured ? "project-media featured-visual parallax-layer parallax-media-layer" : "project-media parallax-layer parallax-media-layer"} data-parallax data-parallax-speed="10">
+      <div className={featured ? "project-media featured-visual parallax-layer parallax-media-layer" : "project-media parallax-layer parallax-media-layer"} data-parallax data-parallax-speed="28">
         <img src={project.image} alt={`${project.company} product interface overview`} />
       </div>
     );
   }
 
   return (
-    <div className={featured ? "project-placeholder featured-visual parallax-layer parallax-media-layer" : "project-placeholder parallax-layer parallax-media-layer"} data-parallax data-parallax-speed="10" role="img" aria-label={`${project.company} project image placeholder`}>
+    <div className={featured ? "project-placeholder featured-visual parallax-layer parallax-media-layer" : "project-placeholder parallax-layer parallax-media-layer"} data-parallax data-parallax-speed="28" role="img" aria-label={`${project.company} project image placeholder`}>
       <div className="placeholder-window" aria-hidden="true">
         <div className="placeholder-toolbar"><i /><i /><i /><span /></div>
         <div className="placeholder-canvas">
@@ -138,7 +138,7 @@ export default function Home() {
 
       <main id="main">
         <section className="hero shell" id="top">
-          <div className="hero-gradient parallax-layer" data-parallax data-parallax-speed="-18" aria-hidden="true"><span /></div>
+          <div className="hero-gradient parallax-layer" data-parallax data-parallax-speed="-24" aria-hidden="true"><span /></div>
           <h1 className="hero-title">
             I make complex products easier to <em>build, use, and scale.</em>
           </h1>
@@ -159,8 +159,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section shell" id="work">
-          <div className="section-heading parallax-layer" data-parallax data-parallax-speed="8">
+        <section className="section shell scroll-scene" id="work" data-parallax data-parallax-speed="0">
+          <div className="section-heading parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="22">
             <div>
               <h2>Products shaped around real operational complexity.</h2>
               <p className="section-intro">Enterprise operations, digital mail SaaS, and financial product systems.</p>
@@ -175,12 +175,12 @@ export default function Home() {
 
         <section className="bridge section">
           <div className="shell bridge-grid">
-            <div className="parallax-layer" data-parallax data-parallax-speed="8">
+            <div className="parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="22">
               <h2>I connect product thinking, visual craft, and implementation.</h2>
             </div>
             <div className="principles">
-              {principles.map((principle) => (
-                <article key={principle.number}>
+              {principles.map((principle, index) => (
+                <article className="parallax-layer parallax-copy-layer" data-parallax data-parallax-speed={12 + index * 4} key={principle.number}>
                   <span>{principle.number}</span>
                   <div><h3>{principle.title}</h3><p>{principle.copy}</p></div>
                 </article>
@@ -189,16 +189,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section shell" id="about">
-          <div className="section-heading parallax-layer" data-parallax data-parallax-speed="8">
+        <section className="section shell scroll-scene" id="about" data-parallax data-parallax-speed="0">
+          <div className="section-heading parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="22">
             <h2>A designer who understands how products get built.</h2>
           </div>
           <div className="about-grid">
-            <p className="about-lede">
+            <p className="about-lede parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="18">
               I’ve worked across enterprise operations, digital mail SaaS, financial
               services, e commerce, and independent client products.
             </p>
-            <div>
+            <div className="parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="-14">
               <p>
                 My front end background helps me design realistic solutions, surface constraints
                 early, and collaborate closely with engineering. I’m based in Central Florida.
@@ -208,11 +208,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section shell independent-section">
-          <div className="section-heading parallax-layer" data-parallax data-parallax-speed="8">
+        <section className="section shell independent-section scroll-scene" data-parallax data-parallax-speed="0">
+          <div className="section-heading parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="22">
             <h2>Building focused products from idea to launch.</h2>
           </div>
-          <div className="independent-card">
+          <div className="independent-card parallax-layer" data-parallax data-parallax-speed="16">
             <div>
               <span className="status">Currently developing</span>
               <h3>Independent product studio</h3>
@@ -230,11 +230,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section shell contact" id="contact">
+        <section className="section shell contact scroll-scene" id="contact" data-parallax data-parallax-speed="0">
           <div className="hero-status contact-status"><span /> Available for select product design opportunities</div>
           <div className="contact-grid">
-            <h2 className="parallax-layer" data-parallax data-parallax-speed="8">Let’s build something clear, useful, and scalable.</h2>
-            <div className="contact-copy">
+            <h2 className="parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="22">Let’s build something clear, useful, and scalable.</h2>
+            <div className="contact-copy parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="-14">
               <p>I’m available for product design opportunities and select collaborations.</p>
               <div className="contact-links">
                 <a className="contact-button primary-contact" href="mailto:jeremyrivera23@yahoo.com"><span><ContactIcon type="email" />Email me</span></a>

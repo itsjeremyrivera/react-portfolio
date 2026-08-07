@@ -189,6 +189,7 @@
 }
 
 .dogsSection {
+  overflow: visible;
   padding-bottom: clamp(7rem, 12vw, 12rem);
 }
 
@@ -196,9 +197,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: start;
+  padding-inline: 1px;
 }
 
 .dogGrid > div {
+  align-self: start;
+  height: fit-content;
   padding: .75rem;
   border: 1px solid var(--line);
   border-radius: 28px;

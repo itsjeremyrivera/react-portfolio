@@ -1,0 +1,315 @@
+.page {
+  overflow: clip;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100svh - 82px);
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  align-items: center;
+  gap: clamp(3rem, 8vw, 7rem);
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+
+.heroGlow {
+  position: absolute;
+  z-index: -1;
+  top: 8%;
+  left: -18%;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 24%, transparent), transparent 68%);
+  filter: blur(42px);
+  opacity: .84;
+  pointer-events: none;
+}
+
+.heroCopy h1,
+.sectionCopy h2,
+.lifeCopy h2,
+.closing h2 {
+  margin: 1rem 0 1.5rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -.052em;
+  line-height: .98;
+  text-wrap: balance;
+}
+
+.heroCopy h1 {
+  max-width: 760px;
+  font-size: clamp(3.5rem, 6.3vw, 6.8rem);
+}
+
+.heroCopy > p:last-child {
+  max-width: 670px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.45vw, 1.25rem);
+}
+
+.heroPortrait {
+  position: relative;
+  padding: clamp(.7rem, 1.4vw, 1rem);
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.photoImage {
+  object-fit: cover;
+}
+
+.portraitPhoto {
+  min-height: min(680px, 72svh);
+  border-radius: 25px;
+}
+
+.photoNote {
+  display: block;
+  padding: .9rem .35rem .15rem;
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+.storySection {
+  padding-top: clamp(6rem, 10vw, 11rem);
+}
+
+.sectionCopy {
+  max-width: 790px;
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.sectionCopy h2,
+.lifeCopy h2,
+.closing h2 {
+  font-size: clamp(2.9rem, 5.2vw, 5.5rem);
+}
+
+.sectionCopy > p:last-child,
+.lifeCopy > p:last-child {
+  max-width: 690px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.wideMedia {
+  position: relative;
+  width: min(1040px, 92%);
+  margin-left: auto;
+  padding: clamp(.7rem, 1.4vw, 1rem);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.widePhoto {
+  min-height: clamp(420px, 58vw, 690px);
+  border-radius: 21px;
+}
+
+.inverseSection {
+  overflow: clip;
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
+}
+
+.lifeGrid {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.lifeCopy {
+  position: sticky;
+  top: 130px;
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  padding-right: clamp(1rem, 5vw, 5rem);
+}
+
+.inverseSection .lifeCopy :global(.eyebrow) {
+  color: var(--inverse-accent);
+}
+
+.inverseSection .lifeCopy > p:last-child {
+  color: var(--inverse-muted);
+}
+
+.lifeCard {
+  grid-column: 2;
+  margin: 0;
+  padding: .75rem;
+  border: 1px solid var(--inverse-line);
+  border-radius: 26px;
+  background: color-mix(in srgb, var(--inverse-text) 5%, transparent);
+}
+
+.travelCard {
+  margin-top: 2rem;
+}
+
+.animeCard {
+  margin-top: 2rem;
+}
+
+.cardPhoto {
+  min-height: clamp(390px, 48vw, 620px);
+  border-radius: 18px;
+}
+
+.coupleCard .cardPhoto {
+  min-height: clamp(440px, 56vw, 700px);
+}
+
+.lifeCard figcaption {
+  padding: .85rem .35rem .15rem;
+  color: var(--inverse-muted);
+  font-size: .78rem;
+}
+
+.dogsSection {
+  padding-bottom: clamp(7rem, 12vw, 12rem);
+}
+
+.dogGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.dogGrid > div {
+  padding: .75rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.dogGrid > div:last-child {
+  margin-top: 12%;
+}
+
+.dogPhoto {
+  min-height: clamp(430px, 54vw, 690px);
+  border-radius: 19px;
+}
+
+.closing {
+  padding-block: clamp(5rem, 9vw, 9rem);
+  border-top: 1px solid var(--line);
+}
+
+.closing h2 {
+  max-width: 900px;
+}
+
+.closingActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2.25rem;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .heroPortrait {
+    width: min(680px, 100%);
+    margin-left: auto;
+  }
+
+  .portraitPhoto {
+    min-height: min(760px, 105vw);
+  }
+
+  .wideMedia {
+    width: 100%;
+  }
+
+  .lifeGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lifeCopy {
+    position: static;
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .lifeCard {
+    grid-column: auto;
+  }
+
+  .travelCard,
+  .animeCard {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 4.5rem;
+  }
+
+  .heroCopy h1 {
+    font-size: clamp(3.15rem, 14vw, 5rem);
+  }
+
+  .sectionCopy h2,
+  .lifeCopy h2,
+  .closing h2 {
+    font-size: clamp(2.75rem, 13vw, 4rem);
+  }
+
+  .lifeGrid,
+  .dogGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .travelCard,
+  .animeCard,
+  .dogGrid > div:last-child {
+    margin-top: 0;
+  }
+
+  .cardPhoto,
+  .coupleCard .cardPhoto,
+  .dogPhoto {
+    min-height: 118vw;
+    max-height: 660px;
+  }
+
+  .widePhoto {
+    min-height: 76vw;
+  }
+
+  .closingActions :global(.button) {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroGlow {
+    transform: none !important;
+  }
+}

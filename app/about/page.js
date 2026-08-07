@@ -103,20 +103,22 @@ export default function AboutPage() {
 
         <section className={`section ${styles.inverseSection}`}>
           <div className={`shell ${styles.lifeGrid}`}>
-            <div
-              className={`${styles.lifeCopy} parallax-layer parallax-copy-layer`}
-              data-parallax
-              data-parallax-speed="18"
-            >
-              <p className="eyebrow">What shapes my eye</p>
-              <h2>People first. Systems underneath. A little skate-culture edge.</h2>
-              <p>
-                My brain works pretty programmatically: I&apos;m always looking at how
-                a product was made, who it helps, and how it could work better.
-                <em> The Design of Everyday Things</em> gave language to that instinct.
-                Skating and skate culture taught me to bring personality and visual
-                energy to the way I solve problems.
-              </p>
+            <div className={styles.lifeCopy}>
+              <div
+                className={`${styles.lifeCopyMotion} parallax-layer parallax-copy-layer`}
+                data-parallax
+                data-parallax-speed="18"
+              >
+                <p className="eyebrow">What shapes my eye</p>
+                <h2>People first. Systems underneath. A little skate-culture edge.</h2>
+                <p>
+                  My brain works pretty programmatically: I&apos;m always looking at how
+                  a product was made, who it helps, and how it could work better.
+                  <em> The Design of Everyday Things</em> gave language to that instinct.
+                  Skating and skate culture taught me to bring personality and visual
+                  energy to the way I solve problems.
+                </p>
+              </div>
             </div>
 
             <figure

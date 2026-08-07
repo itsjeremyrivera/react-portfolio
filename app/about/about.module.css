@@ -1,5 +1,5 @@
 .page {
-  overflow: clip;
+  overflow: visible;
 }
 
 .hero {
@@ -98,7 +98,7 @@
 }
 
 .sectionCopy > p:last-child,
-.lifeCopy > p:last-child {
+.lifeCopyMotion > p:last-child {
   max-width: 690px;
   margin: 0;
   color: var(--muted);
@@ -122,7 +122,7 @@
 }
 
 .inverseSection {
-  overflow: clip;
+  overflow: visible;
   background: var(--inverse-bg);
   color: var(--inverse-text);
 }
@@ -137,16 +137,22 @@
 .lifeCopy {
   position: sticky;
   top: 130px;
+  align-self: start;
+  height: max-content;
   grid-column: 1;
   grid-row: 1 / span 3;
   padding-right: clamp(1rem, 5vw, 5rem);
+}
+
+.lifeCopyMotion {
+  min-width: 0;
 }
 
 .inverseSection .lifeCopy :global(.eyebrow) {
   color: var(--inverse-accent);
 }
 
-.inverseSection .lifeCopy > p:last-child {
+.inverseSection .lifeCopyMotion > p:last-child {
   color: var(--inverse-muted);
 }
 

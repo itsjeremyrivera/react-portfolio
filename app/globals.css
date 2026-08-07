@@ -75,7 +75,7 @@ html { overflow-x: clip; scroll-behavior: smooth; background: var(--bg); }
 body {
   margin: 0;
   min-width: 320px;
-  overflow-x: hidden;
+  overflow-x: clip;
   background:
     radial-gradient(circle at 87% -12%, color-mix(in srgb, var(--accent) 17%, transparent), transparent 34rem),
     radial-gradient(circle at -10% 34%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 30rem),

@@ -9,8 +9,6 @@ const projects = [
     type: "Enterprise product design",
     date: "2025 to Present",
     title: "Operational products for point of sale and vehicle specific navigation.",
-    summary:
-      "Product design and front end delivery for Golf Rail, reusable interaction patterns for a .NET MAUI Blazor Hybrid application, and close collaboration with engineering across complex operational workflows.",
     tags: ["Product design", "Interaction design", "Mobile", "Front end"],
     imageNote: "Approved Golf Rail or navigation product imagery",
   },
@@ -20,8 +18,6 @@ const projects = [
     type: "SaaS product design",
     date: "2022 to 2023",
     title: "Simplifying the journey from document preparation to physical mail.",
-    summary:
-      "End to end UI design across onboarding, document upload, address verification, mailing, payment, and account management flows in a product environment serving 15,000+ users.",
     tags: ["Research", "UX/UI", "Dashboard"],
     imageNote: "Approved Switch workflow and dashboard imagery",
   },
@@ -31,8 +27,6 @@ const projects = [
     type: "Financial SaaS",
     date: "Independent",
     title: "A scalable interface system for payroll financing workflows.",
-    summary:
-      "Custom dashboard components and reusable patterns designed to make complex financial actions clearer, faster, and easier to scale.",
     tags: ["Design systems", "SaaS", "Responsive UI"],
     imageNote: "Payro dashboard and design system imagery",
   },
@@ -55,6 +49,23 @@ const principles = [
     copy: "Front end fluency helps me protect the experience from early concept through production delivery.",
   },
 ];
+
+function ContactIcon({ type }) {
+  if (type === "linkedin") {
+    return (
+      <svg className="contact-icon linkedin-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.47-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13Zm1.78 13.04H3.54V8.98H7.1v11.47Z" />
+      </svg>
+    );
+  }
+
+  const paths = {
+    email: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></>,
+    resume: <><path d="M6 3h9l4 4v14H6z" /><path d="M14 3v5h5M9 13h6M9 17h6" /></>,
+  };
+
+  return <svg className="contact-icon" viewBox="0 0 24 24" aria-hidden="true">{paths[type]}</svg>;
+}
 
 function ProjectPlaceholder({ project, featured }) {
   return (
@@ -92,13 +103,11 @@ function ProjectCard({ project, featured = false }) {
         </div>
         <h3>{project.company}</h3>
         <p className="project-title">{project.title}</p>
-        <p>{project.summary}</p>
         <div className="tag-row">
           {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
         </div>
         <div className="project-footer">
-          <span>Case study in progress</span>
-          <span aria-hidden="true">↗</span>
+          <button className="case-study-button" type="button" disabled>Case study coming soon</button>
         </div>
       </div>
     </article>
@@ -113,17 +122,13 @@ export default function Home() {
 
       <main id="main">
         <section className="hero shell" id="top">
-          <div className="hero-status"><span /> Available for select product design opportunities</div>
-          <p className="eyebrow">Product design × front end fluency</p>
           <h1>
-            I design complex products, and make them easier to <em>build, use, and scale.</em>
+            I make complex products easier to <em>build, use, and scale.</em>
           </h1>
           <div className="hero-grid">
             <p>
-              Product Designer with 6+ years shaping enterprise software, SaaS platforms,
-              dashboards, websites, and cross platform mobile products. I lead work from
-              research and workflow definition through high fidelity prototyping and
-              engineering delivery.
+              Product Designer with 6+ years turning complex workflows into clear,
+              buildable digital products.
             </p>
             <div className="actions">
               <a className="button primary" href="#work">View selected work <span aria-hidden="true">↓</span></a>
@@ -139,10 +144,9 @@ export default function Home() {
 
         <section className="section shell" id="work">
           <div className="section-heading">
-            <p className="eyebrow">Selected work</p>
             <div>
               <h2>Products shaped around real operational complexity.</h2>
-              <p className="section-intro">A focused selection spanning enterprise operations, digital mail SaaS, and financial product systems.</p>
+              <p className="section-intro">Enterprise operations, digital mail SaaS, and financial product systems.</p>
             </div>
           </div>
           <ProjectCard project={projects[0]} featured />
@@ -155,7 +159,6 @@ export default function Home() {
         <section className="bridge section">
           <div className="shell bridge-grid">
             <div>
-              <p className="eyebrow">How I work</p>
               <h2>I connect product thinking, visual craft, and implementation.</h2>
             </div>
             <div className="principles">
@@ -171,7 +174,6 @@ export default function Home() {
 
         <section className="section shell" id="about">
           <div className="section-heading">
-            <p className="eyebrow">About</p>
             <h2>A designer who understands how products get built.</h2>
           </div>
           <div className="about-grid">
@@ -181,13 +183,8 @@ export default function Home() {
             </p>
             <div>
               <p>
-                My front end background helps me explore realistic solutions, communicate
-                constraints early, and create implementation ready experiences without losing
-                sight of the user.
-              </p>
-              <p>
-                I’m based in Central Florida and open to product design opportunities where
-                complex workflows, strong collaboration, and thoughtful systems matter.
+                My front end background helps me design realistic solutions, surface constraints
+                early, and collaborate closely with engineering. I’m based in Central Florida.
               </p>
               <a className="button secondary inline-button" href={RESUME_URL} target="_blank" rel="noreferrer">View full résumé PDF <span aria-hidden="true">↗</span></a>
             </div>
@@ -196,7 +193,6 @@ export default function Home() {
 
         <section className="section shell independent-section">
           <div className="section-heading">
-            <p className="eyebrow">Independent projects</p>
             <h2>Building focused products from idea to launch.</h2>
           </div>
           <div className="independent-card">
@@ -204,8 +200,7 @@ export default function Home() {
               <span className="status">Currently developing</span>
               <h3>Independent product studio</h3>
               <p>
-                Exploring practical products across fitness routines, synchronized music,
-                and creator workflows. Each product is designed, built, tested, and shipped independently.
+                Exploring practical products for fitness, music, and creator workflows.
               </p>
             </div>
             <div className="independent-tags">
@@ -219,15 +214,15 @@ export default function Home() {
         </section>
 
         <section className="section shell contact" id="contact">
-          <p className="eyebrow">Contact</p>
+          <div className="hero-status contact-status"><span /> Available for select product design opportunities</div>
           <div className="contact-grid">
             <h2>Let’s build something clear, useful, and scalable.</h2>
             <div className="contact-copy">
               <p>I’m available for product design opportunities and select collaborations.</p>
               <div className="contact-links">
-                <a className="contact-button primary-contact" href="mailto:jeremyrivera23@yahoo.com">Email me <span aria-hidden="true">↗</span></a>
-                <a className="contact-button" href="https://linkedin.com/in/itsjeremyrivera" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-                <a className="contact-button" href={RESUME_URL} target="_blank" rel="noreferrer">Résumé PDF <span aria-hidden="true">↗</span></a>
+                <a className="contact-button primary-contact" href="mailto:jeremyrivera23@yahoo.com"><span><ContactIcon type="email" />Email me</span></a>
+                <a className="contact-button" href="https://linkedin.com/in/itsjeremyrivera" target="_blank" rel="noreferrer"><span><ContactIcon type="linkedin" />LinkedIn</span></a>
+                <a className="contact-button" href={RESUME_URL} target="_blank" rel="noreferrer"><span><ContactIcon type="resume" />Résumé PDF</span></a>
               </div>
             </div>
           </div>
@@ -236,7 +231,6 @@ export default function Home() {
 
       <footer className="site-footer shell">
         <span>Jeremy Rivera / Product Designer</span>
-        <span>Central Florida · 2026</span>
       </footer>
     </>
   );

@@ -11,7 +11,11 @@ export default function ParallaxController() {
     let frame = 0;
 
     const clearMotion = () => {
-      layers.forEach((layer) => layer.style.removeProperty("--parallax-shift"));
+      layers.forEach((layer) => {
+        layer.style.removeProperty("--parallax-shift");
+        layer.style.removeProperty("--parallax-presence");
+        layer.style.removeProperty("--parallax-scale");
+      });
     };
 
     const update = () => {
@@ -23,7 +27,7 @@ export default function ParallaxController() {
       }
 
       const viewportHeight = window.innerHeight;
-      const mobileScale = window.innerWidth < 700 ? 0.55 : 1;
+      const mobileScale = window.innerWidth < 700 ? 0.45 : 1;
 
       layers.forEach((layer) => {
         const bounds = layer.getBoundingClientRect();
@@ -37,8 +41,12 @@ export default function ParallaxController() {
           (bounds.top + bounds.height / 2 - viewportHeight / 2) / viewportHeight;
         const shift =
           clamp(-distanceFromCenter * travel, -travel, travel) * direction;
+        const presence = clamp(1 - Math.abs(distanceFromCenter) * 0.58, 0.62, 1);
+        const scale = 1.012 + presence * 0.012;
 
         layer.style.setProperty("--parallax-shift", `${shift.toFixed(2)}px`);
+        layer.style.setProperty("--parallax-presence", presence.toFixed(3));
+        layer.style.setProperty("--parallax-scale", scale.toFixed(4));
       });
     };
 

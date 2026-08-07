@@ -220,15 +220,16 @@ export default function Home() {
         </section>
 
         <section className="section shell scroll-scene" id="about" data-parallax data-parallax-speed="0">
-          <div className="section-heading parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="54" data-parallax-x="-16">
+          <div className="section-heading about-heading parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="30" data-parallax-x="-8">
+            <p className="eyebrow">About</p>
             <h2>A designer who understands how products get built.</h2>
           </div>
           <div className="about-grid">
-            <p className="about-lede parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="38" data-parallax-x="-12">
+            <p className="about-lede parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="20" data-parallax-x="-4">
               I’ve worked across enterprise operations, digital mail SaaS, financial
               services, e commerce, and independent client products.
             </p>
-            <div className="parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="-32" data-parallax-x="12">
+            <div className="about-support parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="-14" data-parallax-x="5">
               <p>
                 My front end background helps me design realistic solutions, surface constraints
                 early, and collaborate closely with engineering. I’m based in Central Florida.

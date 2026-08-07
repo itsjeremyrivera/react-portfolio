@@ -271,10 +271,12 @@ button { font: inherit; }
 .principles h3 { margin: 0 0 .45rem; font-family: var(--serif); font-size: clamp(1.7rem, 2.6vw, 2.4rem); font-weight: 400; line-height: 1.05; }
 .principles p { margin: 0; color: var(--inverse-muted); }
 
-.about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(4rem, 9vw, 8rem); align-items: start; }
-.about-lede { max-width: 720px; margin: 0; font-family: var(--serif); font-size: clamp(2rem, 3.05vw, 3.35rem); line-height: 1.1; }
-.about-grid > div { max-width: 540px; padding-top: .35rem; color: var(--muted); font-size: 1.03rem; }
-.about-grid > div p:first-child { margin-top: 0; }
+.about-heading { max-width: 880px; margin-bottom: clamp(2.25rem, 4vw, 3.5rem); }
+.about-heading .eyebrow { margin: 0 0 1rem; }
+.about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(3rem, 7vw, 6.5rem); align-items: start; padding-top: clamp(2rem, 3.5vw, 3rem); border-top: 1px solid var(--line); }
+.about-lede { max-width: 680px; margin: 0; font-family: var(--serif); font-size: clamp(1.65rem, 2.15vw, 2.3rem); line-height: 1.16; text-wrap: balance; }
+.about-support { max-width: 540px; color: var(--muted); font-size: 1.03rem; }
+.about-support p:first-child { margin-top: 0; }
 .contact { border-top: 1px solid var(--line); }
 .contact.scroll-scene { overflow: visible; }
 .contact.scroll-scene::before { top: 10%; left: 32%; width: 76%; height: 78%; background: radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 66%); opacity: .72; }
@@ -349,6 +351,11 @@ button { font: inherit; }
   .featured-visual { min-height: 470px; }
   .project-grid { grid-template-columns: 1fr; }
   .bridge-grid { gap: 3.5rem; }
+  .about-heading { max-width: 720px; margin-bottom: 2rem; }
+  .about-heading h2 { font-size: clamp(2.75rem, 7.4vw, 4rem); }
+  .about-grid { gap: 1.75rem; padding-top: 2rem; }
+  .about-lede { max-width: 680px; font-size: clamp(1.5rem, 4vw, 1.9rem); }
+  .about-support { max-width: 620px; padding-top: 0; }
   .contact-copy { max-width: 620px; }
 }
 
@@ -370,6 +377,8 @@ button { font: inherit; }
   .section { padding-block: 5rem; }
   .section-heading { gap: 1.35rem; }
   .section-heading h2, .bridge h2, .contact h2 { font-size: clamp(2.75rem, 13vw, 4rem); }
+  .about-heading h2 { font-size: clamp(2.65rem, 11vw, 3.25rem); }
+  .about-lede { font-size: clamp(1.4rem, 6.3vw, 1.7rem); line-height: 1.2; }
   .project-card, .resume-sheet { border-radius: 20px; }
   .project-placeholder, .project-grid .project-placeholder { height: auto; min-height: 340px; padding: 16px; }
   .project-media, .project-grid .project-media { height: 340px; min-height: 340px; padding: 12px; }

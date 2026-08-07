@@ -29,6 +29,8 @@ const projects = [
     title: "A scalable interface system for payroll financing workflows.",
     tags: ["Design systems", "SaaS", "Responsive UI"],
     imageNote: "Payro dashboard and design system imagery",
+    image: "/images/payro/payro-dashboard-hero.jpeg",
+    href: "/work/payro",
   },
 ];
 
@@ -68,6 +70,14 @@ function ContactIcon({ type }) {
 }
 
 function ProjectPlaceholder({ project, featured }) {
+  if (project.image) {
+    return (
+      <div className={featured ? "project-media featured-visual" : "project-media"}>
+        <img src={project.image} alt={`${project.company} product interface overview`} />
+      </div>
+    );
+  }
+
   return (
     <div className={featured ? "project-placeholder featured-visual" : "project-placeholder"} role="img" aria-label={`${project.company} project image placeholder`}>
       <div className="placeholder-window" aria-hidden="true">
@@ -107,7 +117,11 @@ function ProjectCard({ project, featured = false }) {
           {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
         </div>
         <div className="project-footer">
-          <button className="case-study-button" type="button" disabled>Case study coming soon</button>
+          {project.href ? (
+            <a className="case-study-button case-study-link" href={project.href}>View case study <span aria-hidden="true">→</span></a>
+          ) : (
+            <button className="case-study-button" type="button" disabled>Case study coming soon</button>
+          )}
         </div>
       </div>
     </article>

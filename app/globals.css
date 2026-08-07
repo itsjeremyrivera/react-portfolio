@@ -172,7 +172,7 @@ button { font: inherit; }
 .impact-grid div + div { padding-left: 1.5rem; border-left: 1px solid var(--line); }
 .impact-item::after { content: ""; position: absolute; right: 1.5rem; bottom: -1px; left: 0; height: 2px; border-radius: 999px; background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 18%, transparent)); box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 30%, transparent); transform: scaleX(var(--impact-progress, 0)); transform-origin: left; }
 .impact-item strong { transform: translateY(calc((1 - var(--parallax-entry, 1)) * 12px)); }
-.impact-grid span { color: var(--accent); font-size: .68rem; font-weight: 800; }
+.impact-grid span { display: block; color: var(--accent); font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .impact-grid strong { display: block; margin: .35rem 0 .2rem; font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.8rem); font-weight: 400; line-height: 1; }
 .impact-grid p { margin: 0; color: var(--muted); font-size: .8rem; }
 

@@ -182,9 +182,9 @@ export default function Home() {
           </div>
           <div className="hero-scroll-impact">
             <div className="impact-grid hero-impact" aria-label="Selected impact">
-              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="18" data-impact-index="0"><span>01</span><strong>15,000+</strong><p>User product environment at Quadient</p></div>
-              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28" data-impact-index="1"><span>02</span><strong>5 to 2 weeks</strong><p>Prototype delivery cycle at Electus</p></div>
-              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="38" data-impact-index="2"><span>03</span><strong>20%</strong><p>Reduction in development timelines</p></div>
+              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="18" data-impact-index="0"><span>The Villages</span><strong>200K+ users</strong><p>Designed clearer mobile navigation and download journeys for an older demographic to support adoption and retention.</p></div>
+              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28" data-impact-index="1"><span>Switch by Quadient</span><strong>15K+ users</strong><p>Improved onboarding, document preparation, address verification, payment, and physical-mail workflows.</p></div>
+              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="38" data-impact-index="2"><span>Payro Finance</span><strong>4 core workflows</strong><p>Unified application, verification, funding, and account management in one responsive customer portal.</p></div>
             </div>
           </div>
         </section>

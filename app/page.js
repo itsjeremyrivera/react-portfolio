@@ -128,7 +128,7 @@ function ProjectCard({ project, featured = false }) {
   const motionDirection = project.number === "03" ? 14 : -14;
 
   return (
-    <article className={`project-card motion-card parallax-layer parallax-copy-layer ${featured ? "featured" : ""}`} data-parallax data-parallax-speed={featured ? 30 : 38} data-parallax-x={motionDirection}>
+    <article className={`project-card motion-card parallax-layer parallax-copy-layer ${featured ? "featured" : ""}`} data-parallax data-parallax-speed="0" data-parallax-x={motionDirection} data-parallax-reveal="22">
       <ProjectPlaceholder project={project} featured={featured} />
       <div className="project-copy">
         <div className="project-meta">
@@ -180,9 +180,9 @@ export default function Home() {
           </div>
           <div className="hero-scroll-impact">
             <div className="impact-grid hero-impact" aria-label="Selected impact">
-              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="18"><span>01</span><strong>15,000+</strong><p>User product environment at Quadient</p></div>
-              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28"><span>02</span><strong>5 to 2 weeks</strong><p>Prototype delivery cycle at Electus</p></div>
-              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="38"><span>03</span><strong>20%</strong><p>Reduction in development timelines</p></div>
+              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="18" data-impact-index="0"><span>01</span><strong>15,000+</strong><p>User product environment at Quadient</p></div>
+              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28" data-impact-index="1"><span>02</span><strong>5 to 2 weeks</strong><p>Prototype delivery cycle at Electus</p></div>
+              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="38" data-impact-index="2"><span>03</span><strong>20%</strong><p>Reduction in development timelines</p></div>
             </div>
           </div>
         </section>

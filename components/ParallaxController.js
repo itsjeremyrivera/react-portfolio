@@ -10,6 +10,7 @@ export default function ParallaxController() {
     const layers = Array.from(document.querySelectorAll("[data-parallax]"));
     const heroScenes = Array.from(document.querySelectorAll("[data-scroll-hero]"));
     const scrollScenes = Array.from(document.querySelectorAll(".scroll-scene"));
+    const impactItems = Array.from(document.querySelectorAll("[data-impact-index]"));
     let frame = 0;
 
     const clearMotion = () => {
@@ -23,6 +24,7 @@ export default function ParallaxController() {
       });
       heroScenes.forEach((scene) => scene.style.removeProperty("--hero-progress"));
       scrollScenes.forEach((scene) => scene.style.removeProperty("--scene-progress"));
+      impactItems.forEach((item) => item.style.removeProperty("--impact-progress"));
     };
 
     const update = () => {
@@ -34,7 +36,8 @@ export default function ParallaxController() {
       }
 
       const viewportHeight = window.innerHeight;
-      const mobileScale = window.innerWidth < 700 ? 0.72 : 1.35;
+      const isMobile = window.innerWidth < 700;
+      const mobileScale = isMobile ? 0.72 : 1.35;
 
       heroScenes.forEach((scene) => {
         const bounds = scene.getBoundingClientRect();
@@ -52,12 +55,31 @@ export default function ParallaxController() {
         scene.style.setProperty("--scene-progress", progress.toFixed(3));
       });
 
+      impactItems.forEach((item, index) => {
+        const bounds = item.getBoundingClientRect();
+        const progress = isMobile
+          ? clamp(
+              (viewportHeight * 0.86 - bounds.top) / Math.max(viewportHeight * 0.7, 1),
+              0,
+              1,
+            )
+          : clamp(
+              (window.scrollY - index * 55) / Math.max(viewportHeight * 0.55, 1),
+              0,
+              1,
+            );
+        item.style.setProperty("--impact-progress", progress.toFixed(3));
+      });
+
       layers.forEach((layer) => {
         const bounds = layer.getBoundingClientRect();
+        const revealDistance = Math.abs(
+          Number(layer.dataset.parallaxReveal ?? (isMobile ? 42 : 54)),
+        );
 
         if (bounds.top > viewportHeight + 160) {
           layer.style.setProperty("--parallax-entry", "0");
-          layer.style.setProperty("--parallax-reveal", "54px");
+          layer.style.setProperty("--parallax-reveal", `${revealDistance}px`);
           return;
         }
 
@@ -87,7 +109,7 @@ export default function ParallaxController() {
           0,
           1,
         );
-        const reveal = (1 - entry) * (window.innerWidth < 700 ? 42 : 54);
+        const reveal = (1 - entry) * revealDistance;
         const scale = 1.012 + presence * 0.012;
 
         layer.style.setProperty("--parallax-shift", `${shift.toFixed(2)}px`);

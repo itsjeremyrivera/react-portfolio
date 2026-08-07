@@ -110,7 +110,7 @@ export default function ParallaxController() {
           1,
         );
         const reveal = (1 - entry) * revealDistance;
-        const scale = 1.012 + presence * 0.012;
+        const scale = 1.006 + presence * 0.006;
 
         layer.style.setProperty("--parallax-shift", `${shift.toFixed(2)}px`);
         layer.style.setProperty("--parallax-shift-x", `${shiftX.toFixed(2)}px`);

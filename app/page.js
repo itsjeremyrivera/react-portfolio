@@ -95,40 +95,42 @@ function ContactIcon({ type }) {
 function ProjectPlaceholder({ project, featured }) {
   if (project.image) {
     return (
-      <div className={featured ? "project-media featured-visual parallax-layer parallax-media-layer" : "project-media parallax-layer parallax-media-layer"} data-parallax data-parallax-speed="48" data-parallax-x="10">
-        <img src={project.image} alt={`${project.company} product interface overview`} />
+      <div className={featured ? "project-media featured-visual" : "project-media"}>
+        <div className="project-media-motion parallax-layer parallax-media-layer" data-parallax data-parallax-speed="24" data-parallax-x="6">
+          <img src={project.image} alt={`${project.company} product interface overview`} />
+        </div>
       </div>
     );
   }
 
   return (
-    <div className={featured ? "project-placeholder featured-visual parallax-layer parallax-media-layer" : "project-placeholder parallax-layer parallax-media-layer"} data-parallax data-parallax-speed="48" data-parallax-x="10" role="img" aria-label={`${project.company} project image placeholder`}>
-      <div className="placeholder-window" aria-hidden="true">
-        <div className="placeholder-toolbar"><i /><i /><i /><span /></div>
-        <div className="placeholder-canvas">
-          <div className="placeholder-sidebar" />
-          <div className="placeholder-content">
-            <span className="placeholder-line line-short" />
-            <span className="placeholder-line line-wide" />
-            <div className="placeholder-panels"><span /><span /></div>
-            <span className="placeholder-line line-medium" />
+    <div className={featured ? "project-placeholder featured-visual" : "project-placeholder"} role="img" aria-label={`${project.company} project image placeholder`}>
+      <div className="project-placeholder-motion parallax-layer parallax-media-layer" data-parallax data-parallax-speed="24" data-parallax-x="6">
+        <div className="placeholder-window" aria-hidden="true">
+          <div className="placeholder-toolbar"><i /><i /><i /><span /></div>
+          <div className="placeholder-canvas">
+            <div className="placeholder-sidebar" />
+            <div className="placeholder-content">
+              <span className="placeholder-line line-short" />
+              <span className="placeholder-line line-wide" />
+              <div className="placeholder-panels"><span /><span /></div>
+              <span className="placeholder-line line-medium" />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="placeholder-label">
-        <span>Image placeholder</span>
-        <strong>{project.company}</strong>
-        <small>{project.imageNote}</small>
+        <div className="placeholder-label">
+          <span>Image placeholder</span>
+          <strong>{project.company}</strong>
+          <small>{project.imageNote}</small>
+        </div>
       </div>
     </div>
   );
 }
 
 function ProjectCard({ project, featured = false }) {
-  const motionDirection = project.number === "03" ? 14 : -14;
-
   return (
-    <article className={`project-card motion-card parallax-layer parallax-copy-layer ${featured ? "featured" : ""}`} data-parallax data-parallax-speed="0" data-parallax-x={motionDirection} data-parallax-reveal="22">
+    <article className={`project-card motion-card parallax-layer parallax-copy-layer ${featured ? "featured" : ""}`} data-parallax data-parallax-speed="0" data-parallax-reveal="0">
       <ProjectPlaceholder project={project} featured={featured} />
       <div className="project-copy">
         <div className="project-meta">

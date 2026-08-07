@@ -1,4 +1,5 @@
 import SiteHeader from "../components/SiteHeader";
+import ParallaxController from "../components/ParallaxController";
 
 const RESUME_URL = "/JeremyRiveraResume.pdf";
 
@@ -72,14 +73,14 @@ function ContactIcon({ type }) {
 function ProjectPlaceholder({ project, featured }) {
   if (project.image) {
     return (
-      <div className={featured ? "project-media featured-visual" : "project-media"}>
+      <div className={featured ? "project-media featured-visual parallax-layer parallax-media-layer" : "project-media parallax-layer parallax-media-layer"} data-parallax data-parallax-speed="10">
         <img src={project.image} alt={`${project.company} product interface overview`} />
       </div>
     );
   }
 
   return (
-    <div className={featured ? "project-placeholder featured-visual" : "project-placeholder"} role="img" aria-label={`${project.company} project image placeholder`}>
+    <div className={featured ? "project-placeholder featured-visual parallax-layer parallax-media-layer" : "project-placeholder parallax-layer parallax-media-layer"} data-parallax data-parallax-speed="10" role="img" aria-label={`${project.company} project image placeholder`}>
       <div className="placeholder-window" aria-hidden="true">
         <div className="placeholder-toolbar"><i /><i /><i /><span /></div>
         <div className="placeholder-canvas">
@@ -133,13 +134,15 @@ export default function Home() {
     <>
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader resumeUrl={RESUME_URL} />
+      <ParallaxController />
 
       <main id="main">
         <section className="hero shell" id="top">
-          <h1>
+          <div className="hero-gradient parallax-layer" data-parallax data-parallax-speed="-18" aria-hidden="true"><span /></div>
+          <h1 className="hero-title">
             I make complex products easier to <em>build, use, and scale.</em>
           </h1>
-          <div className="hero-grid">
+          <div className="hero-grid hero-support">
             <p>
               Product Designer with 6+ years turning complex workflows into clear,
               buildable digital products.
@@ -149,7 +152,7 @@ export default function Home() {
               <a className="button secondary" href={RESUME_URL} target="_blank" rel="noreferrer">View résumé PDF</a>
             </div>
           </div>
-          <div className="impact-grid" aria-label="Selected impact">
+          <div className="impact-grid hero-impact" aria-label="Selected impact">
             <div><span>01</span><strong>15,000+</strong><p>User product environment at Quadient</p></div>
             <div><span>02</span><strong>5 to 2 weeks</strong><p>Prototype delivery cycle at Electus</p></div>
             <div><span>03</span><strong>20%</strong><p>Reduction in development timelines</p></div>
@@ -157,7 +160,7 @@ export default function Home() {
         </section>
 
         <section className="section shell" id="work">
-          <div className="section-heading">
+          <div className="section-heading parallax-layer" data-parallax data-parallax-speed="8">
             <div>
               <h2>Products shaped around real operational complexity.</h2>
               <p className="section-intro">Enterprise operations, digital mail SaaS, and financial product systems.</p>
@@ -172,7 +175,7 @@ export default function Home() {
 
         <section className="bridge section">
           <div className="shell bridge-grid">
-            <div>
+            <div className="parallax-layer" data-parallax data-parallax-speed="8">
               <h2>I connect product thinking, visual craft, and implementation.</h2>
             </div>
             <div className="principles">
@@ -187,7 +190,7 @@ export default function Home() {
         </section>
 
         <section className="section shell" id="about">
-          <div className="section-heading">
+          <div className="section-heading parallax-layer" data-parallax data-parallax-speed="8">
             <h2>A designer who understands how products get built.</h2>
           </div>
           <div className="about-grid">
@@ -206,7 +209,7 @@ export default function Home() {
         </section>
 
         <section className="section shell independent-section">
-          <div className="section-heading">
+          <div className="section-heading parallax-layer" data-parallax data-parallax-speed="8">
             <h2>Building focused products from idea to launch.</h2>
           </div>
           <div className="independent-card">
@@ -230,7 +233,7 @@ export default function Home() {
         <section className="section shell contact" id="contact">
           <div className="hero-status contact-status"><span /> Available for select product design opportunities</div>
           <div className="contact-grid">
-            <h2>Let’s build something clear, useful, and scalable.</h2>
+            <h2 className="parallax-layer" data-parallax data-parallax-speed="8">Let’s build something clear, useful, and scalable.</h2>
             <div className="contact-copy">
               <p>I’m available for product design opportunities and select collaborations.</p>
               <div className="contact-links">

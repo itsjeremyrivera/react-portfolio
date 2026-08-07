@@ -6,7 +6,7 @@ const nextConfig = {
       {
         source: "/JeremyRiveraResume.pdf",
         destination:
-          "https://drive.google.com/file/d/1QOMANcqVvlxiBwIrWUiEXT-1QYgAN54C/view?usp=drivesdk",
+          "https://drive.google.com/file/d/1UpmabTY5aSsfH0QBlERqbHoqLAWeP9dp/view?usp=sharing",
         permanent: false,
       },
     ];

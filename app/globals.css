@@ -333,7 +333,7 @@ button { font: inherit; }
   .brand-copy em { display: none; }
   .brand-copy strong { font-size: .68rem; letter-spacing: .1em; }
   .hero { padding-top: 4.25rem; }
-  .hero-gradient { top: 2.8rem; left: -4rem; width: 115vw; height: 62vw; }
+  .hero-gradient { top: 2.8rem; left: -1rem; width: calc(100% + 2rem); height: 62vw; }
   .hero-status { max-width: 100%; font-size: .68rem; }
   .hero h1 { font-size: clamp(3.05rem, 14.5vw, 5rem); }
   .hero-grid > p { font-size: 1.02rem; }

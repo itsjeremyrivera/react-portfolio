@@ -1,15 +1,20 @@
 <svg width="980" height="680" viewBox="0 0 980 680" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="980" height="680" rx="32" fill="#EEF4FB"/>
-  <rect x="82" y="54" width="816" height="572" rx="28" fill="#0C1728"/>
-  <rect x="112" y="84" width="756" height="512" rx="18" fill="white"/>
-  <rect x="112" y="84" width="756" height="76" rx="18" fill="#17243A"/>
-  <rect x="112" y="142" width="756" height="18" fill="#17243A"/>
-  <text x="154" y="132" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="3">PARCEL PENDING</text>
-  <circle cx="490" cy="294" r="82" fill="#EAF8F0"/>
-  <circle cx="490" cy="294" r="57" fill="#24A566"/>
-  <path d="M458 294L480 316L525 268" stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="490" y="416" text-anchor="middle" fill="#152238" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">Locker 24 is open</text>
-  <text x="490" y="458" text-anchor="middle" fill="#69778A" font-family="Arial, Helvetica, sans-serif" font-size="18">Collect your package and close the door</text>
-  <rect x="326" y="506" width="328" height="58" rx="14" fill="#F15A29"/>
-  <text x="490" y="543" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">I'M DONE</text>
+  <rect width="980" height="680" rx="32" fill="#EEF1F4"/>
+  <rect x="116" y="38" width="748" height="604" rx="42" fill="#2B2E31"/>
+  <circle cx="490" cy="80" r="14" fill="#151719" stroke="#5E6368" stroke-width="3"/>
+  <g fill="#141618">
+    <circle cx="190" cy="80" r="3"/><circle cx="204" cy="80" r="3"/><circle cx="218" cy="80" r="3"/>
+    <circle cx="762" cy="80" r="3"/><circle cx="776" cy="80" r="3"/><circle cx="790" cy="80" r="3"/>
+  </g>
+  <rect x="158" y="116" width="664" height="442" rx="12" fill="#101214" stroke="#5D6267" stroke-width="6"/>
+  <rect x="174" y="132" width="632" height="410" rx="4" fill="#FFFFFF"/>
+
+  <rect x="338" y="236" width="304" height="162" rx="5" fill="#F3B51B"/>
+  <circle cx="490" cy="276" r="24" fill="white" fill-opacity="0.2"/>
+  <path d="M478 276L487 285L504 266" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="490" y="334" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">ACCESS GRANTED</text>
+  <text x="490" y="366" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="15">The package-room door is unlocked</text>
+  <text x="490" y="446" text-anchor="middle" fill="#676D73" font-family="Arial, Helvetica, sans-serif" font-size="16">Enter, retrieve your package, and close the door behind you.</text>
+  <circle cx="490" cy="597" r="14" fill="#151719" stroke="#5E6368" stroke-width="3"/>
+  <rect x="728" y="580" width="58" height="34" rx="17" fill="#F3F5F6" stroke="#A7ADB3" stroke-width="3"/>
 </svg>

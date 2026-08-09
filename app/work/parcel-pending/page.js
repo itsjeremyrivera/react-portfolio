@@ -5,31 +5,31 @@ const RESUME_URL = "/JeremyRiveraResume.pdf";
 const workflowSteps = [
   {
     number: "01",
-    title: "Recognize the pickup action",
-    copy: "People arrived with one clear goal, so the start screen needed one dominant resident action instead of a menu that asked them to learn the system first.",
+    title: "Recognize the access task",
+    copy: "Residents arrived with a unique code and one clear goal, so the terminal opened with a direct instruction instead of asking them to learn the system first.",
     image: "/images/parcel-pending/parcel-pending-overview.svg",
-    alt: "Recreated Parcel Pending kiosk welcome screen with a dominant Parcel Pick-Up action",
+    alt: "Recreated Parcel Pending package-room terminal asking for a unique access code",
   },
   {
     number: "02",
-    title: "Enter the six-digit code",
-    copy: "A focused keypad, visible input state, and direct instructions reduced hesitation between the notification in the user's hand and the locker in front of them.",
+    title: "Enter the unique code",
+    copy: "A focused keypad, visible input state, and concise instructions reduced hesitation between the notification in the resident's hand and the secured door in front of them.",
     image: "/images/parcel-pending/pickup-code.svg",
     alt: "Recreated Parcel Pending access code entry screen",
   },
   {
     number: "03",
-    title: "Move from screen to physical space",
-    copy: "The confirmation state identified the open compartment and told the user exactly what to do next: collect the package, close the door, and finish.",
+    title: "Confirm secure entry",
+    copy: "The confirmation state made the physical result unmistakable: access was granted, the package-room door was unlocked, and the resident could continue.",
     image: "/images/parcel-pending/locker-open.svg",
-    alt: "Recreated Parcel Pending confirmation screen showing an open locker",
+    alt: "Recreated Parcel Pending package-room terminal confirming that access was granted",
   },
 ];
 
 const designPrinciples = [
   {
     title: "One task, one dominant action",
-    copy: "The pickup path stayed visually louder than secondary delivery, help, or administrative routes.",
+    copy: "The access-code path stayed visually louder than secondary help or administrative routes.",
   },
   {
     title: "Design for a public touchscreen",
@@ -43,7 +43,7 @@ const designPrinciples = [
 
 export const metadata = {
   title: "Parcel Pending by Quadient Case Study | Jeremy Rivera",
-  description: "Designing a focused, multilingual parcel-locker pickup flow for a product used at global scale.",
+  description: "Designing a focused, multilingual package-room access flow for a product used at global scale.",
 };
 
 export default function ParcelPendingCaseStudy() {
@@ -55,15 +55,15 @@ export default function ParcelPendingCaseStudy() {
       <main id="main" className="case-study-page parcel-case-study">
         <section className="case-hero shell" id="top">
           <a className="case-back" href="/#work">&larr; Back to selected work</a>
-          <p className="eyebrow">Parcel Pending by Quadient / Smart lockers</p>
-          <h1>A six-digit code. A few seconds. Millions of pickups.</h1>
+          <p className="eyebrow">Parcel Pending by Quadient / Package-room access</p>
+          <h1>A unique code. A secure door. No unnecessary steps.</h1>
           <p className="case-lede">
-            I designed a focused Parcel Pending kiosk pickup flow for people who
-            arrived with a code and one job: open the right locker without assistance.
+            I designed a focused Parcel Pending package-room terminal flow for residents
+            who arrived with a code and one job: enter securely without assistance.
           </p>
           <div className="case-meta" aria-label="Project details">
             <div><span>Role</span><strong>UX/UI design</strong></div>
-            <div><span>Scope</span><strong>Kiosk pickup and localization</strong></div>
+            <div><span>Scope</span><strong>Secure access and localization</strong></div>
             <div><span>Period</span><strong>2022 to 2023</strong></div>
           </div>
         </section>
@@ -71,18 +71,13 @@ export default function ParcelPendingCaseStudy() {
         <figure className="case-hero-image shell parcel-case-hero">
           <div className="parcel-hero-composition">
             <img
-              className="parcel-locker-image"
-              src="/images/parcel-pending/indoor-locker.png"
-              alt="Parcel Pending indoor smart locker"
-            />
-            <img
               className="parcel-screen-image"
               src="/images/parcel-pending/parcel-pending-overview.svg"
-              alt="Recreated Parcel Pending kiosk pickup interface"
+              alt="Recreated Parcel Pending package-room access terminal"
             />
           </div>
           <figcaption>
-            Official public locker imagery paired with a recreated interface based on the documented pickup flow. No confidential artifacts are shown.
+            Recreated from the public package-room product reference and Jeremy&apos;s supplied kiosk photograph. No confidential artifacts are shown.
           </figcaption>
         </figure>
 
@@ -93,13 +88,13 @@ export default function ParcelPendingCaseStudy() {
           </div>
           <div className="case-section-copy">
             <p>
-              Parcel pickup begins before the touchscreen. A resident receives a notification,
-              walks to a physical locker, and arrives expecting the code in their hand to work.
+              Package-room access begins before the touchscreen. A resident receives a notification,
+              walks to a secured room, and arrives expecting the code in their hand to work.
               There is no onboarding moment and very little patience for ambiguity.
             </p>
             <p>
               The design challenge was to protect that expectation across the handoff from phone
-              to kiosk to locker door. Every screen needed to communicate status clearly while
+              to terminal to secured door. Every screen needed to communicate status clearly while
               staying fast enough to feel almost invisible.
             </p>
           </div>
@@ -127,11 +122,11 @@ export default function ParcelPendingCaseStudy() {
         <section className="case-product-section parcel-workflow-section">
           <div className="shell">
             <div className="case-section-heading">
-              <p className="eyebrow">02 / Pickup flow</p>
+              <p className="eyebrow">02 / Access flow</p>
               <h2>Remove decisions until only the right next step remains.</h2>
             </div>
             <p className="case-product-intro">
-              The resident already had the credential required to retrieve a package. The UI&apos;s
+              The resident already had the credential required to enter the package room. The UI&apos;s
               job was to recognize that intent, accept the code, and make the physical result obvious.
             </p>
             <div className="parcel-workflow-grid">
@@ -212,9 +207,9 @@ export default function ParcelPendingCaseStudy() {
           </div>
           <div className="case-section-copy">
             <p>
-              My contribution centered on the resident-facing kiosk pickup flow: the entry point,
-              code interaction, completion state, and localized variants that connected a digital
-              notification to a physical locker door.
+              My contribution centered on the resident-facing package-room terminal flow: the entry
+              point, code interaction, completion state, and localized variants that connected a
+              digital notification to a secured physical door.
             </p>
             <p>
               It is a compact project, but a useful example of product judgment. The right solution

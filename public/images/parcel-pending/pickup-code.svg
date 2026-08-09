@@ -1,26 +1,33 @@
 <svg width="980" height="680" viewBox="0 0 980 680" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="980" height="680" rx="32" fill="#EEF4FB"/>
-  <rect x="82" y="54" width="816" height="572" rx="28" fill="#0C1728"/>
-  <rect x="112" y="84" width="756" height="512" rx="18" fill="white"/>
-  <rect x="112" y="84" width="756" height="76" rx="18" fill="#17243A"/>
-  <rect x="112" y="142" width="756" height="18" fill="#17243A"/>
-  <text x="154" y="132" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="3">PARCEL PENDING</text>
-  <text x="490" y="216" text-anchor="middle" fill="#152238" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">Enter your 6-digit access code</text>
-  <text x="490" y="251" text-anchor="middle" fill="#69778A" font-family="Arial, Helvetica, sans-serif" font-size="17">Your code is in the delivery notification</text>
-  <g fill="#F2F5F9" stroke="#C9D4E1" stroke-width="2">
-    <rect x="283" y="282" width="58" height="58" rx="12"/><rect x="354" y="282" width="58" height="58" rx="12"/>
-    <rect x="425" y="282" width="58" height="58" rx="12"/><rect x="496" y="282" width="58" height="58" rx="12"/>
-    <rect x="567" y="282" width="58" height="58" rx="12"/><rect x="638" y="282" width="58" height="58" rx="12"/>
+  <rect width="980" height="680" rx="32" fill="#EEF1F4"/>
+  <rect x="116" y="38" width="748" height="604" rx="42" fill="#2B2E31"/>
+  <circle cx="490" cy="80" r="14" fill="#151719" stroke="#5E6368" stroke-width="3"/>
+  <g fill="#141618">
+    <circle cx="190" cy="80" r="3"/><circle cx="204" cy="80" r="3"/><circle cx="218" cy="80" r="3"/>
+    <circle cx="762" cy="80" r="3"/><circle cx="776" cy="80" r="3"/><circle cx="790" cy="80" r="3"/>
   </g>
-  <circle cx="312" cy="311" r="6" fill="#17243A"/><circle cx="383" cy="311" r="6" fill="#17243A"/><circle cx="454" cy="311" r="6" fill="#17243A"/>
-  <g fill="#F7F9FC" stroke="#D3DCE7" stroke-width="2" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
-    <rect x="318" y="374" width="96" height="54" rx="12"/><rect x="442" y="374" width="96" height="54" rx="12"/><rect x="566" y="374" width="96" height="54" rx="12"/>
-    <rect x="318" y="440" width="96" height="54" rx="12"/><rect x="442" y="440" width="96" height="54" rx="12"/><rect x="566" y="440" width="96" height="54" rx="12"/>
+  <rect x="158" y="116" width="664" height="442" rx="12" fill="#101214" stroke="#5D6267" stroke-width="6"/>
+  <rect x="174" y="132" width="632" height="410" rx="4" fill="#FFFFFF"/>
+
+  <text x="490" y="186" text-anchor="middle" fill="#34383C" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">ENTER YOUR UNIQUE ACCESS CODE</text>
+  <text x="490" y="218" text-anchor="middle" fill="#7B8187" font-family="Arial, Helvetica, sans-serif" font-size="14">The code is included in your delivery notification</text>
+  <g fill="#FFF9E8" stroke="#F3B51B" stroke-width="2">
+    <rect x="307" y="244" width="50" height="50" rx="5"/><rect x="370" y="244" width="50" height="50" rx="5"/>
+    <rect x="433" y="244" width="50" height="50" rx="5"/><rect x="496" y="244" width="50" height="50" rx="5"/>
+    <rect x="559" y="244" width="50" height="50" rx="5"/><rect x="622" y="244" width="50" height="50" rx="5"/>
   </g>
-  <g fill="#17243A" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" text-anchor="middle">
-    <text x="366" y="410">1</text><text x="490" y="410">2</text><text x="614" y="410">3</text>
-    <text x="366" y="476">4</text><text x="490" y="476">5</text><text x="614" y="476">6</text>
+  <circle cx="332" cy="269" r="5" fill="#35393D"/><circle cx="395" cy="269" r="5" fill="#35393D"/><circle cx="458" cy="269" r="5" fill="#35393D"/>
+
+  <g fill="#F6F6F4" stroke="#D7D9DA" stroke-width="1.5">
+    <rect x="328" y="320" width="88" height="50" rx="5"/><rect x="446" y="320" width="88" height="50" rx="5"/><rect x="564" y="320" width="88" height="50" rx="5"/>
+    <rect x="328" y="382" width="88" height="50" rx="5"/><rect x="446" y="382" width="88" height="50" rx="5"/><rect x="564" y="382" width="88" height="50" rx="5"/>
   </g>
-  <rect x="318" y="520" width="344" height="54" rx="13" fill="#F15A29"/>
-  <text x="490" y="555" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">CONTINUE</text>
+  <g fill="#35393D" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" text-anchor="middle">
+    <text x="372" y="352">1</text><text x="490" y="352">2</text><text x="608" y="352">3</text>
+    <text x="372" y="414">4</text><text x="490" y="414">5</text><text x="608" y="414">6</text>
+  </g>
+  <rect x="328" y="456" width="324" height="52" rx="5" fill="#F3B51B"/>
+  <text x="490" y="489" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="1">CONTINUE</text>
+  <circle cx="490" cy="597" r="14" fill="#151719" stroke="#5E6368" stroke-width="3"/>
+  <rect x="728" y="580" width="58" height="34" rx="17" fill="#F3F5F6" stroke="#A7ADB3" stroke-width="3"/>
 </svg>

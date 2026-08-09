@@ -1,49 +1,29 @@
 import SiteHeader from "../../../components/SiteHeader";
+import parcelLockersField from "./parcel-lockers-field-data";
+import kioskWelcomeInstructions from "./kiosk-welcome-instructions-data";
+import kioskCodeEntryEn from "./kiosk-code-entry-en-data";
+import kioskCodeEntryEs from "./kiosk-code-entry-es-data";
 
 const RESUME_URL = "/JeremyRiveraResume.pdf";
-
-const workflowSteps = [
-  {
-    number: "01",
-    title: "Recognize the access task",
-    copy: "Residents arrived with a unique code and one clear goal, so the terminal opened with a direct instruction instead of asking them to learn the system first.",
-    image: "/images/parcel-pending/parcel-pending-overview.svg",
-    alt: "Recreated Parcel Pending package-room terminal asking for a unique access code",
-  },
-  {
-    number: "02",
-    title: "Enter the unique code",
-    copy: "A focused keypad, visible input state, and concise instructions reduced hesitation between the notification in the resident's hand and the secured door in front of them.",
-    image: "/images/parcel-pending/pickup-code.svg",
-    alt: "Recreated Parcel Pending access code entry screen",
-  },
-  {
-    number: "03",
-    title: "Confirm secure entry",
-    copy: "The confirmation state made the physical result unmistakable: access was granted, the package-room door was unlocked, and the resident could continue.",
-    image: "/images/parcel-pending/locker-open.svg",
-    alt: "Recreated Parcel Pending package-room terminal confirming that access was granted",
-  },
-];
 
 const designPrinciples = [
   {
     title: "One task, one dominant action",
-    copy: "The access-code path stayed visually louder than secondary help or administrative routes.",
+    copy: "Residents arrived with a pickup code and a clear goal, so the interface kept code entry and scanning visually dominant while secondary actions stayed out of the way.",
   },
   {
     title: "Design for a public touchscreen",
-    copy: "Large targets, concise instructions, strong contrast, and immediate feedback supported quick use while standing at the locker.",
+    copy: "Large numeric targets, concise instructions, strong contrast, and obvious input state made the interaction usable while standing at the locker—not sitting at a desk.",
   },
   {
-    title: "Make localization part of the system",
-    copy: "Reusable layouts and short strings accommodated English, Spanish, and French without changing the core interaction model.",
+    title: "Keep localization inside the same interaction model",
+    copy: "The production interface preserves the same keypad structure and task hierarchy in English and Spanish, reducing the need to relearn the flow when the language changes.",
   },
 ];
 
 export const metadata = {
   title: "Parcel Pending by Quadient Case Study | Jeremy Rivera",
-  description: "Designing a focused, multilingual package-room access flow for a product used at global scale.",
+  description: "A compact self-service parcel pickup experience designed for a real Parcel Pending locker installation.",
 };
 
 export default function ParcelPendingCaseStudy() {
@@ -52,50 +32,55 @@ export default function ParcelPendingCaseStudy() {
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader resumeUrl={RESUME_URL} navBase="/" />
 
-      <main id="main" className="case-study-page parcel-case-study">
+      <main id="main" className="case-study-page parcel-case-study parcel-production-case-study">
         <section className="case-hero shell" id="top">
           <a className="case-back" href="/#work">&larr; Back to selected work</a>
-          <p className="eyebrow">Parcel Pending by Quadient / Package-room access</p>
-          <h1>A unique code. A secure door. No unnecessary steps.</h1>
+          <p className="eyebrow">Parcel Pending by Quadient / Self-service parcel pickup</p>
+          <h1>One clear task. Get the parcel and keep moving.</h1>
           <p className="case-lede">
-            I designed a focused Parcel Pending package-room terminal flow for residents
-            who arrived with a code and one job: enter securely without assistance.
+            I designed a straightforward Parcel Pending kiosk experience around the intent residents
+            already brought with them: enter or scan the code they received, retrieve the parcel, and leave.
           </p>
           <div className="case-meta" aria-label="Project details">
             <div><span>Role</span><strong>UX/UI design</strong></div>
-            <div><span>Scope</span><strong>Secure access and localization</strong></div>
+            <div><span>Scope</span><strong>Kiosk interaction and localization</strong></div>
             <div><span>Period</span><strong>2022 to 2023</strong></div>
           </div>
         </section>
 
-        <figure className="case-hero-image shell parcel-case-hero">
-          <div className="parcel-hero-composition">
-            <img
-              className="parcel-screen-image"
-              src="/images/parcel-pending/parcel-pending-overview.svg"
-              alt="Recreated Parcel Pending package-room access terminal"
-            />
+        <figure className="case-hero-image shell parcel-live-hero">
+          <div className="parcel-live-hero-grid">
+            <div className="parcel-live-physical">
+              <img
+                src={parcelLockersField}
+                alt="Parcel Pending locker installation photographed on location"
+              />
+            </div>
+            <div className="parcel-live-interface">
+              <img
+                src={kioskCodeEntryEn}
+                alt="Parcel Pending production kiosk interface with numeric keypad and code entry field"
+              />
+            </div>
           </div>
           <figcaption>
-            Recreated from the public package-room product reference and Jeremy&apos;s supplied kiosk photograph. No confidential artifacts are shown.
+            Production Parcel Pending installation and kiosk interface photographed on location.
           </figcaption>
         </figure>
 
         <section className="case-section shell">
           <div className="case-section-heading">
-            <p className="eyebrow">01 / Context</p>
-            <h2>The interface was intentionally small. The responsibility was not.</h2>
+            <p className="eyebrow">01 / Strategy</p>
+            <h2>The interface did not need to explain the system. It needed to complete the task.</h2>
           </div>
           <div className="case-section-copy">
             <p>
-              Package-room access begins before the touchscreen. A resident receives a notification,
-              walks to a secured room, and arrives expecting the code in their hand to work.
-              There is no onboarding moment and very little patience for ambiguity.
+              Residents arrive after receiving a pickup code by email or SMS. That means the kiosk is
+              not the beginning of the journey—it is the last digital step before the physical pickup.
             </p>
             <p>
-              The design challenge was to protect that expectation across the handoff from phone
-              to terminal to secured door. Every screen needed to communicate status clearly while
-              staying fast enough to feel almost invisible.
+              The strategy was to remove unnecessary decisions: tell the resident what they need,
+              provide a direct code or barcode path, and keep the screen focused on the action in front of them.
             </p>
           </div>
         </section>
@@ -103,7 +88,7 @@ export default function ParcelPendingCaseStudy() {
         <section className="parcel-scale shell" aria-labelledby="parcel-scale-title">
           <div className="parcel-scale-heading">
             <p className="eyebrow">Public product scale today</p>
-            <h2 id="parcel-scale-title">Designed for a system that could not afford confusion.</h2>
+            <h2 id="parcel-scale-title">Simple interactions matter more when they repeat at scale.</h2>
           </div>
           <div className="parcel-scale-grid">
             <div><strong>5M+</strong><span>users served</span></div>
@@ -119,55 +104,75 @@ export default function ParcelPendingCaseStudy() {
           </a>
         </section>
 
-        <section className="case-product-section parcel-workflow-section">
+        <section className="case-product-section parcel-production-flow">
           <div className="shell">
             <div className="case-section-heading">
-              <p className="eyebrow">02 / Access flow</p>
-              <h2>Remove decisions until only the right next step remains.</h2>
+              <p className="eyebrow">02 / Production flow</p>
+              <h2>Use the real interface to show how little the resident has to think about.</h2>
             </div>
             <p className="case-product-intro">
-              The resident already had the credential required to enter the package room. The UI&apos;s
-              job was to recognize that intent, accept the code, and make the physical result obvious.
+              The production screens are intentionally compact. Instructions establish the pickup expectation,
+              then the primary screen centers the code field, barcode option, keypad, and a single forward action.
             </p>
-            <div className="parcel-workflow-grid">
-              {workflowSteps.map((step) => (
-                <article className="parcel-workflow-card" key={step.title}>
-                  <div className="parcel-workflow-media">
-                    <img src={step.image} alt={step.alt} />
+
+            <div className="parcel-production-grid">
+              <figure className="parcel-production-card">
+                <div className="parcel-production-media">
+                  <img
+                    src={kioskWelcomeInstructions}
+                    alt="Parcel Pending production welcome screen explaining that pickup requires a code received by email or SMS"
+                  />
+                </div>
+                <figcaption>
+                  <span>01</span>
+                  <div>
+                    <h3>Set the expectation before input</h3>
+                    <p>The welcome state tells residents what they need and warns them before a pickup code becomes invalid.</p>
                   </div>
-                  <div className="parcel-workflow-copy">
-                    <span>{step.number}</span>
-                    <h3>{step.title}</h3>
-                    <p>{step.copy}</p>
+                </figcaption>
+              </figure>
+
+              <figure className="parcel-production-card">
+                <div className="parcel-production-media">
+                  <img
+                    src={kioskCodeEntryEn}
+                    alt="Parcel Pending production English code entry screen"
+                  />
+                </div>
+                <figcaption>
+                  <span>02</span>
+                  <div>
+                    <h3>Make the next action unmistakable</h3>
+                    <p>The input field, large keypad, barcode path, and Enter action keep the interaction centered on one task.</p>
                   </div>
-                </article>
-              ))}
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>
 
-        <section className="case-section shell parcel-language-section">
+        <section className="case-section shell parcel-production-localization">
           <div className="case-section-heading">
             <p className="eyebrow">03 / Localization</p>
-            <h2>Keep the interaction consistent across languages.</h2>
+            <h2>Change the language without changing the mental model.</h2>
             <p className="parcel-language-note">
-              Parcel Pending publicly documents kiosk support for English, Spanish, and French.
-              This case study stays within that verified language scope.
+              The photographed Spanish state keeps the same keypad, input hierarchy, barcode instruction,
+              help affordance, and primary action as the English production screen.
             </p>
           </div>
-          <figure className="parcel-language-figure">
+          <figure className="parcel-localization-photo">
             <img
-              src="/images/parcel-pending/language-selector.svg"
-              alt="Recreated language selector with English, Spanish, and French options"
+              src={kioskCodeEntryEs}
+              alt="Parcel Pending production kiosk interface displayed in Spanish"
             />
-            <figcaption>Recreated localization state based on Parcel Pending&apos;s public product documentation.</figcaption>
+            <figcaption>Spanish production state photographed on the same Parcel Pending installation.</figcaption>
           </figure>
         </section>
 
         <section className="case-section shell parcel-principles-section">
           <div className="case-section-heading">
             <p className="eyebrow">04 / Design decisions</p>
-            <h2>Simplicity was the outcome of the design work.</h2>
+            <h2>Simplicity was the strategy, not the absence of one.</h2>
           </div>
           <div className="switch-priority-list">
             {designPrinciples.map((principle) => (
@@ -190,8 +195,8 @@ export default function ParcelPendingCaseStudy() {
             </div>
             <div className="parcel-proof-copy">
               <p>
-                The strongest signal for this kind of interface is not that people notice the UI.
-                It is that they complete the pickup quickly and describe the experience as easy.
+                For this kind of self-service product, the interface is doing its job when the resident
+                can move from notification to physical pickup without needing to understand the system behind it.
               </p>
               <a href="https://www.parcelpending.com/en-us/" target="_blank" rel="noreferrer">
                 View public Parcel Pending testimonials <span aria-hidden="true">&#8599;</span>
@@ -203,18 +208,16 @@ export default function ParcelPendingCaseStudy() {
         <section className="case-section shell switch-contribution-section">
           <div className="case-section-heading">
             <p className="eyebrow">05 / Contribution</p>
-            <h2>Designing the last few feet of a much larger service.</h2>
+            <h2>Designing a small interface inside a much larger physical service.</h2>
           </div>
           <div className="case-section-copy">
             <p>
-              My contribution centered on the resident-facing package-room terminal flow: the entry
-              point, code interaction, completion state, and localized variants that connected a
-              digital notification to a secured physical door.
+              My contribution centered on the resident-facing kiosk experience: task framing, code entry,
+              touchscreen hierarchy, and localized states that connected a digital notification to the physical locker pickup.
             </p>
             <p>
-              It is a compact project, but a useful example of product judgment. The right solution
-              was not more UI—it was a clear, durable interaction that could repeat across locations,
-              hardware installations, and languages without making the user think about the system behind it.
+              The project is intentionally compact. The design judgment was knowing where not to add more UI,
+              preserving a direct interaction that could be repeated quickly in a public, shared environment.
             </p>
           </div>
         </section>
@@ -225,6 +228,102 @@ export default function ParcelPendingCaseStudy() {
           <a className="button primary" href="/#work">View selected work <span aria-hidden="true">&rarr;</span></a>
         </section>
       </main>
+
+      <style>{`
+        .parcel-production-case-study .parcel-live-hero {
+          background: linear-gradient(145deg, #e9edf2, #d8e1ec);
+          padding: clamp(1rem, 2.5vw, 2rem);
+        }
+        .parcel-live-hero-grid {
+          min-height: 640px;
+          display: grid;
+          grid-template-columns: .82fr 1.18fr;
+          gap: clamp(1rem, 2.4vw, 2rem);
+          align-items: stretch;
+        }
+        .parcel-live-physical,
+        .parcel-live-interface,
+        .parcel-production-media,
+        .parcel-localization-photo {
+          overflow: hidden;
+          border-radius: 22px;
+          background: #080b10;
+          box-shadow: 0 24px 70px rgba(24, 45, 78, .16);
+        }
+        .parcel-live-physical img,
+        .parcel-live-interface img,
+        .parcel-production-media img,
+        .parcel-localization-photo img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+        }
+        .parcel-live-physical img { object-position: center; }
+        .parcel-live-interface img { object-position: center 38%; }
+        .parcel-live-hero > figcaption {
+          padding: 1rem .25rem 0;
+          color: #49566a;
+          font-size: .76rem;
+        }
+        .parcel-production-flow { padding-block: clamp(5rem, 9vw, 9rem); }
+        .parcel-production-grid {
+          margin-top: clamp(2.5rem, 5vw, 4.5rem);
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: clamp(1.5rem, 3vw, 2.8rem);
+        }
+        .parcel-production-card { margin: 0; }
+        .parcel-production-media { aspect-ratio: 4 / 5; }
+        .parcel-production-media img { object-position: center 42%; }
+        .parcel-production-card figcaption {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 1rem;
+          padding-top: 1.25rem;
+        }
+        .parcel-production-card figcaption > span {
+          color: var(--accent);
+          font-size: .72rem;
+          font-weight: 800;
+          letter-spacing: .16em;
+        }
+        .parcel-production-card h3 {
+          margin: 0 0 .5rem;
+          font-family: var(--serif);
+          font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+          font-weight: 400;
+          line-height: 1.04;
+        }
+        .parcel-production-card p { margin: 0; color: var(--muted); }
+        .parcel-production-localization { align-items: center; }
+        .parcel-localization-photo {
+          margin: 0;
+          max-height: 760px;
+        }
+        .parcel-localization-photo img {
+          max-height: 720px;
+          object-position: center 42%;
+        }
+        .parcel-localization-photo figcaption {
+          padding: .8rem .25rem 0;
+          color: var(--muted);
+          font-size: .76rem;
+        }
+        @media (max-width: 900px) {
+          .parcel-live-hero-grid { min-height: 0; grid-template-columns: 1fr 1fr; }
+          .parcel-live-physical,
+          .parcel-live-interface { aspect-ratio: 3 / 4; }
+        }
+        @media (max-width: 680px) {
+          .parcel-production-case-study .parcel-live-hero { padding: .65rem; }
+          .parcel-live-hero-grid,
+          .parcel-production-grid { grid-template-columns: 1fr; }
+          .parcel-live-physical,
+          .parcel-live-interface,
+          .parcel-production-media { aspect-ratio: 4 / 5; }
+        }
+      `}</style>
 
       <footer className="site-footer shell">
         <span>Jeremy Rivera / Product Designer</span>

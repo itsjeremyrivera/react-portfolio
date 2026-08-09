@@ -7,11 +7,13 @@ const projects = [
   {
     number: "01",
     company: "The Villages",
-    type: "Enterprise product design",
+    type: "Cross-platform product design",
     date: "2025 to Present",
-    title: "Operational products for point of sale and vehicle specific navigation.",
-    tags: ["Product design", "Interaction design", "Mobile", "Front end"],
-    imageNote: "Approved Golf Rail or navigation product imagery",
+    title: "Modernizing home search across web and mobile.",
+    tags: ["Product design", "Angular", "Micro-frontend", "Responsive UI"],
+    image: "/images/villages/homefinder-desktop.png",
+    mediaClass: "villages-project-media",
+    href: "/work/villages",
   },
   {
     number: "02",
@@ -200,7 +202,7 @@ export default function Home() {
           </div>
           <div className="hero-scroll-impact">
             <div className="impact-grid hero-impact" aria-label="Selected impact">
-              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="18" data-impact-index="0"><span>The Villages</span><strong>200K+ users</strong><p>Designed clearer mobile navigation and download journeys for an older demographic to support adoption and retention.</p></div>
+              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="18" data-impact-index="0"><span>The Villages / Homefinder</span><strong>Web + mobile</strong><p>Designed and built a shared Angular home-search experience for the public website and mobile applications.</p></div>
               <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28" data-impact-index="1"><span>Parcel Pending by Quadient</span><strong>5M+ users</strong><p>Designed a focused multilingual kiosk flow that connected a six-digit pickup code to the right physical locker door.</p></div>
               <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="38" data-impact-index="2"><span>Payro Finance</span><strong>4 core workflows</strong><p>Unified application, verification, funding, and account management in one responsive customer portal.</p></div>
             </div>

@@ -18,9 +18,11 @@ const projects = [
     company: "Switch by Quadient",
     type: "SaaS product design",
     date: "2022 to 2023",
-    title: "Simplifying the journey from document preparation to physical mail.",
-    tags: ["Research", "UX/UI", "Dashboard"],
-    imageNote: "Approved Switch workflow and dashboard imagery",
+    title: "Turning physical mail into a guided digital workflow.",
+    tags: ["Product design", "UX/UI", "SaaS", "Design systems"],
+    image: "/images/switch/switch-mail-overview.png",
+    mediaClass: "switch-project-media",
+    href: "/work/switch",
   },
   {
     number: "03",
@@ -94,8 +96,13 @@ function ContactIcon({ type }) {
 
 function ProjectPlaceholder({ project, featured }) {
   if (project.image) {
+    const mediaClasses = [
+      featured ? "project-media featured-visual" : "project-media",
+      project.mediaClass,
+    ].filter(Boolean).join(" ");
+
     return (
-      <div className={featured ? "project-media featured-visual" : "project-media"}>
+      <div className={mediaClasses}>
         <div className="project-media-motion parallax-layer parallax-media-layer" data-parallax data-parallax-speed="24" data-parallax-x="6">
           <img src={project.image} alt={`${project.company} product interface overview`} />
         </div>
@@ -183,7 +190,7 @@ export default function Home() {
           <div className="hero-scroll-impact">
             <div className="impact-grid hero-impact" aria-label="Selected impact">
               <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="18" data-impact-index="0"><span>The Villages</span><strong>200K+ users</strong><p>Designed clearer mobile navigation and download journeys for an older demographic to support adoption and retention.</p></div>
-              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28" data-impact-index="1"><span>Switch by Quadient</span><strong>15K+ users</strong><p>Improved onboarding, document preparation, address verification, payment, and physical-mail workflows.</p></div>
+              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28" data-impact-index="1"><span>Switch by Quadient</span><strong>20K+ customers</strong><p>Designed across account setup, verified contacts, document upload, mailing options, payment, tracking, and reporting.</p></div>
               <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="38" data-impact-index="2"><span>Payro Finance</span><strong>4 core workflows</strong><p>Unified application, verification, funding, and account management in one responsive customer portal.</p></div>
             </div>
           </div>

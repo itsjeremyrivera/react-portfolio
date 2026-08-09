@@ -15,6 +15,17 @@ const projects = [
   },
   {
     number: "02",
+    company: "Parcel Pending by Quadient",
+    type: "Smart locker product design",
+    date: "2022 to 2023",
+    title: "A focused kiosk pickup flow designed for clarity at global scale.",
+    tags: ["Product design", "Kiosk UI", "Localization", "Interaction design"],
+    image: "/images/parcel-pending/parcel-pending-overview.svg",
+    mediaClass: "parcel-project-media",
+    href: "/work/parcel-pending",
+  },
+  {
+    number: "03",
     company: "Switch by Quadient",
     type: "SaaS product design",
     date: "2022 to 2023",
@@ -25,7 +36,7 @@ const projects = [
     href: "/work/switch",
   },
   {
-    number: "03",
+    number: "04",
     company: "Payro Finance",
     type: "Financial SaaS",
     date: "Independent",
@@ -190,7 +201,7 @@ export default function Home() {
           <div className="hero-scroll-impact">
             <div className="impact-grid hero-impact" aria-label="Selected impact">
               <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="18" data-impact-index="0"><span>The Villages</span><strong>200K+ users</strong><p>Designed clearer mobile navigation and download journeys for an older demographic to support adoption and retention.</p></div>
-              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28" data-impact-index="1"><span>Switch by Quadient</span><strong>20K+ customers</strong><p>Designed across account setup, verified contacts, document upload, mailing options, payment, tracking, and reporting.</p></div>
+              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28" data-impact-index="1"><span>Parcel Pending by Quadient</span><strong>5M+ users</strong><p>Designed a focused multilingual kiosk flow that connected a six-digit pickup code to the right physical locker door.</p></div>
               <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="38" data-impact-index="2"><span>Payro Finance</span><strong>4 core workflows</strong><p>Unified application, verification, funding, and account management in one responsive customer portal.</p></div>
             </div>
           </div>
@@ -200,13 +211,14 @@ export default function Home() {
           <div className="section-heading parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="58" data-parallax-x="-16">
             <div>
               <h2>Products shaped around real operational complexity.</h2>
-              <p className="section-intro">Enterprise operations, digital mail SaaS, and financial product systems.</p>
+              <p className="section-intro">Enterprise operations, smart lockers, digital mail SaaS, and financial product systems.</p>
             </div>
           </div>
           <ProjectCard project={projects[0]} featured />
+          <ProjectCard project={projects[1]} featured />
           <div className="project-grid">
-            <ProjectCard project={projects[1]} />
             <ProjectCard project={projects[2]} />
+            <ProjectCard project={projects[3]} />
           </div>
         </section>
 

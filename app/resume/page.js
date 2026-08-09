@@ -13,7 +13,7 @@ const roles = [
     role: "UX/UI Designer",
     dates: "July 2022–April 2023",
     summary:
-      "Owned end-to-end UI design for Switch by Quadient across onboarding, document preparation, address verification, mailing, payment, and account management. Led UX enhancements in a product environment serving 15,000+ users.",
+      "Owned end-to-end UI design for Switch by Quadient across onboarding, document preparation, address verification, mailing, payment, and account management. Also designed resident-facing kiosk pickup and localized interface states for Parcel Pending, a global smart-locker ecosystem that now publicly reports 5M+ users.",
   },
   {
     company: "Independent",

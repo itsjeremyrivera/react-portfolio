@@ -122,10 +122,33 @@ export default function SwitchCaseStudy() {
           </a>
         </section>
 
+        <section className="case-section shell switch-competitive-section">
+          <div className="case-section-heading">
+            <p className="eyebrow">02 / Competitive frame</p>
+            <h2>Learn from the market standard without copying its complexity.</h2>
+          </div>
+          <div className="case-section-copy">
+            <p>
+              I reviewed Stamps.com as a key market reference, looking at established patterns
+              for contact management, address verification, mailing-service selection, postage,
+              and tracking. That analysis clarified both what customers would already recognize
+              and where a browser-based workflow could feel more guided.
+            </p>
+            <p>
+              Switch kept the operational safeguards people expected while organizing them around
+              the task of sending a document. The goal was a clear sequence, not a feature-for-feature
+              copy of an incumbent shipping tool.
+            </p>
+            <a className="case-source-link" href="https://www.stamps.com/download/" target="_blank" rel="noreferrer">
+              View the Stamps.com product reference <span aria-hidden="true">&#8599;</span>
+            </a>
+          </div>
+        </section>
+
         <section className="case-product-section switch-workflow-section">
           <div className="shell">
             <div className="case-section-heading">
-              <p className="eyebrow">02 / Core workflow</p>
+              <p className="eyebrow">03 / Core workflow</p>
               <h2>Four connected stages from setup to delivery tracking.</h2>
             </div>
             <p className="case-product-intro">
@@ -162,7 +185,7 @@ export default function SwitchCaseStudy() {
 
         <section className="case-section shell switch-priorities-section">
           <div className="case-section-heading">
-            <p className="eyebrow">03 / Design priorities</p>
+            <p className="eyebrow">04 / Design priorities</p>
             <h2>Use clarity to reduce risk across the mailing journey.</h2>
           </div>
           <div className="switch-priority-list">
@@ -177,7 +200,7 @@ export default function SwitchCaseStudy() {
 
         <section className="case-section shell switch-contribution-section">
           <div className="case-section-heading">
-            <p className="eyebrow">04 / Contribution</p>
+            <p className="eyebrow">05 / Contribution</p>
             <h2>A product designer working across the complete service.</h2>
           </div>
           <div className="case-section-copy">

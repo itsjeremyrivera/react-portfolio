@@ -1,0 +1,57 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="160" y1="42" x2="1436" y2="880" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FAFF"/>
+      <stop offset="1" stop-color="#DCE9FA"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="522" y1="188" x2="1086" y2="713" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17243A"/>
+      <stop offset="1" stop-color="#0B1424"/>
+    </linearGradient>
+    <filter id="shadow" x="360" y="78" width="880" height="760" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="32" stdDeviation="32" flood-color="#28405F" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" rx="44" fill="url(#bg)"/>
+  <circle cx="1390" cy="126" r="220" fill="#79AFFF" fill-opacity="0.18"/>
+  <circle cx="180" cy="788" r="260" fill="#F15A29" fill-opacity="0.10"/>
+
+  <g opacity="0.58">
+    <rect x="96" y="170" width="294" height="574" rx="24" fill="#CFD9E6" stroke="#AEBCCE" stroke-width="3"/>
+    <path d="M96 314H390M96 458H390M96 602H390M243 170V744" stroke="#AEBCCE" stroke-width="3"/>
+    <circle cx="220" cy="385" r="6" fill="#7C8999"/>
+    <circle cx="367" cy="528" r="6" fill="#7C8999"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="430" y="104" width="740" height="692" rx="38" fill="#08111F"/>
+    <rect x="462" y="136" width="676" height="628" rx="25" fill="#FFFFFF"/>
+    <rect x="462" y="136" width="676" height="94" rx="25" fill="url(#panel)"/>
+    <rect x="462" y="206" width="676" height="24" fill="url(#panel)"/>
+    <path d="M510 183H530L541 162H552" stroke="#F15A29" stroke-width="6" stroke-linecap="round"/>
+    <text x="576" y="188" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="4">PARCEL PENDING</text>
+    <g transform="translate(1042 166)">
+      <circle cx="20" cy="20" r="19" stroke="#AEC1D8" stroke-width="2"/>
+      <path d="M3 20H37M20 3C26 9 29 14 29 20C29 26 26 31 20 37M20 3C14 9 11 14 11 20C11 26 14 31 20 37" stroke="#AEC1D8" stroke-width="2"/>
+    </g>
+
+    <text x="800" y="330" text-anchor="middle" fill="#17243A" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700">Welcome</text>
+    <text x="800" y="374" text-anchor="middle" fill="#637083" font-family="Arial, Helvetica, sans-serif" font-size="20">What would you like to do?</text>
+    <rect x="584" y="422" width="432" height="126" rx="22" fill="#F15A29"/>
+    <path d="M647 474H693V510H647V474Z" stroke="white" stroke-width="5"/>
+    <path d="M647 480L670 496L693 480" stroke="white" stroke-width="5" stroke-linejoin="round"/>
+    <text x="732" y="499" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">PARCEL PICK-UP</text>
+    <rect x="584" y="574" width="208" height="82" rx="18" fill="#EFF3F8" stroke="#CBD5E1" stroke-width="2"/>
+    <text x="688" y="625" text-anchor="middle" fill="#445164" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">DELIVER</text>
+    <rect x="808" y="574" width="208" height="82" rx="18" fill="#EFF3F8" stroke="#CBD5E1" stroke-width="2"/>
+    <text x="912" y="625" text-anchor="middle" fill="#445164" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">HELP</text>
+    <text x="800" y="714" text-anchor="middle" fill="#8A96A6" font-family="Arial, Helvetica, sans-serif" font-size="15">Reconstructed public workflow</text>
+  </g>
+
+  <g opacity="0.9">
+    <rect x="1230" y="242" width="274" height="420" rx="24" fill="#D8E2EE" stroke="#B4C0CF" stroke-width="3"/>
+    <path d="M1230 352H1504M1230 462H1504M1230 572H1504M1367 242V662" stroke="#B4C0CF" stroke-width="3"/>
+    <circle cx="1342" cy="407" r="6" fill="#7C8999"/>
+    <circle cx="1479" cy="517" r="6" fill="#7C8999"/>
+  </g>
+</svg>

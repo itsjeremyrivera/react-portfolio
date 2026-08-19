@@ -321,7 +321,10 @@ export default function ParcelPendingCaseStudy() {
           .parcel-production-grid { grid-template-columns: 1fr; }
           .parcel-live-physical,
           .parcel-live-interface,
-          .parcel-production-media { aspect-ratio: 4 / 5; }
+          .parcel-production-media { aspect-ratio: auto; }
+          .parcel-live-physical img,
+          .parcel-live-interface img,
+          .parcel-production-media img { height: auto; }
         }
       `}</style>
 

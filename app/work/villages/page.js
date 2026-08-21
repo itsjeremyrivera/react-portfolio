@@ -67,7 +67,7 @@ export default function VillagesCaseStudy() {
             />
           </div>
           <figcaption>
-            The live Homefinder experience across desktop and mobile.
+            The live Homefinder experience across desktop and a true 360px mobile viewport.
             No internal data or unreleased application designs are shown.
           </figcaption>
         </figure>
@@ -237,7 +237,8 @@ export default function VillagesCaseStudy() {
               <p>
                 Recorded from the public product at a true mobile viewport, this
                 loop follows the journey from property details into the immersive
-                gallery and through a horizontal image change.
+                gallery, through a horizontal image change, and back into the
+                expandable home information.
               </p>
             </div>
             <figure className="villages-motion-figure">
@@ -250,13 +251,14 @@ export default function VillagesCaseStudy() {
                   />
                   <img
                     src="/images/villages/homefinder-mobile-detail.png"
-                    alt="Mobile Homefinder interaction showing a property gallery and image navigation"
+                    alt="Mobile Homefinder interaction showing a property gallery, image navigation, and expandable home features"
                     loading="lazy"
                   />
                 </picture>
               </div>
               <figcaption>
-                Real mobile behavior: open the gallery and move between photos.
+                Real mobile behavior: open the gallery, move between photos, and
+                reveal additional property details.
               </figcaption>
             </figure>
           </div>
@@ -320,7 +322,7 @@ export default function VillagesCaseStudy() {
           </div>
           <p className="villages-section-intro">
             Mobile is a purpose-built version of the same product logic—not a scaled-down
-            desktop screen. These 360px states show how the experience moves from
+            desktop screen. These complete 360px states show how the experience moves from
             browsing to refinement and detailed evaluation.
           </p>
           <div className="villages-mobile-grid">
@@ -332,13 +334,13 @@ export default function VillagesCaseStudy() {
             </figure>
             <figure>
               <div className="villages-phone-frame">
-                <img src="/images/villages/homefinder-mobile-filters.png" alt="Mobile Homefinder filters with property criteria" loading="lazy" />
+                <img src="/images/villages/homefinder-mobile-filters.png" alt="Mobile Homefinder filters with property criteria and persistent actions" loading="lazy" />
               </div>
               <figcaption><strong>Refine</strong><span>Focus on criteria without competing content.</span></figcaption>
             </figure>
             <figure>
               <div className="villages-phone-frame">
-                <img src="/images/villages/homefinder-mobile-detail.png" alt="Mobile Homefinder property detail with gallery and facts" loading="lazy" />
+                <img src="/images/villages/homefinder-mobile-detail.png" alt="Mobile Homefinder property detail with gallery, facts, actions, and features" loading="lazy" />
               </div>
               <figcaption><strong>Inspect</strong><span>Evaluate a home and act from one clear view.</span></figcaption>
             </figure>

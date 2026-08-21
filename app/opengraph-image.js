@@ -54,11 +54,12 @@ export default function OpenGraphImage() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            <svg width="104" height="104" viewBox="0 0 48 48">
-              <rect x="1" y="1" width="46" height="46" rx="14" fill="#7db0ff" />
-              <path d="M7 19C14 8 28 4 40 10" fill="none" stroke="#07111f" strokeOpacity="0.32" strokeWidth="1.4" strokeLinecap="round" />
-              <path d="M8.5 12.5H21V29c0 5.8-3.6 9-9 9-3.5 0-6.3-1.7-7.7-4.5" fill="none" stroke="#07111f" strokeWidth="3.1" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M25 38V12.5h7.2c6 0 9.6 3.1 9.6 8s-3.6 8-9.6 8H25m7.5 0L42 38" fill="none" stroke="#07111f" strokeWidth="3.1" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="142" height="104" viewBox="0 0 88 64">
+              <g fill="none" stroke="#7db0ff" strokeWidth="3.8" strokeLinecap="square" strokeLinejoin="bevel">
+                <path d="M8 9h29l5 5v27L31 54H13l-6-6V37h13v6h7l4-4V18H8Z" />
+                <path d="M43 54V9h25l11 11v11l-8 8h-6l14 15H67L54 40v14Z" />
+                <path d="M54 18v12h12l4-4v-4l-4-4Z" />
+              </g>
             </svg>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div style={{ fontSize: 34, fontWeight: 800, letterSpacing: "0.02em" }}>Jeremy Rivera</div>

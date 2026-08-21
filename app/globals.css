@@ -107,8 +107,13 @@ button { font: inherit; }
   -webkit-backdrop-filter: blur(24px) saturate(150%);
 }
 .site-header { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-.brand { display: inline-flex; align-items: center; gap: .8rem; text-decoration: none; }
-.brand-mark { width: 40px; height: 40px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--accent); font-size: .72rem; font-weight: 850; letter-spacing: .04em; }
+.brand { display: inline-flex; align-items: center; gap: .9rem; text-decoration: none; }
+.brand-mark { width: 44px; height: 44px; display: grid; place-items: center; flex: 0 0 auto; color: var(--accent); border-radius: 14px; box-shadow: 0 10px 30px color-mix(in srgb, var(--accent) 22%, transparent), inset 0 0 0 1px color-mix(in srgb, var(--text) 12%, transparent); overflow: hidden; transition: transform 180ms ease, box-shadow 180ms ease; }
+.brand-mark svg { display: block; width: 100%; height: 100%; }
+.brand-mark-surface { fill: currentColor; }
+.brand-mark-glyph { fill: none; stroke: var(--accent-ink); stroke-width: 3.1; stroke-linecap: round; stroke-linejoin: round; }
+.brand-mark-glint { fill: none; stroke: color-mix(in srgb, var(--accent-ink) 34%, transparent); stroke-width: 1.4; stroke-linecap: round; }
+.brand:hover .brand-mark { transform: translateY(-1px) rotate(-2deg); box-shadow: 0 14px 36px color-mix(in srgb, var(--accent) 30%, transparent), inset 0 0 0 1px color-mix(in srgb, var(--text) 18%, transparent); }
 .brand-copy { display: flex; flex-direction: column; gap: .05rem; }
 .brand-copy strong { text-transform: uppercase; letter-spacing: .13em; font-size: .74rem; }
 .brand-copy em { color: var(--muted); font-family: var(--serif); font-size: .96rem; }
@@ -588,6 +593,7 @@ button { font: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+  .brand:hover .brand-mark { transform: none !important; }
   .parallax-layer, .parallax-media-layer { transform: none !important; filter: none !important; will-change: auto; }
   .scroll-scene::before, .scroll-scene::after, .impact-item::after, .principle-icon, .contact-button { transform: none !important; }
   .hero-scroll-copy, .hero-scroll-impact, .hero::after { transform: none !important; opacity: 1; will-change: auto; }

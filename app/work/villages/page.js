@@ -67,7 +67,7 @@ export default function VillagesCaseStudy() {
             />
           </div>
           <figcaption>
-            The live Homefinder experience across desktop and a true 360px mobile viewport.
+            The live Homefinder experience across desktop and mobile.
             No internal data or unreleased application designs are shown.
           </figcaption>
         </figure>
@@ -322,7 +322,7 @@ export default function VillagesCaseStudy() {
           </div>
           <p className="villages-section-intro">
             Mobile is a purpose-built version of the same product logic—not a scaled-down
-            desktop screen. These complete 360px states show how the experience moves from
+            desktop screen. These 360px states show how the experience moves from
             browsing to refinement and detailed evaluation.
           </p>
           <div className="villages-mobile-grid">

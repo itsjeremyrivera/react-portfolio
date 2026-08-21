@@ -237,8 +237,7 @@ export default function VillagesCaseStudy() {
               <p>
                 Recorded from the public product at a true mobile viewport, this
                 loop follows the journey from property details into the immersive
-                gallery, through a horizontal image change, and back into the
-                expandable home information.
+                gallery and through a horizontal image change.
               </p>
             </div>
             <figure className="villages-motion-figure">
@@ -251,14 +250,13 @@ export default function VillagesCaseStudy() {
                   />
                   <img
                     src="/images/villages/homefinder-mobile-detail.png"
-                    alt="Mobile Homefinder interaction showing a property gallery, image navigation, and expandable home features"
+                    alt="Mobile Homefinder interaction showing a property gallery and image navigation"
                     loading="lazy"
                   />
                 </picture>
               </div>
               <figcaption>
-                Real mobile behavior: open the gallery, move between photos, and
-                reveal additional property details.
+                Real mobile behavior: open the gallery and move between photos.
               </figcaption>
             </figure>
           </div>

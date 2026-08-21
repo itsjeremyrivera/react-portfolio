@@ -334,13 +334,13 @@ export default function VillagesCaseStudy() {
             </figure>
             <figure>
               <div className="villages-phone-frame">
-                <img src="/images/villages/homefinder-mobile-filters.png" alt="Mobile Homefinder filters with property criteria and persistent actions" loading="lazy" />
+                <img src="/images/villages/homefinder-mobile-filters.png" alt="Mobile Homefinder filters with property criteria" loading="lazy" />
               </div>
               <figcaption><strong>Refine</strong><span>Focus on criteria without competing content.</span></figcaption>
             </figure>
             <figure>
               <div className="villages-phone-frame">
-                <img src="/images/villages/homefinder-mobile-detail.png" alt="Mobile Homefinder property detail with gallery, facts, actions, and features" loading="lazy" />
+                <img src="/images/villages/homefinder-mobile-detail.png" alt="Mobile Homefinder property detail with gallery and facts" loading="lazy" />
               </div>
               <figcaption><strong>Inspect</strong><span>Evaluate a home and act from one clear view.</span></figcaption>
             </figure>

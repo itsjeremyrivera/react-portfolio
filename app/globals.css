@@ -497,13 +497,18 @@ button { font: inherit; }
   .parcel-scale-note, .parcel-scale > a { grid-column: auto; }
   .parcel-workflow-grid, .parcel-proof-grid { grid-template-columns: 1fr; }
   .villages-hero-media { grid-template-columns: 1fr; padding-bottom: 1rem; }
-  .villages-mobile-frame { width: min(58%, 320px); margin-inline: auto; }
+  .villages-mobile-frame { width: min(58%, 320px); aspect-ratio: 9 / 19.5; margin-inline: auto; overflow: hidden; }
+  .villages-mobile-frame img { width: 100%; height: 100%; object-fit: contain; }
   .villages-challenge-grid { grid-template-columns: 1fr; }
   .villages-challenge-grid article { min-height: 220px; }
   .villages-interaction-list article { grid-template-columns: 1fr; }
   .villages-detail-grid { grid-template-columns: 1fr; }
   .villages-motion-demo { grid-template-columns: 1fr; }
   .villages-motion-figure { justify-self: center; }
+  .villages-phone-frame { aspect-ratio: 9 / 19.5; }
+  .villages-phone-frame img,
+  .villages-motion-phone picture { width: 100%; height: 100%; }
+  .villages-phone-frame img { object-fit: contain; }
   .villages-platform-flow { grid-template-columns: 1fr; }
   .villages-flow-arrow { justify-self: center; transform: rotate(90deg); }
   .villages-flow-source, .villages-flow-core { min-height: 210px; }
@@ -574,7 +579,7 @@ button { font: inherit; }
   .villages-hero-media { margin-bottom: 6rem; padding: 10px; }
   .villages-desktop-frame { border-radius: 12px; }
   .villages-mobile-frame { width: min(74%, 260px); aspect-ratio: 9 / 19.5; padding: .45rem; border-radius: 22px; overflow: hidden; }
-  .villages-mobile-frame img { width: 100%; height: 100%; border-radius: 16px; object-fit: cover; object-position: top center; }
+  .villages-mobile-frame img { width: 100%; height: 100%; border-radius: 16px; object-fit: contain; }
   .villages-hero-media figcaption { margin: .75rem .35rem 0; }
   .villages-challenge-grid article { min-height: 200px; }
   .villages-interaction-list { gap: 4rem; }
@@ -586,7 +591,7 @@ button { font: inherit; }
   .villages-phone-frame { aspect-ratio: 9 / 19.5; }
   .villages-phone-frame img,
   .villages-motion-phone picture { width: 100%; height: 100%; }
-  .villages-phone-frame img { object-fit: cover; object-position: top center; }
+  .villages-phone-frame img { object-fit: contain; }
   .villages-mobile-grid { grid-template-columns: 1fr; }
   .villages-mobile-grid figure, .villages-mobile-grid figure:last-child { grid-column: auto; width: min(100%, 280px); justify-self: center; }
 }

@@ -43,20 +43,6 @@ export default function SiteHeader({ resumeUrl = "/JeremyRiveraResume.pdf", navB
   return (
     <header className="site-header-wrap">
       <div className="site-header shell">
-        <a className="brand" href={`${navBase}#top`} aria-label="Jeremy Rivera home" onClick={() => setMenuOpen(false)}>
-          <span className="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 88 64" focusable="false">
-              <path className="brand-mark-outline" d="M8 9h29l5 5v27L31 54H13l-6-6V37h13v6h7l4-4V18H8Z" />
-              <path className="brand-mark-outline" d="M43 54V9h25l11 11v11l-8 8h-6l14 15H67L54 40v14Z" />
-              <path className="brand-mark-outline" d="M54 18v12h12l4-4v-4l-4-4Z" />
-            </svg>
-          </span>
-          <span className="brand-copy">
-            <strong>Jeremy Rivera</strong>
-            <em>Product Designer</em>
-          </span>
-        </a>
-
         <div className="header-actions">
           <nav id="site-navigation" className={menuOpen ? "site-nav is-open" : "site-nav"} aria-label="Primary navigation">
             {links.map(([label, href, external]) => (

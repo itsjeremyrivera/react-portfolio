@@ -53,18 +53,9 @@ export default function OpenGraphImage() {
             padding: "64px 72px",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            <svg width="142" height="104" viewBox="0 0 88 64">
-              <g fill="none" stroke="#7db0ff" strokeWidth="3.8" strokeLinecap="square" strokeLinejoin="bevel">
-                <path d="M8 9h29l5 5v27L31 54H13l-6-6V37h13v6h7l4-4V18H8Z" />
-                <path d="M43 54V9h25l11 11v11l-8 8h-6l14 15H67L54 40v14Z" />
-                <path d="M54 18v12h12l4-4v-4l-4-4Z" />
-              </g>
-            </svg>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ fontSize: 34, fontWeight: 800, letterSpacing: "0.02em" }}>Jeremy Rivera</div>
-              <div style={{ marginTop: 5, color: "#b8c2d3", fontSize: 24 }}>Product Designer</div>
-            </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ fontSize: 34, fontWeight: 800, letterSpacing: "0.02em" }}>Jeremy Rivera</div>
+            <div style={{ marginTop: 5, color: "#b8c2d3", fontSize: 24 }}>Product Designer</div>
           </div>
 
           <div style={{ display: "flex", maxWidth: 920, fontSize: 66, fontWeight: 700, lineHeight: 1.08, letterSpacing: "-0.045em" }}>
@@ -81,3 +72,4 @@ export default function OpenGraphImage() {
     size,
   );
 }
+

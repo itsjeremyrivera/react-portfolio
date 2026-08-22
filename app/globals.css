@@ -106,15 +106,7 @@ button { font: inherit; }
   backdrop-filter: blur(24px) saturate(150%);
   -webkit-backdrop-filter: blur(24px) saturate(150%);
 }
-.site-header { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-.brand { display: inline-flex; align-items: center; gap: .9rem; text-decoration: none; }
-.brand-mark { width: 58px; height: 44px; display: grid; place-items: center; flex: 0 0 auto; color: var(--accent); filter: drop-shadow(0 9px 18px color-mix(in srgb, var(--accent) 22%, transparent)); transition: transform 180ms ease, filter 180ms ease; }
-.brand-mark svg { display: block; width: 100%; height: 100%; }
-.brand-mark-outline { fill: none; stroke: currentColor; stroke-width: 3.4; stroke-linecap: square; stroke-linejoin: bevel; }
-.brand:hover .brand-mark { transform: translateY(-1px); filter: drop-shadow(0 12px 22px color-mix(in srgb, var(--accent) 32%, transparent)); }
-.brand-copy { display: flex; flex-direction: column; gap: .05rem; }
-.brand-copy strong { text-transform: uppercase; letter-spacing: .13em; font-size: .74rem; }
-.brand-copy em { color: var(--muted); font-family: var(--serif); font-size: .96rem; }
+.site-header { min-height: 82px; display: flex; align-items: center; justify-content: flex-end; gap: 2rem; }
 .header-actions { position: relative; display: flex; align-items: center; gap: .55rem; }
 .site-nav { display: flex; align-items: center; gap: 1.8rem; }
 .site-nav a { color: var(--muted); text-decoration: none; font-size: .88rem; font-weight: 650; transition: color 160ms ease; }
@@ -532,8 +524,6 @@ button { font: inherit; }
 
 @media (max-width: 560px) {
   .shell { width: calc(100% - 32px); }
-  .brand-copy em { display: none; }
-  .brand-copy strong { font-size: .68rem; letter-spacing: .1em; }
   .hero { padding-top: 4.25rem; }
   .hero-scroll-copy { transform: translate3d(0, calc(var(--hero-progress) * -54px), 0) scale(calc(1 - var(--hero-progress) * .025)); opacity: calc(1 - var(--hero-progress) * .22); }
   .hero-scroll-impact { transform: translate3d(0, calc(var(--hero-progress) * -24px), 0); }
@@ -591,7 +581,6 @@ button { font: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
-  .brand:hover .brand-mark { transform: none !important; }
   .parallax-layer, .parallax-media-layer { transform: none !important; filter: none !important; will-change: auto; }
   .scroll-scene::before, .scroll-scene::after, .impact-item::after, .principle-icon, .contact-button { transform: none !important; }
   .hero-scroll-copy, .hero-scroll-impact, .hero::after { transform: none !important; opacity: 1; will-change: auto; }

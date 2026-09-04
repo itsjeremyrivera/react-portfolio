@@ -42,7 +42,7 @@ export default function HeroGlow() {
       glow.dataset.active = String(entry.isIntersecting);
       if (!entry.isIntersecting) resetTilt();
     });
-    observer.observe(hero);
+    observer.observe(glow);
     hero.addEventListener("pointermove", move, { passive: true });
     hero.addEventListener("pointerleave", resetTilt);
     reducedMotion.addEventListener("change", resetTilt);

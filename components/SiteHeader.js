@@ -1,18 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
-export default function SiteHeader({ resumeUrl = "/JeremyRiveraResume.pdf", navBase = "" }) {
+export default function SiteHeader({ resumeUrl = "/JeremyRiveraResume.pdf" }) {
   const menuButton = useRef(null);
   const headerRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState("system");
 
   const links = [
-    ["Work", `${navBase}#work`, false],
-    ["About", `${navBase}#about`, false],
+    ["Work", "/#work", false],
+    ["About", "/about", false],
     ["Résumé PDF", resumeUrl, true],
-    ["Contact", `${navBase}#contact`, false],
+    ["Contact", "/#contact", false],
   ];
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function SiteHeader({ resumeUrl = "/JeremyRiveraResume.pdf", navB
 
   useEffect(() => {
     if (!menuOpen) return;
-    headerRef.current?.querySelector("#site-navigation a")?.focus();
+    headerRef.current?.querySelector("#site-navigation a")?.focus({ preventScroll: true });
 
     const closeOnEscape = (event) => {
       if (event.key === "Escape") {
@@ -39,9 +40,11 @@ export default function SiteHeader({ resumeUrl = "/JeremyRiveraResume.pdf", navB
     };
     window.addEventListener("keydown", closeOnEscape);
     document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("focusin", closeOutside);
     return () => {
       window.removeEventListener("keydown", closeOnEscape);
       document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("focusin", closeOutside);
     };
   }, [menuOpen]);
 
@@ -67,23 +70,21 @@ export default function SiteHeader({ resumeUrl = "/JeremyRiveraResume.pdf", navB
     <header
       className="site-header-wrap"
       ref={headerRef}
-      onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setMenuOpen(false);
-      }}
     >
       <div className="site-header shell">
         <div className="header-actions">
           <nav id="site-navigation" className={menuOpen ? "site-nav is-open" : "site-nav"} aria-label="Primary navigation">
             {links.map(([label, href, external]) => (
-              <a
+              <Link
                 key={label}
                 href={href}
+                prefetch={external ? false : undefined}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noreferrer" : undefined}
                 onClick={() => setMenuOpen(false)}
               >
                 {label}
-              </a>
+              </Link>
             ))}
           </nav>
 

@@ -4,8 +4,8 @@ import ScrollToTopButton from "../Components/ScrollToTopButton";
 export const metadata = {
   metadataBase: new URL("https://jeremyrivera.design"),
   title: {
-    default: "Jeremy Rivera — Product Designer",
-    template: "%s — Jeremy Rivera",
+    default: "Jeremy Rivera | Product Designer",
+    template: "%s | Jeremy Rivera",
   },
   description:
     "Product Designer bridging UX and front-end engineering across enterprise software, SaaS, dashboards, and mobile products.",
@@ -13,17 +13,17 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Jeremy Rivera — Product Designer",
+    title: "Jeremy Rivera | Product Designer",
     description:
       "Product design, systems thinking, interaction design, and front-end fluency for complex digital products.",
     url: "/",
-    siteName: "Jeremy Rivera — Product Designer",
+    siteName: "Jeremy Rivera | Product Designer",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jeremy Rivera — Product Designer",
+    title: "Jeremy Rivera | Product Designer",
     description:
       "Product design, systems thinking, interaction design, and front-end fluency for complex digital products.",
   },

@@ -1,5 +1,8 @@
+import Image from "next/image";
 import SiteHeader from "../components/SiteHeader";
 import ParallaxController from "../components/ParallaxController";
+import HeroGlow from "../components/HeroGlow";
+import KioskPreview from "../components/KioskPreview";
 
 const RESUME_URL = "/JeremyRiveraResume.pdf";
 
@@ -12,6 +15,10 @@ const projects = [
     title: "Modernizing home search across web and mobile.",
     tags: ["Product design", "Angular", "Micro-frontend", "Responsive UI"],
     image: "/images/villages/homefinder-desktop.png",
+    width: 1440,
+    height: 1000,
+    role: "Product design + Angular implementation",
+    contribution: "Reworked search, filters, and home details for web and embedded mobile.",
     mediaClass: "villages-project-media",
     href: "/work/villages",
   },
@@ -20,9 +27,13 @@ const projects = [
     company: "Parcel Pending by Quadient",
     type: "Smart locker product design",
     date: "2022 to 2023",
-    title: "A focused kiosk pickup flow designed for clarity at global scale.",
+    title: "A clear path from pickup code to parcel.",
     tags: ["Product design", "Kiosk UI", "Localization", "Interaction design"],
     image: "/images/parcel-pending/parcel-pending-overview.svg",
+    width: 1200,
+    height: 800,
+    role: "Product design + kiosk interaction",
+    contribution: "Shaped a focused pickup flow with a consistent interaction model across languages.",
     mediaClass: "parcel-project-media",
     href: "/work/parcel-pending",
   },
@@ -34,6 +45,10 @@ const projects = [
     title: "Turning physical mail into a guided digital workflow.",
     tags: ["Product design", "UX/UI", "SaaS", "Design systems"],
     image: "/images/switch/switch-mail-overview.png",
+    width: 703,
+    height: 403,
+    role: "Product design + UI systems",
+    contribution: "Connected account setup, address verification, sending, and tracking in one guided workflow.",
     mediaClass: "switch-project-media",
     href: "/work/switch",
   },
@@ -46,6 +61,10 @@ const projects = [
     tags: ["Design systems", "SaaS", "Responsive UI"],
     imageNote: "Payro dashboard and design system imagery",
     image: "/images/payro/payro-dashboard-hero.jpeg",
+    width: 1600,
+    height: 1433,
+    role: "UX research + product design",
+    contribution: "Mapped the lending journey and created responsive interfaces and a reusable Figma design system.",
     href: "/work/payro",
   },
 ];
@@ -108,6 +127,12 @@ function ContactIcon({ type }) {
 }
 
 function ProjectPlaceholder({ project, featured }) {
+  if (project.company === "Parcel Pending by Quadient") {
+    return <div className="project-product-stage parcel-preview-stage"><div className="project-kiosk"><KioskPreview /></div><span className="project-preview-label">Kiosk interaction / English + Español</span></div>;
+  }
+  if (project.company === "The Villages") {
+    return <div className="project-product-stage villages-preview-stage"><div className="project-browser"><div className="project-browser-bar">Homefinder / The Villages</div><Image src={project.image} alt="Homefinder search interface with listings and a map" width={1440} height={1000} sizes="(max-width: 900px) 90vw, 620px" /></div><span className="project-preview-label">One search experience / Web + mobile</span></div>;
+  }
   if (project.image) {
     const mediaClasses = [
       featured ? "project-media featured-visual" : "project-media",
@@ -117,7 +142,13 @@ function ProjectPlaceholder({ project, featured }) {
     return (
       <div className={mediaClasses}>
         <div className="project-media-motion parallax-layer parallax-media-layer" data-parallax data-parallax-speed="24" data-parallax-x="6">
-          <img src={project.image} alt={`${project.company} product interface overview`} />
+          <Image
+            src={project.image}
+            alt={`${project.company} product interface overview`}
+            width={project.width}
+            height={project.height}
+            sizes="(max-width: 900px) calc(100vw - 64px), (max-width: 1268px) 52vw, 660px"
+          />
         </div>
       </div>
     );
@@ -160,12 +191,16 @@ function ProjectCard({ project, featured = false }) {
         </div>
         <h3>{project.company}</h3>
         <p className="project-title">{project.title}</p>
+        <div className="project-contribution">
+          <p className="project-role"><span>My role</span>{project.role}</p>
+          <p>{project.contribution}</p>
+        </div>
         <div className="tag-row">
           {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
         </div>
         <div className="project-footer">
           {project.href ? (
-            <a className="case-study-button case-study-link" href={project.href}>View case study <span aria-hidden="true">→</span></a>
+            <a className="case-study-button case-study-link" href={project.href} aria-label={`View ${project.company} case study`}>View case study <span aria-hidden="true">→</span></a>
           ) : (
             <button className="case-study-button" type="button" disabled>Case study coming soon</button>
           )}
@@ -184,8 +219,9 @@ export default function Home() {
 
       <main id="main">
         <section className="hero shell" id="top" data-scroll-hero>
-          <div className="hero-gradient parallax-layer" data-parallax data-parallax-speed="-38" data-parallax-x="34" aria-hidden="true"><span /></div>
+          <div className="hero-layout">
           <div className="hero-scroll-copy">
+            <p className="eyebrow hero-positioning">Product design × front-end fluency</p>
             <h1 className="hero-title">
               I make complex products easier to <em>build, use, and scale.</em>
             </h1>
@@ -200,10 +236,12 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <HeroGlow />
+          </div>
           <div className="hero-scroll-impact">
             <div className="impact-grid hero-impact" aria-label="Selected impact">
               <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="18" data-impact-index="0"><span>The Villages / Homefinder</span><strong>Web + mobile</strong><p>Designed and built a shared Angular home-search experience for the public website and mobile applications.</p></div>
-              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28" data-impact-index="1"><span>Parcel Pending by Quadient</span><strong>5M+ users</strong><p>Designed a focused multilingual kiosk flow that connected a six-digit pickup code to the right physical locker door.</p></div>
+              <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="28" data-impact-index="1"><span>Parcel Pending by Quadient</span><strong>Multilingual UI</strong><p>Designed a focused multilingual kiosk flow that connected a six-digit pickup code to the right physical locker door.</p></div>
               <div className="impact-item parallax-layer parallax-copy-layer" data-parallax data-parallax-speed="38" data-impact-index="2"><span>Payro Finance</span><strong>4 core workflows</strong><p>Unified application, verification, funding, and account management in one responsive customer portal.</p></div>
             </div>
           </div>

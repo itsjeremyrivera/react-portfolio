@@ -14,7 +14,7 @@ const designPrinciples = [
   },
   {
     title: "Design for a public touchscreen",
-    copy: "Large numeric targets, concise instructions, strong contrast, and obvious input state made the interaction usable while standing at the locker—not sitting at a desk.",
+    copy: "Large numeric targets, concise instructions, strong contrast, and obvious input state made the interaction usable while standing at the locker.",
   },
   {
     title: "Keep localization inside the same interaction model",
@@ -84,8 +84,8 @@ export default function ParcelPendingCaseStudy() {
           </div>
           <div className="case-section-copy">
             <p>
-              Residents arrive after receiving a pickup code by email or SMS. That means the kiosk is
-              not the beginning of the journey—it is the last digital step before the physical pickup.
+              Residents arrive after receiving a pickup code by email or SMS. The kiosk is
+              the last digital step before the physical pickup.
             </p>
             <p>
               The strategy was to remove unnecessary decisions: tell the resident what they need,
@@ -106,7 +106,7 @@ export default function ParcelPendingCaseStudy() {
           </div>
           <p className="parcel-scale-note">
             These are Parcel Pending&apos;s current public ecosystem figures, included to show the
-            scale of the product—not as outcomes attributed solely to my design.
+            scale of the product. They are not outcomes attributed solely to my design.
           </p>
           <a href="https://www.parcelpending.com/" target="_blank" rel="noreferrer">
             View Parcel Pending&apos;s public product data <span aria-hidden="true">&#8599;</span>

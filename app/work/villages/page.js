@@ -44,7 +44,7 @@ export default function VillagesCaseStudy() {
           <p className="eyebrow">The Villages / Homefinder</p>
           <h1>Modernizing home search across web and mobile.</h1>
           <p className="case-lede">
-            I helped redesign and build Homefinder—an Angular micro-frontend that
+            I helped redesign and build Homefinder, an Angular micro-frontend that
             brings property discovery, filters, geographic context, and home details
             into one responsive experience across web and mobile applications.
           </p>
@@ -330,8 +330,8 @@ export default function VillagesCaseStudy() {
             <h2>Preserve the journey while changing the hierarchy.</h2>
           </div>
           <p className="villages-section-intro">
-            Mobile is a purpose-built version of the same product logic—not a scaled-down
-            desktop screen. These complete 360px states show how the experience moves from
+            Mobile adapts the same product logic to the needs of a smaller
+            screen. These complete 360px states show how the experience moves from
             browsing to refinement and detailed evaluation.
           </p>
           <div className="villages-mobile-grid">

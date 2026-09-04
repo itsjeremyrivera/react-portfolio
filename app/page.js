@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SiteHeader from "../components/SiteHeader";
 import ParallaxController from "../components/ParallaxController";
+import HeroGlow from "../components/HeroGlow";
 
 const RESUME_URL = "/JeremyRiveraResume.pdf";
 
@@ -211,7 +212,7 @@ export default function Home() {
 
       <main id="main">
         <section className="hero shell" id="top" data-scroll-hero>
-          <div className="hero-gradient parallax-layer" data-parallax data-parallax-speed="-38" data-parallax-x="34" aria-hidden="true"><span /></div>
+          <HeroGlow />
           <div className="hero-scroll-copy">
             <p className="eyebrow hero-positioning">Product design × front-end fluency</p>
             <h1 className="hero-title">

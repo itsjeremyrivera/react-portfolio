@@ -1,0 +1,91 @@
+.glow {
+  position: absolute;
+  z-index: 0;
+  top: -5rem;
+  right: -2.5rem;
+  width: min(700px, 64vw);
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+
+.haze {
+  position: absolute;
+  inset: 7% -8%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 45%, color-mix(in srgb, var(--accent) 22%, transparent), color-mix(in srgb, var(--accent) 8%, transparent) 40%, transparent 68%);
+  filter: blur(28px);
+}
+
+.perspective {
+  position: absolute;
+  inset: 17%;
+  perspective: 1000px;
+}
+
+.tilt,
+.sculpture {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.tilt {
+  transform: rotateX(var(--glow-rotate-x, 0deg)) rotateY(var(--glow-rotate-y, 0deg));
+  transition: transform 700ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.sculpture {
+  transform: rotateX(-18deg) rotateY(-24deg) rotateZ(-20deg);
+  animation: orbit 18s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+
+.glow[data-active="true"] .sculpture { animation-play-state: running; }
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  border-top: 3px solid color-mix(in srgb, var(--accent-hover) 70%, transparent);
+  border-bottom: 9px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: 50%;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--accent-hover) 7%, transparent), transparent 48%, color-mix(in srgb, var(--accent) 5%, transparent));
+  box-shadow: inset 0 0 22px color-mix(in srgb, var(--accent) 13%, transparent), 0 0 24px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.outer { transform: rotateX(58deg) translateZ(22px); }
+.middle { inset: 8%; transform: rotateY(62deg) rotateX(-22deg) translateZ(-12px); }
+.inner { inset: 20%; transform: rotateX(-38deg) rotateY(-28deg) translateZ(34px); }
+
+.core {
+  position: absolute;
+  inset: 37%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--accent-hover) 75%, var(--bg)), color-mix(in srgb, var(--accent) 24%, transparent) 45%, color-mix(in srgb, var(--accent) 6%, transparent) 72%);
+  box-shadow: inset -9px -13px 20px color-mix(in srgb, var(--bg) 50%, transparent), 0 0 46px color-mix(in srgb, var(--accent) 20%, transparent);
+  transform: translateZ(38px);
+}
+
+@keyframes orbit {
+  from { transform: translate3d(0, -9px, 0) rotateX(-18deg) rotateY(-24deg) rotateZ(-20deg); }
+  to { transform: translate3d(0, 12px, 0) rotateX(2deg) rotateY(12deg) rotateZ(10deg); }
+}
+
+@media (max-width: 900px) {
+  .glow { top: -3rem; right: -5rem; width: min(600px, 80vw); }
+}
+
+@media (max-width: 600px) {
+  .glow { top: -4rem; right: -6rem; width: 390px; opacity: .62; }
+  .perspective { inset: 15%; }
+  .haze { filter: blur(18px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt { transform: none; transition: none; }
+  .sculpture { animation: none; }
+}
+
+@media print {
+  .glow { display: none; }
+}

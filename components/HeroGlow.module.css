@@ -1,91 +1,25 @@
-.glow {
-  position: absolute;
-  z-index: 0;
-  top: -5rem;
-  right: -2.5rem;
-  width: min(700px, 64vw);
-  aspect-ratio: 1;
-  pointer-events: none;
-}
-
-.haze {
-  position: absolute;
-  inset: 7% -8%;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 45%, color-mix(in srgb, var(--accent) 22%, transparent), color-mix(in srgb, var(--accent) 8%, transparent) 40%, transparent 68%);
-  filter: blur(28px);
-}
-
-.perspective {
-  position: absolute;
-  inset: 17%;
-  perspective: 1000px;
-}
-
-.tilt,
-.sculpture {
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-}
-
-.tilt {
-  transform: rotateX(var(--glow-rotate-x, 0deg)) rotateY(var(--glow-rotate-y, 0deg));
-  transition: transform 700ms cubic-bezier(.2, .7, .2, 1);
-}
-
-.sculpture {
-  transform: rotateX(-18deg) rotateY(-24deg) rotateZ(-20deg);
-  animation: orbit 18s ease-in-out infinite alternate;
-  animation-play-state: paused;
-}
-
-.glow[data-active="true"] .sculpture { animation-play-state: running; }
-
-.ring {
-  position: absolute;
-  inset: 0;
-  border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
-  border-top: 3px solid color-mix(in srgb, var(--accent-hover) 70%, transparent);
-  border-bottom: 9px solid color-mix(in srgb, var(--accent) 20%, transparent);
-  border-radius: 50%;
-  background: linear-gradient(145deg, color-mix(in srgb, var(--accent-hover) 7%, transparent), transparent 48%, color-mix(in srgb, var(--accent) 5%, transparent));
-  box-shadow: inset 0 0 22px color-mix(in srgb, var(--accent) 13%, transparent), 0 0 24px color-mix(in srgb, var(--accent) 12%, transparent);
-}
-
-.outer { transform: rotateX(58deg) translateZ(22px); }
-.middle { inset: 8%; transform: rotateY(62deg) rotateX(-22deg) translateZ(-12px); }
-.inner { inset: 20%; transform: rotateX(-38deg) rotateY(-28deg) translateZ(34px); }
-
-.core {
-  position: absolute;
-  inset: 37%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--accent-hover) 75%, var(--bg)), color-mix(in srgb, var(--accent) 24%, transparent) 45%, color-mix(in srgb, var(--accent) 6%, transparent) 72%);
-  box-shadow: inset -9px -13px 20px color-mix(in srgb, var(--bg) 50%, transparent), 0 0 46px color-mix(in srgb, var(--accent) 20%, transparent);
-  transform: translateZ(38px);
-}
-
-@keyframes orbit {
-  from { transform: translate3d(0, -9px, 0) rotateX(-18deg) rotateY(-24deg) rotateZ(-20deg); }
-  to { transform: translate3d(0, 12px, 0) rotateX(2deg) rotateY(12deg) rotateZ(10deg); }
-}
-
-@media (max-width: 900px) {
-  .glow { top: -3rem; right: -5rem; width: min(600px, 80vw); }
-}
-
-@media (max-width: 600px) {
-  .glow { top: -4rem; right: -6rem; width: 390px; opacity: .62; }
-  .perspective { inset: 15%; }
-  .haze { filter: blur(18px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tilt { transform: none; transition: none; }
-  .sculpture { animation: none; }
-}
-
-@media print {
-  .glow { display: none; }
-}
+.scene { position: relative; width: 100%; min-width: 0; height: 475px; perspective: 1400px; }
+.stack { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)); transition: transform 350ms ease-out; }
+.code { position: absolute; width: 83%; left: 7%; top: 8px; background: #111d31; color: #c9d8ed; border: 1px solid #3c5577; border-radius: 12px; overflow: hidden; transform: rotateY(-15deg) rotateX(5deg) rotateZ(-5deg) translateZ(-30px); box-shadow: 0 20px 50px #132c5230, 0 0 48px color-mix(in srgb,var(--accent) 12%,transparent); }
+.codeTitle { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid #2b3d58; font: 11px ui-monospace,monospace; }
+.codeTitle > span { color: #93baff; font-size: 16px; }
+.codeTitle i { margin-left: auto; font-style: normal; color: #91a9c8; }
+.code pre { margin: 0; padding: 20px 20px 52px; font: 11px/1.85 ui-monospace,SFMono-Regular,Consolas,monospace; }
+.purple { color: #c4a8fa; }
+.blue { color: #9ac6ff; }
+.green { color: #9bddb4; }
+.product { position: absolute; width: 87%; top: 195px; left: 0; border: 1px solid #879aae; border-radius: 12px; overflow: hidden; background: #f9fbff; color: #172439; box-shadow: 0 22px 42px #0b234c2e, 6px 7px 0 -3px #91a0b5; transform: rotateY(-12deg) rotateX(7deg) rotateZ(-3deg) translateZ(35px); }
+.productBar, .productFooter { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; gap: 8px; }
+.productBar { font-size: 9px; color: #556880; }
+.product img { width: 100%; height: auto; display: block; max-height: 222px; object-fit: cover; object-position: top; border-block: 1px solid #d8e0e9; }
+.productFooter strong { font-size: 11px; font-weight: 600; }
+.productFooter > span { font-size: 8px; color: #586a80; }
+.phone { position: absolute; width: 98px; height: 204px; right: 1%; top: 246px; overflow: hidden; padding: 5px; border: 1px solid #768296; border-radius: 19px; background: #202b3b; box-shadow: 0 20px 35px #091b4038; transform: rotateY(-18deg) rotateZ(7deg) translateZ(85px); }
+.phone img { width: 100%; height: auto; display: block; border-radius: 14px 14px 0 0; }
+.island { position: absolute; z-index: 1; top: 8px; width: 28px; height: 7px; border-radius: 10px; left: calc(50% - 14px); background: #18212d; }
+.note { position: absolute; top: 505px; left: 10px; display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 10px; }
+.note > span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+@media (max-width: 1050px) and (min-width: 761px) { .scene { transform: scale(.88); transform-origin: center; } }
+@media (max-width: 760px) { .scene { max-width: 440px; height: 440px; margin-inline: auto; } .code { top: 5px; left: 9%; width: 88%; } .code pre { font-size: 10px; padding: 16px 16px 40px; } .product { top: 172px; width: 87%; left: 0; } .product img { max-height: 184px; } .phone { top: 226px; width: 83px; height: 176px; right: 0; } .note { top: 425px; left: 0; font-size: 9px; } .productFooter { padding: 10px; } .productFooter strong { font-size: 9px; } .productFooter > span { font-size: 7px; } }
+@media (prefers-reduced-motion: reduce) { .stack { transform: none; transition: none; } }
+@media print { .scene { display: none; } }

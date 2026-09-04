@@ -1,0 +1,15 @@
+.device { width: 100%; padding: 14px 12px 22px; border: 1px solid #50545b; border-radius: 17px; background: #202327; box-shadow: 10px 16px 0 -8px #46494e, 0 26px 36px #0e16232b; }
+.screen { container-type: inline-size; min-width: 0; aspect-ratio: 3/4; background: #fff; color: #202329; border-radius: 3px; overflow: hidden; display: flex; flex-direction: column; font-family: Arial, sans-serif; }
+.header { display: flex; align-items: center; gap: 12px; padding: 6% 5%; border-bottom: 1px solid #ddd; }
+.header img { display: block; width: 65%; height: auto; margin-right: auto; border-radius: 0; }
+.header > span { font-size: 4cqw; white-space: nowrap; }
+.help { width: 16px; height: 16px; border: 1px solid #1d232b; border-radius: 50%; text-align: center; line-height: 15px; }
+.content { padding: 10% 9% 5%; text-align: center; flex: 1; }
+.content > strong { font-size: 5.4cqw; font-weight: 500; line-height: 1.2; display: block; }
+.content > p { margin: 4% auto 8%; max-width: 95%; font-size: 3.5cqw; line-height: 1.5; }
+.input { height: 10cqw; width: 79%; margin: 0 auto 6%; border: 1px solid #1572a8; border-radius: 2px; }
+.keypad { width: 66%; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 4px; }
+.keypad span { display: grid; place-items: center; height: 10cqw; background: #edf0f1; border: 1px solid #adb2b5; border-radius: 3px; font-size: 4.5cqw; }
+.keypad span:nth-child(10) { font-size: 2.6cqw; }
+.enter { display: block; width: 66%; padding: 7px 0; margin: 6% auto 0; background: #22262a; color: #fff; border-radius: 3px; font-size: 3.2cqw; }
+.footer { padding: 5% 6%; border-top: 1px solid #e5e5e5; color: #62666c; font-size: 2.6cqw; }

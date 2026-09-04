@@ -596,3 +596,38 @@ main [id] { scroll-margin-top: 108px; }
   .resume-page { padding: 0; }
   .resume-sheet { border: 0; box-shadow: none; max-width: none; padding: 0; }
 }
+
+/* Product-focused 3D hero and selected project presentations. */
+.hero { min-height: 0; padding-top: 50px; padding-bottom: 60px; }
+.hero::after { display: none; }
+.hero-layout { display: grid; grid-template-columns: 1.08fr 1fr; align-items: center; gap: clamp(32px, 5vw, 70px); }
+.hero-layout .hero-scroll-copy { transform: none; opacity: 1; }
+.hero-layout h1 { margin: 20px 0 26px; font-size: clamp(3.3rem, 5.1vw, 5rem); max-width: 640px; line-height: 1.03; }
+.hero-layout .hero-grid { display: block; }
+.hero-layout .hero-grid > p { max-width: 500px; font-size: 1.05rem; line-height: 1.7; }
+.hero-layout .actions { justify-content: flex-start; margin-top: 28px; gap: 10px; }
+.hero-layout .button { font-size: .85rem; padding: .8rem 1rem; }
+.hero-layout .hero-positioning { font-size: .7rem; letter-spacing: .1em; }
+.hero-scroll-impact { margin-top: 76px; transform: none; opacity: 1; }
+.hero-impact { margin-top: 0; }
+.project-card.featured { min-height: 560px; }
+.project-product-stage { min-width: 0; min-height: 500px; padding: 34px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; overflow: hidden; }
+.villages-preview-stage { background: #e7ece8; }
+.parcel-preview-stage { background: #eae8e4; }
+.project-browser { width: 100%; border: 1px solid #b6c2bb; border-radius: 9px; overflow: hidden; background: white; box-shadow: 0 24px 35px #13332422; transform: perspective(1100px) rotateY(7deg) rotateX(3deg); }
+.project-browser-bar { color: #5d6b61; background: #f9fbf9; padding: 9px 12px; font-size: 9px; }
+.project-browser img { display: block; width: 100%; height: auto; }
+.project-kiosk { width: min(72%, 270px); transform: perspective(1100px) rotateY(-10deg) rotateX(3deg); }
+.project-preview-label { color: #58655d; font-size: .75rem; text-align: center; letter-spacing: .02em; }
+.parcel-preview-stage .project-preview-label { color: #595d64; }
+@media (max-width: 900px) { .project-product-stage { min-height: 420px; padding: 34px; } }
+@media (max-width: 760px) {
+ .hero { padding-top: 28px; padding-bottom: 40px; }
+ .hero-layout { grid-template-columns: 1fr; gap: 38px; }
+ .hero-layout h1 { font-size: clamp(3.1rem, 10.5vw, 4.5rem); margin-top: 20px; }
+ .hero-layout .hero-grid > p { font-size: 1rem; }
+ .hero-layout .actions { flex-wrap: wrap; }
+ .hero-scroll-impact { margin-top: 55px; }
+ .project-product-stage { min-height: 330px; padding: 26px; gap: 26px; }
+ .project-kiosk { width: min(75%, 230px); }
+}

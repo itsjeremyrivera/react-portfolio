@@ -1,398 +1,95 @@
-import { CaseStudyNavigation, NextCaseStudy } from "../../../components/CaseStudyNavigation";
+import Image from "next/image";
 import SiteHeader from "../../../components/SiteHeader";
-
-const RESUME_URL = "/JeremyRiveraResume.pdf";
-
-const productDecisions = [
-  {
-    title: "Turn ambiguous data into useful choices",
-    copy: "I helped consolidate overlapping property data into a filter structure people could understand without knowing the organization behind the data.",
-  },
-  {
-    title: "Keep browsing and geography connected",
-    copy: "The listing rail and map work as one canvas, helping people compare home details without losing the location context behind each option.",
-  },
-  {
-    title: "Let people inspect a home without losing their search",
-    copy: "The detail layer keeps the search visible behind it while bringing photography, specifications, floor plans, saving, sharing, and contact actions together.",
-  },
-  {
-    title: "Adapt the hierarchy instead of shrinking it",
-    copy: "On mobile, search, filters, saved homes, map access, listing cards, and home details are reorganized around touch and one-handed scanning.",
-  },
-  {
-    title: "Protect the design through implementation",
-    copy: "Working directly in Angular let me resolve responsive and component-level decisions with the engineers instead of losing them between design and production.",
-  },
-];
+import PhoneMockup from "../../../components/PhoneMockup";
+import { CaseStudyNavigation, NextCaseStudy } from "../../../components/CaseStudyNavigation";
+import styles from "../../../components/CasePresentation.module.css";
 
 export const metadata = {
   alternates: { canonical: "/work/villages" },
   title: "The Villages Homefinder Case Study",
-  description: "Designing and building a responsive Angular micro-frontend for home search across The Villages website and mobile apps.",
+  description: "Product design and Angular implementation for a connected home search experience across web and mobile.",
 };
 
 export default function VillagesCaseStudy() {
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
-      <SiteHeader resumeUrl={RESUME_URL} navBase="/" />
-
-      <main id="main" className="case-study-page villages-case-study">
-        <section className="case-hero shell" id="top">
-          <a className="case-back" href="/#work">&larr; Back to selected work</a>
-          <p className="eyebrow">The Villages / Homefinder</p>
-          <h1>Modernizing home search across web and mobile.</h1>
-          <p className="case-lede">
-            I helped redesign and build Homefinder, an Angular micro-frontend that
-            brings property discovery, filters, geographic context, and home details
-            into one responsive experience across web and mobile applications.
-          </p>
-          <div className="case-meta" aria-label="Project details">
-            <div><span>Role</span><strong>Product design + Angular implementation</strong></div>
-            <div><span>Team</span><strong>4 design engineers + 2 software engineers</strong></div>
-            <div><span>Delivery</span><strong>Responsive web + embedded mobile</strong></div>
-          </div>
-          <CaseStudyNavigation sections={[
-            ["context", "Context"],
-            ["interaction-model", "Interactions"],
-            ["platform-strategy", "Implementation"],
-            ["design-decisions", "Design decisions"],
-            ["contribution", "My contribution"],
-          ]} />
-        </section>
-
-        <figure className="villages-hero-media shell">
-          <div className="villages-desktop-frame">
-            <img
-              src="/images/villages/homefinder-desktop.png"
-              alt="Homefinder desktop experience with listing filters, home results, and an interactive map"
-            />
-          </div>
-          <div className="villages-mobile-frame">
-            <img
-              src="/images/villages/homefinder-mobile.png"
-              alt="Homefinder mobile experience showing responsive search and listing cards"
-            />
-          </div>
-          <figcaption>
-            The live Homefinder experience across desktop and a true 360px mobile viewport.
-            No internal data or unreleased application designs are shown.
-          </figcaption>
-        </figure>
-
-        <section id="context" className="case-section shell">
-          <div className="case-section-heading">
-            <p className="eyebrow">01 / Context</p>
-            <h2>A high-intent search experience inside a much larger ecosystem.</h2>
-          </div>
-          <div className="case-section-copy">
-            <p>
-              Homefinder is where prospective residents move from exploring The Villages
-              lifestyle to comparing real homes. The experience brings new homes,
-              pre-owned homes, and homesites into one searchable list-and-map workspace.
-            </p>
-            <p>
-              A legacy version had already established familiar behaviors, but the product
-              also carried ambiguous data points and cross-platform constraints. The work
-              required improving clarity without disrupting the way returning users searched.
-            </p>
-          </div>
-        </section>
-
-        <section className="villages-challenge-section shell" aria-labelledby="villages-challenge-title">
-          <div className="case-section-heading">
-            <p className="eyebrow">02 / Product challenge</p>
-            <h2 id="villages-challenge-title">Make complexity useful before making it invisible.</h2>
-          </div>
-          <div className="villages-challenge-grid">
-            <article>
-              <span>Data</span>
-              <h3>One understandable property model</h3>
-              <p>Consolidate ambiguous and overlapping listing attributes into filters people could confidently use.</p>
-            </article>
-            <article>
-              <span>Continuity</span>
-              <h3>A respectful evolution of a legacy tool</h3>
-              <p>Improve hierarchy and interaction patterns while preserving the mental model returning users already knew.</p>
-            </article>
-            <article>
-              <span>Delivery</span>
-              <h3>One product across several hosts</h3>
-              <p>Build a responsive experience that works independently on the web and as an embedded mobile surface.</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="interaction-model" className="villages-interaction-section shell" aria-labelledby="villages-interaction-title">
-          <div className="case-section-heading">
-            <p className="eyebrow">03 / Interaction model</p>
-            <h2 id="villages-interaction-title">Move naturally from discovery to a confident decision.</h2>
-          </div>
-          <p className="villages-section-intro">
-            The strongest part of the experience is not a single screen. It is the way
-            browsing, narrowing, and evaluating a home stay connected as one journey.
-          </p>
-          <div className="villages-interaction-list">
-            <article>
-              <div className="villages-interaction-copy">
-                <span>01 / Explore</span>
-                <h3>Scan homes without losing location context.</h3>
-                <p>
-                  The split list-and-map canvas supports quick visual comparison while
-                  category toggles keep new homes, pre-owned homes, and homesites in one search.
-                </p>
-              </div>
-              <figure>
-                <img src="/images/villages/homefinder-desktop.png" alt="Homefinder desktop interface with listing results beside an interactive property map" loading="lazy" />
-              </figure>
-            </article>
-            <article>
-              <div className="villages-interaction-copy">
-                <span>02 / Refine</span>
-                <h3>Turn complex inventory into understandable choices.</h3>
-                <p>
-                  A focused filter layer brings series, areas, bedrooms, bathrooms,
-                  garage, homesite, price, square footage, pool, and open-home criteria
-                  together without permanently crowding the map.
-                </p>
-              </div>
-              <figure>
-                <img src="/images/villages/homefinder-filters.png" alt="Homefinder property filters layered over the map and listing interface" loading="lazy" />
-              </figure>
-            </article>
-            <article>
-              <div className="villages-interaction-copy">
-                <span>03 / Decide</span>
-                <h3>Bring the evidence and next actions into one place.</h3>
-                <p>
-                  The home-detail layer combines the gallery, tour, price, specifications,
-                  map, floor plan, save, share, features, and contact paths while preserving
-                  the search behind it.
-                </p>
-              </div>
-              <figure>
-                <img src="/images/villages/homefinder-detail.png" alt="Homefinder detail layer with property gallery, specifications, floor plan, save, share, and contact actions" loading="lazy" />
-              </figure>
-            </article>
-          </div>
-        </section>
-
-        <section className="villages-detail-section shell" aria-labelledby="villages-detail-title">
-          <div className="case-section-heading">
-            <p className="eyebrow">04 / Detail experience</p>
-            <h2 id="villages-detail-title">Design the moments between interest and action.</h2>
-          </div>
-          <p className="villages-section-intro">
-            Opening a listing creates a focused decision environment. Photography,
-            property context, practical actions, and a path to a real person stay
-            connected without forcing someone to abandon their search.
-          </p>
-
-          <figure className="villages-lightbox-figure">
-            <img
-              src="/images/villages/homefinder-lightbox.png"
-              alt="Homefinder full-screen property gallery with photo, tour, and map modes plus previous and next image controls"
-              loading="lazy"
-            />
-            <figcaption>
-              The live gallery supports Photos, Tour, and Map modes, desktop arrow
-              controls, and horizontal swipe navigation on touch screens.
-            </figcaption>
+      <SiteHeader resumeUrl="/JeremyRiveraResume.pdf" navBase="/" />
+      <main id="main" className={styles.page}>
+        <div className={styles.wrap}>
+          <header className={styles.intro} id="top">
+            <a className={styles.back} href="/#work">← Selected work</a>
+            <p className="eyebrow">The Villages / Homefinder</p>
+            <h1>A better way to find a place to call home.</h1>
+            <p className={styles.lede}>I helped design and build a connected home search experience, bringing listings, filters, maps, and property details together across web and mobile.</p>
+            <dl className={styles.meta}>
+              <div><dt>My role</dt><dd>Product design + Angular implementation</dd></div>
+              <div><dt>Team</dt><dd>4 design engineers + 2 software engineers</dd></div>
+              <div><dt>Platform</dt><dd>Responsive web + embedded mobile</dd></div>
+            </dl>
+          </header>
+          <figure className={styles.stage}>
+            <div className={styles.desktop}>
+              <div className={styles.toolbar} aria-hidden="true"><i /><i /><i /><span>thevillages.com / homefinder</span></div>
+              <Image src="/images/villages/homefinder-desktop.png" alt="Homefinder with property results beside the map and search controls above" width={1440} height={1000} sizes="(max-width: 760px) 90vw, 1020px" priority />
+            </div>
           </figure>
-
-          <div className="villages-detail-grid">
-            <article>
-              <span>Visual evaluation</span>
-              <h3>Make the home the focus.</h3>
-              <p>
-                The lightbox removes surrounding search noise and lets people move
-                through a deep photo set. On a 360px viewport, a horizontal swipe
-                advances the gallery without relying on small arrow targets.
-              </p>
-            </article>
-            <article>
-              <span>Action hierarchy</span>
-              <h3>Keep high-value actions within reach.</h3>
-              <p>
-                Map and Floor Plan receive primary emphasis, while Save, call, and
-                Share form a compact secondary row that stays easy to scan on mobile.
-              </p>
-            </article>
-            <article>
-              <span>Progressive disclosure</span>
-              <h3>Reveal depth without front-loading it.</h3>
-              <p>
-                Home Features, the home series, and community context live in
-                accordions with smooth height transitions, adding detail without
-                overwhelming the first read.
-              </p>
-            </article>
-            <article>
-              <span>Guided conversion</span>
-              <h3>Connect interest to a human next step.</h3>
-              <p>
-                The desktop detail layer keeps a sales-help form beside the home,
-                while phone, Sell, and Relocate paths support an agent-assisted
-                transition from consideration to conversation.
-              </p>
-            </article>
+          <p className={styles.caption}>Listings and location share one workspace, so comparing a home keeps its neighborhood in view.</p>
+          <div className={styles.contents}>
+            <CaseStudyNavigation sections={[["context", "The challenge"], ["interaction-model", "Search & details"], ["mobile", "Mobile experience"], ["platform-strategy", "Implementation"], ["contribution", "My contribution"]]} />
           </div>
 
-          <div className="villages-motion-demo">
-            <div className="villages-motion-copy">
-              <span>Live interaction capture</span>
-              <h3>See the detail experience move.</h3>
-              <p>
-                Recorded from the public product at a true mobile viewport, this
-                loop follows the journey from property details into the immersive
-                gallery, through a horizontal image change, and back into the
-                expandable home information.
-              </p>
+          <section id="context" className={`${styles.chapter} ${styles.split}`}>
+            <div><p className="eyebrow">01 / The challenge</p><h2>Make a complex search feel familiar.</h2></div>
+            <div className={styles.copy}>
+              <p>Homefinder brings new homes, pre-owned homes, and homesites into one search. Returning visitors already knew the legacy tool, while the underlying listing data included overlapping and ambiguous attributes.</p>
+              <p>I worked with stakeholders to turn that complexity into useful choices, preserving familiar browsing behavior while clarifying the hierarchy of filters, results, and home details.</p>
             </div>
-            <figure className="villages-motion-figure">
-              <div className="villages-phone-frame villages-motion-phone">
-                <picture>
-                  <source
-                    media="(prefers-reduced-motion: no-preference)"
-                    srcSet="/images/villages/homefinder-mobile-interactions.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="/images/villages/homefinder-mobile-detail.png"
-                    alt="Mobile Homefinder interaction showing a property gallery, image navigation, and expandable home features"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
-              <figcaption>
-                Real mobile behavior: open the gallery, move between photos, and
-                reveal additional property details.
-              </figcaption>
-            </figure>
-          </div>
-        </section>
+          </section>
 
-        <section id="platform-strategy" className="case-product-section villages-platform-section">
-          <div className="shell">
-            <div className="case-section-heading">
-              <p className="eyebrow">05 / Platform strategy</p>
-              <h2>A shared product, not three look-alike interfaces.</h2>
-            </div>
-            <p className="case-product-intro">
-              Homefinder was implemented as an Angular micro-frontend so the product
-              could keep one interface foundation while being consumed by different
-              web and mobile environments.
-            </p>
-            <div className="villages-platform-flow" aria-label="Homefinder platform architecture">
-              <div className="villages-flow-source">
-                <span>Structured input</span>
-                <strong>Property data</strong>
-                <p>Listings, categories, attributes, status, pricing, and location.</p>
-              </div>
-              <span className="villages-flow-arrow" aria-hidden="true">&rarr;</span>
-              <div className="villages-flow-core">
-                <span>Shared product layer</span>
-                <strong>Angular Homefinder micro-frontend</strong>
-                <p>Filters, cards, map, saved homes, responsive behavior, and iconography.</p>
-              </div>
-              <span className="villages-flow-arrow" aria-hidden="true">&rarr;</span>
-              <div className="villages-flow-destinations">
-                <article><span>Live</span><strong>Public website</strong></article>
-                <article><span>Embedded today</span><strong>Legacy mobile app</strong></article>
-                <article><span>Integration in progress</span><strong>Next-generation app</strong></article>
+          <section id="interaction-model" className={styles.chapter}>
+            <div className={styles.split}>
+              <div><p className="eyebrow">02 / Search & details</p><h2>Keep the journey connected.</h2></div>
+              <div>
+                <article className={styles.decision}><span>01</span><div><h3>Refine without crowding the search</h3><p>A dedicated filter layer organizes price, home features, location, and property criteria while keeping the main canvas focused on results.</p></div></article>
+                <article className={styles.decision}><span>02</span><div><h3>Inspect a home without losing your place</h3><p>Property details open over the search. Photography, specifications, floor plans, and contact actions stay together in one focused view.</p></div></article>
               </div>
             </div>
-          </div>
-        </section>
+            <div className={styles.screens}>
+              <figure><a className={styles.screen} href="/images/villages/homefinder-filters.png" target="_blank" rel="noreferrer" aria-label="Open the full Homefinder filter screen" style={{display:"block"}}><Image src="/images/villages/homefinder-filters.png" alt="Property filter controls over the Homefinder search" width={1440} height={1000} sizes="(max-width: 760px) 90vw, 540px" /></a><figcaption className={styles.screenCaption}><strong>Refine the search</strong>Related criteria live together. Open the image for a closer look.</figcaption></figure>
+              <figure><a className={styles.screen} href="/images/villages/homefinder-detail.png" target="_blank" rel="noreferrer" aria-label="Open the full Homefinder property detail screen" style={{display:"block"}}><Image src="/images/villages/homefinder-detail.png" alt="A home detail view with a photo gallery, home facts, and contact options" width={1440} height={1000} sizes="(max-width: 760px) 90vw, 540px" /></a><figcaption className={styles.screenCaption}><strong>Evaluate a home</strong>Information and the next action share the same view.</figcaption></figure>
+            </div>
+          </section>
 
-        <section id="design-decisions" className="case-section shell villages-decisions-section">
-          <div className="case-section-heading">
-            <p className="eyebrow">06 / Design decisions</p>
-            <h2>Make a dense search tool feel direct and approachable.</h2>
-          </div>
-          <div className="villages-decision-list">
-            {productDecisions.map((decision, index) => (
-              <article key={decision.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{decision.title}</h3>
-                  <p>{decision.copy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+          <section id="mobile" className={styles.chapter}>
+            <p className="eyebrow">03 / Mobile experience</p>
+            <h2>The same journey, designed for a smaller screen.</h2>
+            <p className={styles.copy}>Search, filters, and home details adapt around touch. The phone stays the same size while the content moves inside it.</p>
+            <div className={styles.mobileShowcase}>
+              <div><h3>Explore Homefinder in motion.</h3><p className={styles.copy}>Browse the listings, open a home, and explore its details in a recording of the public mobile experience.</p><a className="button secondary inline-button" href="https://www.thevillages.com/homefinder/" target="_blank" rel="noreferrer">Open live Homefinder <span aria-hidden="true">↗</span></a></div>
+              <PhoneMockup src="/images/villages/homefinder-mobile-poster.jpg" videoSrc="/images/villages/homefinder-mobile-walkthrough.mp4" alt="Mobile Homefinder recording showing listing scroll, property details, expandable features, and the photo gallery" caption="Recorded from live Homefinder at a 390px mobile viewport. Press play to watch." />
+            </div>
+            <p className={styles.hint}>Scroll inside each phone to explore the full screen. You can also focus a phone and use the arrow keys.</p>
+            <div className={styles.phoneGrid}>
+              <PhoneMockup src="/images/villages/homefinder-mobile.png" alt="Homefinder mobile listing results" caption={<><strong>Browse</strong>Compare homes with search and map access close by.</>} />
+              <PhoneMockup src="/images/villages/homefinder-mobile-filters.png" alt="Homefinder mobile search filters" caption={<><strong>Refine</strong>Focus on the criteria that matter to the search.</>} />
+              <PhoneMockup src="/images/villages/homefinder-mobile-detail.png" alt="Homefinder mobile property details" caption={<><strong>Inspect</strong>Move from photos to home facts and contact actions.</>} />
+            </div>
+          </section>
 
-        <section className="villages-responsive-section shell">
-          <div className="case-section-heading">
-            <p className="eyebrow">07 / Responsive experience</p>
-            <h2>Preserve the journey while changing the hierarchy.</h2>
-          </div>
-          <p className="villages-section-intro">
-            Mobile adapts the same product logic to the needs of a smaller
-            screen. These complete 360px states show how the experience moves from
-            browsing to refinement and detailed evaluation.
-          </p>
-          <div className="villages-mobile-grid">
-            <figure>
-              <div className="villages-phone-frame">
-                <img src="/images/villages/homefinder-mobile.png" alt="Mobile Homefinder browse state with search controls and full listing cards" loading="lazy" />
-              </div>
-              <figcaption><strong>Browse</strong><span>Search and compare complete listing cards.</span></figcaption>
-            </figure>
-            <figure>
-              <div className="villages-phone-frame">
-                <img src="/images/villages/homefinder-mobile-filters.png" alt="Mobile Homefinder filters with property criteria and persistent actions" loading="lazy" />
-              </div>
-              <figcaption><strong>Refine</strong><span>Focus on criteria without competing content.</span></figcaption>
-            </figure>
-            <figure>
-              <div className="villages-phone-frame">
-                <img src="/images/villages/homefinder-mobile-detail.png" alt="Mobile Homefinder property detail with gallery, facts, actions, and features" loading="lazy" />
-              </div>
-              <figcaption><strong>Inspect</strong><span>Evaluate a home and act from one clear view.</span></figcaption>
-            </figure>
-          </div>
-        </section>
+          <section id="platform-strategy" className={`${styles.chapter} ${styles.split}`}>
+            <div><p className="eyebrow">04 / Implementation</p><h2>One interface foundation across platforms.</h2></div>
+            <div className={styles.copy}><p>The Angular micro-frontend gives the web and embedded mobile experience a shared foundation. Filters, listing cards, responsive behavior, and iconography follow the same product logic.</p><p>Working directly in the frontend let me resolve responsive details with engineering and carry the design through implementation.</p><div className={styles.platforms} aria-label="Implementation scope"><span>Angular micro-frontend</span><span>Responsive web</span><span>Embedded mobile</span></div></div>
+          </section>
 
-        <section id="contribution" className="case-section shell villages-contribution-section">
-          <div className="case-section-heading">
-            <p className="eyebrow">08 / Contribution</p>
-            <h2>Design decisions grounded in stakeholder needs and production code.</h2>
-          </div>
-          <div className="case-section-copy">
-            <p>
-              I worked directly with stakeholders to clarify requirements, resolve
-              ambiguity in the available data, and make product decisions alongside
-              four design engineers and two software engineers.
-            </p>
-            <p>
-              My contribution extended through the frontend: I designed interface
-              patterns and iconography, implemented substantial parts of the Angular
-              experience, and collaborated through responsive behavior and production delivery.
-            </p>
-            <p>
-              The current Homefinder is live on the public website and embedded in the
-              legacy application. Integration into the redesigned application is still
-              in progress, so no unreleased screens or unfinished outcomes are presented here.
-            </p>
-            <a className="button secondary inline-button" href="https://www.thevillages.com/homefinder/" target="_blank" rel="noreferrer">
-              View live Homefinder <span aria-hidden="true">&#8599;</span>
-            </a>
-          </div>
-        </section>
-
-        <NextCaseStudy
-          href="/work/parcel-pending"
-          company="Parcel Pending by Quadient"
-          title="A focused multilingual kiosk experience for self-service parcel pickup."
-        />
+          <section id="contribution" className={`${styles.chapter} ${styles.split}`}>
+            <div><p className="eyebrow">05 / My contribution</p><h2>From ambiguous requirements to working interfaces.</h2></div>
+            <div className={styles.copy}><p>I clarified requirements with stakeholders, helped structure the property information, and designed the search, filter, and detail patterns. My contribution also included iconography, Angular implementation, and responsive refinement alongside the engineering team.</p><p>The result presented here is the public Homefinder experience, with one continuous path from discovery to evaluating a home.</p></div>
+          </section>
+          <div className={styles.next}><NextCaseStudy href="/work/parcel-pending" company="Parcel Pending by Quadient" title="A focused multilingual kiosk experience for self-service parcel pickup." /></div>
+        </div>
       </main>
-
-      <footer className="site-footer shell">
-        <span>Jeremy Rivera / Product Designer</span>
-      </footer>
+      <footer className="site-footer shell"><span>Jeremy Rivera / Product Designer</span></footer>
     </>
   );
 }

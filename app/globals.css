@@ -151,6 +151,7 @@ button { font: inherit; }
 .hero-status span { width: 7px; height: 7px; border-radius: 50%; background: #35c46a; box-shadow: 0 0 0 5px rgba(53, 196, 106, .12); }
 .hero h1, .section-heading h2, .bridge h2, .contact h2 { font-family: var(--serif); font-weight: 400; letter-spacing: -.052em; line-height: .98; }
 .hero h1 { max-width: 1050px; margin: 1.35rem 0 2.8rem; font-size: clamp(3.7rem, 7vw, 7rem); text-wrap: balance; }
+.hero-positioning { font-size: .8125rem; letter-spacing: .12em; }
 .hero h1 em { color: var(--accent); font-weight: 400; }
 .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 4rem; align-items: end; }
 .hero-grid > p { margin: 0; max-width: 790px; color: var(--muted); font-size: clamp(1.08rem, 1.55vw, 1.34rem); }
@@ -211,19 +212,30 @@ button { font: inherit; }
 .placeholder-label strong { display: block; margin-top: .45rem; font-family: var(--serif); font-size: clamp(2rem, 4vw, 4.4rem); font-weight: 400; line-height: 1; }
 .placeholder-label small { display: block; margin-top: .65rem; max-width: 450px; color: var(--muted); font-size: .8rem; }
 .project-copy { padding: clamp(2rem, 4vw, 3.4rem); display: flex; flex-direction: column; align-items: flex-start; }
-.project-meta { display: flex; flex-wrap: wrap; gap: .72rem; color: var(--accent); text-transform: uppercase; letter-spacing: .09em; font-size: .64rem; font-weight: 800; }
+.project-meta { display: flex; flex-wrap: wrap; gap: .72rem; color: var(--accent); text-transform: uppercase; letter-spacing: .09em; font-size: .75rem; font-weight: 800; }
 .project-meta span + span::before { content: "/"; padding-right: .72rem; color: var(--quiet); }
 .project-copy h3 { margin: 2.2rem 0 .9rem; font-family: var(--serif); font-size: clamp(2.5rem, 4vw, 4.4rem); line-height: .98; font-weight: 400; }
 .project-copy p { margin: 0; color: var(--muted); }
 .project-copy .project-title { margin-bottom: 1rem; color: var(--text); font-size: 1.17rem; }
 .tag-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
 .tag-row span { border: 1px solid var(--line); border-radius: 999px; padding: .48rem .68rem; color: var(--muted); font-size: .73rem; }
+.project-contribution { width: 100%; margin: .35rem 0 1.5rem; padding-block: 1.1rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 1rem; }
+.project-contribution .project-role { margin-bottom: .7rem; color: var(--text); font-size: .875rem; font-weight: 650; }
+.project-role span { display: block; margin-bottom: .3rem; color: var(--accent); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
 .project-footer { width: 100%; margin-top: auto; padding-top: 3rem; }
 .case-study-button { min-height: 48px; padding: .75rem 1rem; border: 1px solid var(--line-strong); border-radius: 16px; background: var(--surface-2); color: var(--muted); font-weight: 750; }
 .case-study-button:disabled { cursor: not-allowed; opacity: .8; }
 .case-study-link { display: inline-flex; align-items: center; gap: .55rem; color: var(--text); text-decoration: none; transition: transform 160ms ease, border-color 160ms ease, color 160ms ease; }
 .case-study-link:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent); }
 
+main [id] { scroll-margin-top: 108px; }
+.case-contents { margin-top: 1.6rem; }
+.case-contents p { margin: 0 0 .55rem; color: var(--muted); font-size: .875rem; }
+.case-contents ul { display: flex; flex-wrap: wrap; gap: .45rem .65rem; margin: 0; padding: 0; list-style: none; }
+.case-contents a { display: inline-flex; align-items: center; min-height: 44px; padding: .45rem .8rem; border: 1px solid var(--line); border-radius: 10px; color: var(--text); font-size: .875rem; text-decoration: none; }
+.case-contents a:hover { border-color: var(--accent); color: var(--accent); background: var(--surface); }
+.case-next .case-next-description { max-width: 640px; margin: -1rem 0 2rem; color: var(--muted); font-size: 1.1rem; }
+.case-next-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
 .case-study-page { overflow: hidden; }
 .case-hero { padding-block: clamp(3rem, 6vw, 6rem) clamp(3rem, 5vw, 5rem); }
 .case-back { display: inline-flex; margin-bottom: clamp(4rem, 8vw, 7rem); color: var(--muted); text-decoration: none; font-size: .88rem; font-weight: 700; }

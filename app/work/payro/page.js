@@ -1,3 +1,4 @@
+import { CaseStudyNavigation, NextCaseStudy } from "../../../components/CaseStudyNavigation";
 import SiteHeader from "../../../components/SiteHeader";
 
 const RESUME_URL = "/JeremyRiveraResume.pdf";
@@ -49,7 +50,8 @@ const productImages = [
 ];
 
 export const metadata = {
-  title: "Payro Finance Case Study | Jeremy Rivera",
+  alternates: { canonical: "/work/payro" },
+  title: "Payro Finance Case Study",
   description: "Designing a clear, scalable payroll financing experience for small-business owners.",
 };
 
@@ -74,13 +76,19 @@ export default function PayroCaseStudy() {
             <div><span>Scope</span><strong>Onboarding, underwriting, dashboard</strong></div>
             <div><span>Deliverable</span><strong>Responsive UI and design system</strong></div>
           </div>
+          <CaseStudyNavigation sections={[
+            ["context", "Context"],
+            ["research", "Research"],
+            ["product-experience", "Product experience"],
+            ["design-system", "Design system"],
+          ]} />
         </section>
 
         <figure className="case-hero-image shell">
           <img src="/images/payro/payro-dashboard-hero.jpeg" alt="Payro payroll financing dashboard interface" />
         </figure>
 
-        <section className="case-section shell">
+        <section id="context" className="case-section shell">
           <div className="case-section-heading">
             <p className="eyebrow">01 / Context</p>
             <h2>A focused lending product for a critical business need.</h2>
@@ -98,7 +106,7 @@ export default function PayroCaseStudy() {
           </div>
         </section>
 
-        <section className="case-section shell case-process-section">
+        <section id="research" className="case-section shell case-process-section">
           <div className="case-section-heading">
             <p className="eyebrow">02 / Research and structure</p>
             <h2>Turn the operational model into a journey people can follow.</h2>
@@ -120,7 +128,7 @@ export default function PayroCaseStudy() {
           </div>
         </section>
 
-        <section className="case-product-section">
+        <section id="product-experience" className="case-product-section">
           <div className="shell">
             <div className="case-section-heading">
               <p className="eyebrow">03 / Product experience</p>
@@ -141,7 +149,7 @@ export default function PayroCaseStudy() {
           </div>
         </section>
 
-        <section className="case-section shell case-system-section">
+        <section id="design-system" className="case-section shell case-system-section">
           <div className="case-section-heading">
             <p className="eyebrow">04 / System and handoff</p>
             <h2>A reusable foundation for the product team.</h2>
@@ -158,11 +166,11 @@ export default function PayroCaseStudy() {
           </figure>
         </section>
 
-        <section className="case-next shell">
-          <p className="eyebrow">Selected work</p>
-          <h2>Return to the full portfolio.</h2>
-          <a className="button primary" href="/#work">View selected work <span aria-hidden="true">→</span></a>
-        </section>
+        <NextCaseStudy
+          href="/work/villages"
+          company="The Villages"
+          title="Modernizing home search across web and mobile."
+        />
       </main>
 
       <footer className="site-footer shell">

@@ -7,6 +7,7 @@ import styles from "./about.module.css";
 const RESUME_URL = "/JeremyRiveraResume.pdf";
 
 export const metadata = {
+  alternates: { canonical: "/about" },
   title: "About",
   description:
     "Jeremy Rivera's path from an old Macintosh Plus to product design, front-end development, and human-centered digital products.",

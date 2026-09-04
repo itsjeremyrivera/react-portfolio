@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SiteHeader from "../components/SiteHeader";
 import ParallaxController from "../components/ParallaxController";
 
@@ -12,6 +13,10 @@ const projects = [
     title: "Modernizing home search across web and mobile.",
     tags: ["Product design", "Angular", "Micro-frontend", "Responsive UI"],
     image: "/images/villages/homefinder-desktop.png",
+    width: 1440,
+    height: 1000,
+    role: "Product design + Angular implementation",
+    contribution: "Reworked search, filters, and home details for web and embedded mobile.",
     mediaClass: "villages-project-media",
     href: "/work/villages",
   },
@@ -23,6 +28,10 @@ const projects = [
     title: "A focused kiosk pickup flow designed for clarity at global scale.",
     tags: ["Product design", "Kiosk UI", "Localization", "Interaction design"],
     image: "/images/parcel-pending/parcel-pending-overview.svg",
+    width: 1200,
+    height: 800,
+    role: "Product design + kiosk interaction",
+    contribution: "Shaped a focused pickup flow with a consistent interaction model across languages.",
     mediaClass: "parcel-project-media",
     href: "/work/parcel-pending",
   },
@@ -34,6 +43,10 @@ const projects = [
     title: "Turning physical mail into a guided digital workflow.",
     tags: ["Product design", "UX/UI", "SaaS", "Design systems"],
     image: "/images/switch/switch-mail-overview.png",
+    width: 703,
+    height: 403,
+    role: "Product design + UI systems",
+    contribution: "Connected account setup, address verification, sending, and tracking in one guided workflow.",
     mediaClass: "switch-project-media",
     href: "/work/switch",
   },
@@ -46,6 +59,10 @@ const projects = [
     tags: ["Design systems", "SaaS", "Responsive UI"],
     imageNote: "Payro dashboard and design system imagery",
     image: "/images/payro/payro-dashboard-hero.jpeg",
+    width: 1600,
+    height: 1433,
+    role: "UX research + product design",
+    contribution: "Mapped the lending journey and created responsive interfaces and a reusable Figma design system.",
     href: "/work/payro",
   },
 ];
@@ -117,7 +134,13 @@ function ProjectPlaceholder({ project, featured }) {
     return (
       <div className={mediaClasses}>
         <div className="project-media-motion parallax-layer parallax-media-layer" data-parallax data-parallax-speed="24" data-parallax-x="6">
-          <img src={project.image} alt={`${project.company} product interface overview`} />
+          <Image
+            src={project.image}
+            alt={`${project.company} product interface overview`}
+            width={project.width}
+            height={project.height}
+            sizes="(max-width: 900px) calc(100vw - 64px), (max-width: 1268px) 52vw, 660px"
+          />
         </div>
       </div>
     );
@@ -160,12 +183,16 @@ function ProjectCard({ project, featured = false }) {
         </div>
         <h3>{project.company}</h3>
         <p className="project-title">{project.title}</p>
+        <div className="project-contribution">
+          <p className="project-role"><span>My role</span>{project.role}</p>
+          <p>{project.contribution}</p>
+        </div>
         <div className="tag-row">
           {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
         </div>
         <div className="project-footer">
           {project.href ? (
-            <a className="case-study-button case-study-link" href={project.href}>View case study <span aria-hidden="true">→</span></a>
+            <a className="case-study-button case-study-link" href={project.href} aria-label={`View ${project.company} case study`}>View case study <span aria-hidden="true">→</span></a>
           ) : (
             <button className="case-study-button" type="button" disabled>Case study coming soon</button>
           )}
@@ -186,6 +213,7 @@ export default function Home() {
         <section className="hero shell" id="top" data-scroll-hero>
           <div className="hero-gradient parallax-layer" data-parallax data-parallax-speed="-38" data-parallax-x="34" aria-hidden="true"><span /></div>
           <div className="hero-scroll-copy">
+            <p className="eyebrow hero-positioning">Product design × front-end fluency</p>
             <h1 className="hero-title">
               I make complex products easier to <em>build, use, and scale.</em>
             </h1>

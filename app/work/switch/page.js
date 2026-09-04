@@ -1,3 +1,4 @@
+import { CaseStudyNavigation, NextCaseStudy } from "../../../components/CaseStudyNavigation";
 import SiteHeader from "../../../components/SiteHeader";
 
 const RESUME_URL = "/JeremyRiveraResume.pdf";
@@ -49,7 +50,8 @@ const designPriorities = [
 ];
 
 export const metadata = {
-  title: "Switch by Quadient Case Study | Jeremy Rivera",
+  alternates: { canonical: "/work/switch" },
+  title: "Switch by Quadient Case Study",
   description: "Designing a guided digital workflow for preparing, sending, and tracking physical business mail.",
 };
 
@@ -74,6 +76,13 @@ export default function SwitchCaseStudy() {
             <div><span>Scope</span><strong>Onboarding, sending, tracking, accounts</strong></div>
             <div><span>Period</span><strong>2022 to 2023</strong></div>
           </div>
+          <CaseStudyNavigation sections={[
+            ["context", "Context"],
+            ["research", "Research"],
+            ["workflow", "Core workflow"],
+            ["design-priorities", "Design priorities"],
+            ["contribution", "My contribution"],
+          ]} />
         </section>
 
         <figure className="case-hero-image shell switch-case-hero">
@@ -84,7 +93,7 @@ export default function SwitchCaseStudy() {
           <figcaption>Publicly released Switch product imagery; no confidential artifacts are shown.</figcaption>
         </figure>
 
-        <section className="case-section shell">
+        <section id="context" className="case-section shell">
           <div className="case-section-heading">
             <p className="eyebrow">01 / Context</p>
             <h2>A familiar task with a surprising amount of operational complexity.</h2>
@@ -122,7 +131,7 @@ export default function SwitchCaseStudy() {
           </a>
         </section>
 
-        <section className="case-section shell switch-competitive-section">
+        <section id="research" className="case-section shell switch-competitive-section">
           <div className="case-section-heading">
             <p className="eyebrow">02 / Competitive frame</p>
             <h2>Learn from the market standard without copying its complexity.</h2>
@@ -145,7 +154,7 @@ export default function SwitchCaseStudy() {
           </div>
         </section>
 
-        <section className="case-product-section switch-workflow-section">
+        <section id="workflow" className="case-product-section switch-workflow-section">
           <div className="shell">
             <div className="case-section-heading">
               <p className="eyebrow">03 / Core workflow</p>
@@ -183,7 +192,7 @@ export default function SwitchCaseStudy() {
           </div>
         </section>
 
-        <section className="case-section shell switch-priorities-section">
+        <section id="design-priorities" className="case-section shell switch-priorities-section">
           <div className="case-section-heading">
             <p className="eyebrow">04 / Design priorities</p>
             <h2>Use clarity to reduce risk across the mailing journey.</h2>
@@ -198,7 +207,7 @@ export default function SwitchCaseStudy() {
           </div>
         </section>
 
-        <section className="case-section shell switch-contribution-section">
+        <section id="contribution" className="case-section shell switch-contribution-section">
           <div className="case-section-heading">
             <p className="eyebrow">05 / Contribution</p>
             <h2>A product designer working across the complete service.</h2>
@@ -217,11 +226,11 @@ export default function SwitchCaseStudy() {
           </div>
         </section>
 
-        <section className="case-next shell">
-          <p className="eyebrow">Selected work</p>
-          <h2>Return to the full portfolio.</h2>
-          <a className="button primary" href="/#work">View selected work <span aria-hidden="true">&rarr;</span></a>
-        </section>
+        <NextCaseStudy
+          href="/work/payro"
+          company="Payro Finance"
+          title="A responsive customer portal and design system for payroll financing."
+        />
       </main>
 
       <footer className="site-footer shell">

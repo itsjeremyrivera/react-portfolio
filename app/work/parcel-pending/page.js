@@ -1,3 +1,4 @@
+import { CaseStudyNavigation, NextCaseStudy } from "../../../components/CaseStudyNavigation";
 import SiteHeader from "../../../components/SiteHeader";
 import parcelLockersField from "./parcel-lockers-field-data";
 import kioskWelcomeInstructions from "./kiosk-welcome-instructions-data";
@@ -22,7 +23,8 @@ const designPrinciples = [
 ];
 
 export const metadata = {
-  title: "Parcel Pending by Quadient Case Study | Jeremy Rivera",
+  alternates: { canonical: "/work/parcel-pending" },
+  title: "Parcel Pending by Quadient Case Study",
   description: "A compact self-service parcel pickup experience designed for a real Parcel Pending locker installation.",
 };
 
@@ -46,6 +48,13 @@ export default function ParcelPendingCaseStudy() {
             <div><span>Scope</span><strong>Kiosk interaction and localization</strong></div>
             <div><span>Period</span><strong>2022 to 2023</strong></div>
           </div>
+          <CaseStudyNavigation sections={[
+            ["strategy", "Strategy"],
+            ["production-flow", "Pickup flow"],
+            ["localization", "Localization"],
+            ["design-decisions", "Design decisions"],
+            ["contribution", "My contribution"],
+          ]} />
         </section>
 
         <figure className="case-hero-image shell parcel-live-hero">
@@ -68,7 +77,7 @@ export default function ParcelPendingCaseStudy() {
           </figcaption>
         </figure>
 
-        <section className="case-section shell">
+        <section id="strategy" className="case-section shell">
           <div className="case-section-heading">
             <p className="eyebrow">01 / Strategy</p>
             <h2>The interface did not need to explain the system. It needed to complete the task.</h2>
@@ -104,7 +113,7 @@ export default function ParcelPendingCaseStudy() {
           </a>
         </section>
 
-        <section className="case-product-section parcel-production-flow">
+        <section id="production-flow" className="case-product-section parcel-production-flow">
           <div className="shell">
             <div className="case-section-heading">
               <p className="eyebrow">02 / Production flow</p>
@@ -151,7 +160,7 @@ export default function ParcelPendingCaseStudy() {
           </div>
         </section>
 
-        <section className="case-section shell parcel-production-localization">
+        <section id="localization" className="case-section shell parcel-production-localization">
           <div className="case-section-heading">
             <p className="eyebrow">03 / Localization</p>
             <h2>Change the language without changing the mental model.</h2>
@@ -169,7 +178,7 @@ export default function ParcelPendingCaseStudy() {
           </figure>
         </section>
 
-        <section className="case-section shell parcel-principles-section">
+        <section id="design-decisions" className="case-section shell parcel-principles-section">
           <div className="case-section-heading">
             <p className="eyebrow">04 / Design decisions</p>
             <h2>Simplicity was the strategy, not the absence of one.</h2>
@@ -205,7 +214,7 @@ export default function ParcelPendingCaseStudy() {
           </div>
         </section>
 
-        <section className="case-section shell switch-contribution-section">
+        <section id="contribution" className="case-section shell switch-contribution-section">
           <div className="case-section-heading">
             <p className="eyebrow">05 / Contribution</p>
             <h2>Designing a small interface inside a much larger physical service.</h2>
@@ -222,11 +231,11 @@ export default function ParcelPendingCaseStudy() {
           </div>
         </section>
 
-        <section className="case-next shell">
-          <p className="eyebrow">Selected work</p>
-          <h2>Return to the full portfolio.</h2>
-          <a className="button primary" href="/#work">View selected work <span aria-hidden="true">&rarr;</span></a>
-        </section>
+        <NextCaseStudy
+          href="/work/switch"
+          company="Switch by Quadient"
+          title="Turning physical mail into a guided digital workflow."
+        />
       </main>
 
       <style>{`

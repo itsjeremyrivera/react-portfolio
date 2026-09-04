@@ -32,7 +32,8 @@ const roles = [
 ];
 
 export const metadata = {
-  title: "Résumé — Jeremy Rivera",
+  title: "Résumé",
+  alternates: { canonical: "/resume" },
 };
 
 export default function ResumePage() {

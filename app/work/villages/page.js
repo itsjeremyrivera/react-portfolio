@@ -1,3 +1,4 @@
+import { CaseStudyNavigation, NextCaseStudy } from "../../../components/CaseStudyNavigation";
 import SiteHeader from "../../../components/SiteHeader";
 
 const RESUME_URL = "/JeremyRiveraResume.pdf";
@@ -26,6 +27,7 @@ const productDecisions = [
 ];
 
 export const metadata = {
+  alternates: { canonical: "/work/villages" },
   title: "The Villages Homefinder Case Study",
   description: "Designing and building a responsive Angular micro-frontend for home search across The Villages website and mobile apps.",
 };
@@ -51,6 +53,13 @@ export default function VillagesCaseStudy() {
             <div><span>Team</span><strong>4 design engineers + 2 software engineers</strong></div>
             <div><span>Delivery</span><strong>Responsive web + embedded mobile</strong></div>
           </div>
+          <CaseStudyNavigation sections={[
+            ["context", "Context"],
+            ["interaction-model", "Interactions"],
+            ["platform-strategy", "Implementation"],
+            ["design-decisions", "Design decisions"],
+            ["contribution", "My contribution"],
+          ]} />
         </section>
 
         <figure className="villages-hero-media shell">
@@ -72,7 +81,7 @@ export default function VillagesCaseStudy() {
           </figcaption>
         </figure>
 
-        <section className="case-section shell">
+        <section id="context" className="case-section shell">
           <div className="case-section-heading">
             <p className="eyebrow">01 / Context</p>
             <h2>A high-intent search experience inside a much larger ecosystem.</h2>
@@ -115,7 +124,7 @@ export default function VillagesCaseStudy() {
           </div>
         </section>
 
-        <section className="villages-interaction-section shell" aria-labelledby="villages-interaction-title">
+        <section id="interaction-model" className="villages-interaction-section shell" aria-labelledby="villages-interaction-title">
           <div className="case-section-heading">
             <p className="eyebrow">03 / Interaction model</p>
             <h2 id="villages-interaction-title">Move naturally from discovery to a confident decision.</h2>
@@ -264,7 +273,7 @@ export default function VillagesCaseStudy() {
           </div>
         </section>
 
-        <section className="case-product-section villages-platform-section">
+        <section id="platform-strategy" className="case-product-section villages-platform-section">
           <div className="shell">
             <div className="case-section-heading">
               <p className="eyebrow">05 / Platform strategy</p>
@@ -297,7 +306,7 @@ export default function VillagesCaseStudy() {
           </div>
         </section>
 
-        <section className="case-section shell villages-decisions-section">
+        <section id="design-decisions" className="case-section shell villages-decisions-section">
           <div className="case-section-heading">
             <p className="eyebrow">06 / Design decisions</p>
             <h2>Make a dense search tool feel direct and approachable.</h2>
@@ -347,7 +356,7 @@ export default function VillagesCaseStudy() {
           </div>
         </section>
 
-        <section className="case-section shell villages-contribution-section">
+        <section id="contribution" className="case-section shell villages-contribution-section">
           <div className="case-section-heading">
             <p className="eyebrow">08 / Contribution</p>
             <h2>Design decisions grounded in stakeholder needs and production code.</h2>
@@ -374,11 +383,11 @@ export default function VillagesCaseStudy() {
           </div>
         </section>
 
-        <section className="case-next shell">
-          <p className="eyebrow">Selected work</p>
-          <h2>Return to the full portfolio.</h2>
-          <a className="button primary" href="/#work">View selected work <span aria-hidden="true">&rarr;</span></a>
-        </section>
+        <NextCaseStudy
+          href="/work/parcel-pending"
+          company="Parcel Pending by Quadient"
+          title="A focused multilingual kiosk experience for self-service parcel pickup."
+        />
       </main>
 
       <footer className="site-footer shell">

@@ -122,6 +122,7 @@ export default function AboutPage() {
               </div>
             </div>
 
+
             <figure
               className={`${styles.lifeCard} ${styles.travelCard} parallax-layer parallax-media-layer`}
               data-parallax

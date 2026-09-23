@@ -140,7 +140,7 @@
   align-self: start;
   height: max-content;
   grid-column: 1;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 2;
   padding-right: clamp(1rem, 5vw, 5rem);
 }
 
@@ -178,10 +178,6 @@
   border-radius: 18px;
 }
 
-.coupleCard .cardPhoto {
-  min-height: clamp(440px, 56vw, 700px);
-}
-
 .lifeCard figcaption {
   padding: .85rem .35rem .15rem;
   color: var(--inverse-muted);
@@ -195,9 +191,11 @@
 
 .dogGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(1rem, 2.5vw, 2rem);
   align-items: start;
+  width: min(760px, 100%);
+  margin-left: auto;
   padding-inline: 1px;
 }
 
@@ -209,10 +207,6 @@
   border-radius: 28px;
   background: var(--surface);
   box-shadow: var(--shadow);
-}
-
-.dogGrid > div:last-child {
-  margin-top: 12%;
 }
 
 .dogPhoto {
@@ -298,13 +292,11 @@
   }
 
   .travelCard,
-  .animeCard,
-  .dogGrid > div:last-child {
+  .animeCard {
     margin-top: 0;
   }
 
   .cardPhoto,
-  .coupleCard .cardPhoto,
   .dogPhoto {
     min-height: 118vw;
     max-height: 660px;

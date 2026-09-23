@@ -123,20 +123,6 @@ export default function AboutPage() {
             </div>
 
             <figure
-              className={`${styles.lifeCard} ${styles.coupleCard} parallax-layer parallax-media-layer`}
-              data-parallax
-              data-parallax-speed="-16"
-            >
-              <Photo
-                src="/images/about/couple-by-the-coast.webp"
-                alt="Jeremy and his partner together by a tropical coast"
-                sizes="(max-width: 700px) 100vw, 48vw"
-                className={styles.cardPhoto}
-              />
-              <figcaption>Puerto Rico with my girlfriend.</figcaption>
-            </figure>
-
-            <figure
               className={`${styles.lifeCard} ${styles.travelCard} parallax-layer parallax-media-layer`}
               data-parallax
               data-parallax-speed="18"
@@ -172,21 +158,13 @@ export default function AboutPage() {
             data-parallax
             data-parallax-speed="18"
           >
-            <h2>Home has always been better with these two around.</h2>
+            <h2>Home was always better with Flash around.</h2>
             <p>
-              Koda boi is the black dog. Flash is the golden retriever. Flash passed
-              away, but I love this photo and wanted him to have a place here too.
+              Flash was my golden retriever. He passed away, but I love this photo
+              and wanted him to have a place here too.
             </p>
           </div>
           <div className={styles.dogGrid}>
-            <div className="parallax-layer parallax-media-layer" data-parallax data-parallax-speed="16">
-              <Photo
-                src="/images/about/koda-closeup.webp"
-                alt="Koda boi, Jeremy's black dog, smiling on a yellow cushion"
-                sizes="(max-width: 700px) 100vw, 47vw"
-                className={styles.dogPhoto}
-              />
-            </div>
             <div className="parallax-layer parallax-media-layer" data-parallax data-parallax-speed="-14">
               <Photo
                 src="/images/about/golden-dog.webp"
